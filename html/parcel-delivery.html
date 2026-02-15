@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Livraison Express à Charleroi - Service de livraison rapide et sécurisé">
+    <title>Livraison Express - Services Taxis Charleroi</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-brand">
+                <div class="brand-logo">V</div>
+                <div class="brand-text">
+                    <div class="brand-title">Services Taxis</div>
+                    <div class="brand-subtitle">Trajets sûrs</div>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#fleet" class="nav-link">Flotte</a>
+                <a href="index.html#business" class="nav-link">Entreprise</a>
+                <a href="index.html#why" class="nav-link">Pourquoi Services Taxis</a>
+                <a href="index.html#booking" class="nav-button">Réserver</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SERVICE PAGE SECTION -->
+    <section class="service-detail">
+        <div class="section-container">
+            <button class="back-button" onclick="history.back()">← Retour</button>
+            <div class="service-detail-content">
+                <div class="service-detail-icon"><i class="icon fas fa-box"></i></div>
+                <h1 class="service-detail-title">Livraison Express</h1>
+                <p class="service-detail-subtitle">Service de livraison rapide et sécurisé</p>
+                
+                <div class="service-detail-body">
+                    <h2>À Propos de ce Service</h2>
+                    <p>Vous avez besoin de livrer un colis rapidement et en toute sécurité ? Notre service de livraison express assure que votre envoi arrive à destination en parfait état et dans les délais.</p>
+                    
+                    <h2>Avantages</h2>
+                    <ul class="service-features">
+                        <li>✓ Livraison rapide et ponctuelle</li>
+                        <li>✓ Transport sécurisé de vos colis</li>
+                        <li>✓ Suivi en temps réel du colis</li>
+                        <li>✓ Tarifs compétitifs</li>
+                        <li>✓ Couverture géographique large</li>
+                        <li>✓ Service fiable et professionnel</li>
+                    </ul>
+
+                    <h2>Réservation</h2>
+                    <p>Pour livrer votre colis, veuillez utiliser notre formulaire de réservation ou nous contacter directement.</p>
+                </div>
+
+                <section class="booking-section local-booking">
+                    <div class="section-container">
+                        <h2 class="section-heading">Demander un Trajet / Livraison</h2>
+                        <div class="booking-form-container">
+                            <form class="booking-form" id="rideForm" method="POST" action="https://formspree.io/f/mnoqnrrj">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="service">Type de Service <span class="required">*</span></label>
+                                        <select id="service" name="service" class="form-input" required>
+                                            <option value="">Sélectionnez un service...</option>
+                                            <option value="Livraison Express" selected>Livraison Express</option>
+                                            <option value="Taxi en ville">Taxi en ville</option>
+                                            <option value="Transferts aéroport">Transferts aéroport</option>
+                                            <option value="Transport / entreprise">Transport / entreprise</option>
+                                            <option value="Long trajets">Long trajets</option>
+                                            <option value="Transport événement">Transport événement</option>
+                                            <option value="Transport groupe">Transport groupe</option>
+                                            <option value="Trajet programmé">Trajet programmé</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passengers">Passagers <span class="required">*</span></label>
+                                        <select id="passengers" name="passengers" class="form-input" required>
+                                            <option value="">Sélectionnez...</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5+</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name">Nom Complet <span class="required">*</span></label>
+                                        <input type="text" id="name" name="name" class="form-input" placeholder="Jean Dupont" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Numéro de Téléphone <span class="required">*</span></label>
+                                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="+32 470 12 34 56" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="email">Adresse Email <span class="required">*</span></label>
+                                        <input type="email" id="email" name="email" class="form-input" placeholder="votre@email.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="company">Entreprise (Optionnel)</label>
+                                        <input type="text" id="company" name="company" class="form-input" placeholder="Votre Entreprise">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="pickup">Adresse de Prise <span class="required">*</span></label>
+                                        <input type="text" id="pickup" name="pickup" class="form-input" placeholder="Centre Ville Bruxelles, 1000 Bruxelles" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="dropoff">Adresse de Destination (Optionnel)</label>
+                                        <input type="text" id="dropoff" name="dropoff" class="form-input" placeholder="Aéroport de Bruxelles (BRU)">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="datetime">Date & Heure de Prise (Optionnel)</label>
+                                        <input type="datetime-local" id="datetime" name="datetime" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="vehicle">Type de Véhicule <span class="required">*</span></label>
+                                        <select id="vehicle" name="vehicle" class="form-input" required>
+                                            <option value="">Sélectionnez un véhicule...</option>
+                                            <option>Standard (berline)</option>
+                                            <option>Exécutif (premium)</option>
+                                            <option>Fourgonnette (bagages)</option>
+                                            <option>Minibus (groupes)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="luggage">Bagages (Optionnel)</label>
+                                        <input type="text" id="luggage" name="luggage" class="form-input" placeholder="ex. 1 bagage cabine, 1 valise">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="notes">Remarques Spéciales (Optionnel)</label>
+                                        <input type="text" id="notes" name="notes" class="form-input" placeholder="Exigences particulières...">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="child-seat" name="child-seat">
+                                        <label for="child-seat" class="check-label">Siège enfant nécessaire</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" id="accessibility" name="accessibility">
+                                        <label for="accessibility" class="check-label">Exigences d'accessibilité</label>
+                                    </div>
+                                </div>
+
+                                <div id="formMessage" class="form-message" style="display: none;"></div>
+
+                                <button type="submit" class="form-submit">Demander un Trajet</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 class="footer-title">Services Taxis</h3>
+                <p class="footer-desc">Service de taxi premium à Charleroi et dans toute la Belgique.
+Réservations à la demande, trajets programmés, transport d'entreprise et transport de groupe.</p>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-heading">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="city-taxi.html">Taxi en Ville</a></li>
+                    <li><a href="business-taxi.html">Taxi Affaires</a></li>
+                    <li><a href="group-transport.html">Transport Groupe</a></li>
+                    <li><a href="night-taxi.html">Taxi de Nuit</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-heading">Entreprise</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html#why">À Propos de Nous</a></li>
+                    <li><a href="index.html#business">Solutions Entreprise</a></li>
+                    <li><a href="index.html#fleet">Notre Flotte</a></li>
+                    <li><a href="index.html#booking">Demander un Trajet</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-heading">Contact</h4>
+                <p class="footer-text">Email: info@TaxisServices.be</p>
+                <p class="footer-text">Téléphone: +32 2 XXX XXXX</p>
+                <p class="footer-text">Disponible 24/7</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Services Taxis. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script>
+        const rideForm = document.getElementById('rideForm');
+        const formMessage = document.getElementById('formMessage');
+
+        if (rideForm) {
+            rideForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const submitBtn = rideForm.querySelector('.form-submit');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = '⏳ Traitement...';
+                submitBtn.disabled = true;
+                const formData = new FormData(rideForm);
+
+                fetch(rideForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        formMessage.textContent = '✅ Succès! Nous avons reçu votre demande de réservation. Notre équipe vous contactera dans les 15 minutes.';
+                        formMessage.className = 'form-message success';
+                        formMessage.style.display = 'block';
+                        rideForm.reset();
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                })
+                .catch(() => {
+                    formMessage.textContent = '❌ Une erreur s\'est produite. Veuillez réessayer ou nous contacter à info@TaxisServices.be';
+                    formMessage.className = 'form-message error';
+                    formMessage.style.display = 'block';
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+        }
+    </script>
+</body>
+</html>
