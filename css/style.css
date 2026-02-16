@@ -116,6 +116,81 @@ body {
     box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
 }
 
+/* Services Dropdown */
+.services-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.services-label {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.services-dropdown:hover .services-label {
+    color: #ffd700;
+    border-bottom-color: #ffd700;
+}
+
+.services-menu {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    margin-top: 0;
+    background: white;
+    border: 1px solid #e6e6e0;
+    border-radius: 12px;
+    padding: 16px;
+    display: none;
+    flex-direction: row;
+    gap: 12px;
+    box-shadow: 0 20px 40px rgba(26, 26, 26, 0.15);
+    z-index: 100;
+    width: max-content;
+    backdrop-filter: blur(12px);
+    background: rgba(250, 250, 248, 0.95);
+}
+
+.services-dropdown:hover .services-menu {
+    display: flex;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1a1a1a;
+    transition: all 0.3s;
+    min-width: 100px;
+    text-align: center;
+}
+
+.service-item:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-4px);
+}
+
+.service-menu-icon {
+    font-size: 32px;
+    color: #ffd700;
+}
+
+.service-menu-name {
+    font-size: 13px;
+    font-weight: 500;
+}
+
 /* ============================================================
    HERO SECTION
    ============================================================ */
@@ -221,6 +296,7 @@ body {
     cursor: pointer;
     transition: all 0.25s ease;
     width: fit-content;
+    margin: 0 auto;
     text-decoration: none;
     box-shadow: 0 18px 40px rgba(26, 26, 26, 0.12);
 }
@@ -327,8 +403,13 @@ body {
    ============================================================ */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
+}
+
+.service-card:nth-child(1),
+.service-card:nth-child(2) {
+    grid-column: span 2;
 }
 
 .service-card {
@@ -337,10 +418,14 @@ body {
     border: 1px solid #e5e5e5;
     border-radius: 14px;
     padding: 30px;
+    padding-left: 100px;
     overflow: hidden;
     transition: all 0.35s ease;
-    text-align: center;
+    text-align: left;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .service-card::before {
@@ -556,19 +641,24 @@ body {
 }
 
 .service-icon {
-    font-size: 48px;
-    margin-bottom: 16px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    margin-bottom: 0;
 }
 
 .icon {
-    font-size: 42px;
+    font-size: 24px;
     color: #FFD700;
     background-color: #111;
-    padding: 15px;
-    border-radius: 12px;
+    padding: 8px;
+    border-radius: 8px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: 40px;
+    height: 40px;
 }
 
 .service-title {
