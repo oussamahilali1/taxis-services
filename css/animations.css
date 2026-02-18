@@ -1,0 +1,299 @@
+/* ============================================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================================ */
+
+/* Base animation setup */
+[data-animate] {
+    opacity: 0;
+    will-change: opacity, transform;
+}
+
+/* Fade-up animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-left animation */
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade-right animation */
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale fade animation for cards */
+@keyframes scaleFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animate on intersection */
+[data-animate="visible"] {
+    animation: var(--animation-name, fadeUp) var(--animation-duration, 0.7s) var(--animation-easing, cubic-bezier(0.25, 0.46, 0.45, 0.94)) forwards;
+    animation-delay: var(--animation-delay, 0s);
+}
+
+/* Override for elements marked with scale-fade animation type */
+[data-animation-type="scale-fade"][data-animate="visible"] {
+    --animation-name: scaleFade;
+}
+
+/* Animation delays for staggered effects */
+.stagger-1 {
+    --animation-delay: 0.1s;
+}
+
+.stagger-2 {
+    --animation-delay: 0.2s;
+}
+
+.stagger-3 {
+    --animation-delay: 0.3s;
+}
+
+.stagger-4 {
+    --animation-delay: 0.4s;
+}
+
+.stagger-5 {
+    --animation-delay: 0.5s;
+}
+
+.stagger-6 {
+    --animation-delay: 0.6s;
+}
+
+/* Fade-up animations */
+.fade-up {
+    --animation-name: fadeUp;
+    --animation-duration: 0.7s;
+}
+
+/* Fade-left animations */
+.fade-left {
+    --animation-name: fadeLeft;
+    --animation-duration: 0.7s;
+}
+
+/* Fade-right animations */
+.fade-right {
+    --animation-name: fadeRight;
+    --animation-duration: 0.7s;
+}
+
+/* Scale fade for cards */
+.scale-fade {
+    --animation-name: scaleFade;
+    --animation-duration: 0.7s;
+}
+
+/* Hero improvements - smooth initial appearance */
+.hero {
+    opacity: 0;
+    animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.hero-left {
+    animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
+    opacity: 0;
+}
+
+.hero-title {
+    transform-origin: center;
+    letter-spacing: -0.5px;
+}
+
+.hero-cta {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Enhanced service cards */
+.service-card {
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-card:hover {
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Enhanced fleet cards */
+.fleet-card {
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fleet-card:hover {
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Section headings smooth appearance */
+.section-heading {
+    animation: fadeUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s backwards;
+}
+
+.section-subtitle {
+    animation: fadeUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s backwards;
+}
+
+/* Form improvements */
+.booking-form-container {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.form-input,
+.form-group input,
+.form-group select {
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.form-input:focus,
+.form-group input:focus,
+.form-group select:focus {
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.form-submit {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.form-submit:hover {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Enhanced button transitions */
+.nav-button {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-button:hover {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-button {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-button:hover {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Smooth scrolling enhancements */
+@supports (scroll-behavior: smooth) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    [data-animate="visible"] {
+        animation-duration: 0.6s;
+    }
+
+    .stagger-1 {
+        --animation-delay: 0.05s;
+    }
+
+    .stagger-2 {
+        --animation-delay: 0.1s;
+    }
+
+    .stagger-3 {
+        --animation-delay: 0.15s;
+    }
+
+    .stagger-4 {
+        --animation-delay: 0.2s;
+    }
+
+    .stagger-5 {
+        --animation-delay: 0.25s;
+    }
+
+    .stagger-6 {
+        --animation-delay: 0.3s;
+    }
+
+    .hero-left {
+        animation-duration: 0.7s;
+        animation-delay: 0.15s;
+    }
+
+    .section-heading {
+        animation-duration: 0.6s;
+        animation-delay: 0.05s;
+    }
+
+    .section-subtitle {
+        animation-duration: 0.6s;
+        animation-delay: 0.1s;
+    }
+}
+
+/* Disable animations during reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+        opacity: 1;
+    }
+
+    [data-animate="visible"] {
+        animation: none;
+    }
+
+    .hero {
+        animation: none;
+        opacity: 1;
+    }
+
+    .hero-left {
+        animation: none;
+        opacity: 1;
+    }
+
+    .section-heading,
+    .section-subtitle {
+        animation: none;
+    }
+
+    * {
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -6,6 +6,7 @@
     <meta name="description" content="Service de taxi premium à Charleroi: trajets en ville, transferts aéroport, transport d'entreprise, longs trajets, événements, groupe, à la demande et trajets programmés.">
     <title>Services Taxis — Prise rapide. Trajet sûr. Arrivée détente.</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -48,29 +49,29 @@
                 <div class="services-dropdown">
                     <div class="services-label">Passengers</div>
                     <div class="services-menu">
-                        <a href="taxi-ville.html" class="service-item">
+                        <a href="city-taxi.html" class="service-item">
                             <div class="service-menu-icon"><i class="fas fa-taxi"></i></div>
                             <span class="service-menu-name">Taxi en Ville</span>
                         </a>
-                        <a href="taxi-affaires.html" class="service-item">
+                        <a href="business-taxi.html" class="service-item">
                             <div class="service-menu-icon"><i class="fas fa-briefcase"></i></div>
                             <span class="service-menu-name">Taxi Affaires</span>
                         </a>
-                        <a href="transport-groupe.html" class="service-item">
+                        <a href="group-transport.html" class="service-item">
                             <div class="service-menu-icon"><i class="fas fa-van-shuttle"></i></div>
-                            <span class="service-menu-name">Transport Groupe</span>
+                            <span class="service-menu-name">Transport Groupe Van</span>
                         </a>
-                        <a href="taxi-nuit.html" class="service-item">
+                        <a href="night-taxi.html" class="service-item">
                             <div class="service-menu-icon"><i class="fas fa-moon"></i></div>
                             <span class="service-menu-name">Taxi de Nuit</span>
                         </a>
-                        <a href="taxi-pmr.html" class="service-item">
-                            <div class="service-menu-icon"><i class="fas fa-wheelchair"></i></div>
-                            <span class="service-menu-name">Taxi PMR</span>
-                        </a>
-                        <a href="livraison-express.html" class="service-item">
+                        <a href="parcel-delivery.html" class="service-item">
                             <div class="service-menu-icon"><i class="fas fa-box"></i></div>
                             <span class="service-menu-name">Livraison Express</span>
+                        </a>
+                        <a href="pmr-taxi.html" class="service-item">
+                            <div class="service-menu-icon"><i class="fas fa-wheelchair"></i></div>
+                            <span class="service-menu-name">Taxi PMR</span>
                         </a>
                     </div>
                 </div>
@@ -81,9 +82,9 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section class="hero" data-animate="fade-up">
         <div class="hero-container">
-            <div class="hero-left">
+            <div class="hero-left" data-animate="fade-up">
                 <h1 class="hero-title">Prise rapide.<br>Trajet sûr.<br>Arrivée détente.</h1>
                 <p class="hero-subtitle"></p>
                 <a href="#booking" class="hero-cta">Demander un trajet</a>
@@ -98,42 +99,42 @@
     </section>
 
     <!-- SERVICES SECTION -->
-    <section class="services" id="services">
+    <section class="services" id="services" data-animate="fade-up">
         <div class="section-container">
-            <h2 class="section-heading">Nos Services</h2>
-            <p class="section-subtitle">Explorez tous nos services de mobilité en un coup d'oeil</p>
+            <h2 class="section-heading" data-animate="fade-up">Nos Services</h2>
+            <p class="section-subtitle" data-animate="fade-up">Explorez tous nos services de mobilité en un coup d'oeil</p>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" data-animate="fade-up" data-animation-type="scale-fade">
                     <div class="service-icon"><i class="icon fas fa-taxi"></i></div>
                     <h3 class="service-title">Taxi en Ville</h3>
                     <p class="service-desc">Votre taxi à Charleroi disponible 24h/24 et 7j/7</p>
                     <a href="city-taxi.html" class="service-button">Réserver un taxi</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-animate="fade-up" data-animation-type="scale-fade">
                     <div class="service-icon"><i class="icon fas fa-briefcase"></i></div>
                     <h3 class="service-title">Taxi Affaires</h3>
                     <p class="service-desc">Solutions de transport adaptées aux entreprises</p>
                     <a href="business-taxi.html" class="service-button">Réserver un taxi</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-animate="fade-up" data-animation-type="scale-fade">
                     <div class="service-icon"><i class="icon fas fa-van-shuttle"></i></div>
                     <h3 class="service-title">Transport Groupe Van</h3>
                     <p class="service-desc">Réservez un van pour vos trajets en groupe</p>
                     <a href="group-transport.html" class="service-button">Réserver un taxi</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-animate="fade-up" data-animation-type="scale-fade">
                     <div class="service-icon"><i class="icon fas fa-moon"></i></div>
                     <h3 class="service-title">Taxi de Nuit</h3>
                     <p class="service-desc">Votre taxi de nuit à Charleroi, sûr et disponible</p>
                     <a href="night-taxi.html" class="service-button">Réserver un taxi</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-animate="fade-up" data-animation-type="scale-fade">
                     <div class="service-icon"><i class="icon fas fa-box"></i></div>
                     <h3 class="service-title">Livraison Express</h3>
                     <p class="service-desc">Service de livraison rapide et sécurisé</p>
                     <a href="parcel-delivery.html" class="service-button">Réserver un taxi</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-animate="fade-up" data-animation-type="scale-fade">
                     <div class="service-icon"><i class="icon fas fa-wheelchair"></i></div>
                     <h3 class="service-title">Taxi PMR</h3>
                     <p class="service-desc">Transport adapté aux personnes à mobilité réduite</p>
@@ -143,10 +144,10 @@
         </div>
     </section>
     <!-- BOOKING FORM SECTION -->
-    <section class="booking-section" id="booking">
+    <section class="booking-section" id="booking" data-animate="fade-up">
         <div class="section-container">
-            <h2 class="section-heading">Demander un Trajet</h2>
-            <div class="booking-form-container">
+            <h2 class="section-heading" data-animate="fade-up">Demander un Trajet</h2>
+            <div class="booking-form-container" data-animate="fade-up">
                 <form class="booking-form" id="rideForm" method="POST" action="https://formspree.io/f/mnoqnrrj">
                     <div class="form-row">
                         <div class="form-group">
@@ -350,5 +351,6 @@ Réservations à la demande, trajets programmés, transport d'entreprise et tran
             });
         });
     </script>
+    <script src="../js/scroll-animations.js"></script>
 </body>
 </html>
