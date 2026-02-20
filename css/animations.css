@@ -154,14 +154,9 @@
     transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Section headings smooth appearance */
-.section-heading {
-    animation: fadeUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s backwards;
-}
-
-.section-subtitle {
-    animation: fadeUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s backwards;
-}
+/* Section headings: animations are triggered by Intersection Observer
+   Removed automatic on-load animations so headings remain hidden until
+   the observer sets data-animate="visible". */
 
 /* Form improvements */
 .booking-form-container {
