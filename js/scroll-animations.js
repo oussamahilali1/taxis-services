@@ -85,6 +85,20 @@
         // Start observing
         initScrollAnimations();
 
+        // Header state: transparent at top, semi-transparent after scroll
+        const header = document.querySelector('.header');
+        if (header) {
+            const updateHeaderState = () => {
+                if (window.scrollY > 8) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            };
+            updateHeaderState();
+            window.addEventListener('scroll', updateHeaderState, { passive: true });
+        }
+
         // Trigger animations for elements already in viewport (e.g., on page load)
         const elements = document.querySelectorAll('[data-animate]');
         elements.forEach(element => {
