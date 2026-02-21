@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -430,12 +430,16 @@ body {
    ============================================================ */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 24px;
 }
 
 .service-card:nth-child(1),
 .service-card:nth-child(2) {
+    grid-column: span 3;
+}
+
+.service-card:nth-child(n + 3) {
     grid-column: span 2;
 }
 
@@ -483,6 +487,42 @@ body {
 .service-card > * {
     position: relative;
     z-index: 1;
+}
+
+.service-card.with-bg {
+    background-size: cover;
+    background-position: center;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.service-card.with-bg .service-title,
+.service-card.with-bg .service-desc {
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.service-card.with-bg .service-button {
+    background-color: rgba(255, 215, 0, 0.95);
+}
+
+.service-card.with-bg.bg-proximite {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('https://images.unsplash.com/photo-1556122071-e404eaedb77f?auto=format&fit=crop&w=1600&q=80');
+}
+
+.service-card.with-bg.bg-airport {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80');
+}
+
+.service-card.with-bg.bg-pmr {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)), url('https://images.unsplash.com/photo-1576765608866-5b51046452be?auto=format&fit=crop&w=1600&q=80');
+}
+
+.service-card.with-bg.bg-business {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1600&q=80');
+}
+
+.service-card.with-bg.bg-colis {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80');
 }
 
 .service-button {
@@ -869,7 +909,7 @@ body {
 }
 
 .business-list li:before {
-    content: "→";
+    content: "✓";
     position: absolute;
     left: 0;
     color: #ffd700;
@@ -1174,6 +1214,10 @@ body {
     .service-card:nth-child(2) {
         grid-column: span 1;
     }
+
+    .service-card:nth-child(n + 3) {
+        grid-column: span 1;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1201,3 +1245,4 @@ body {
         grid-template-columns: 1fr;
     }
 }
+

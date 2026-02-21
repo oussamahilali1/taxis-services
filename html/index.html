@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -21,60 +21,31 @@
                     <div class="brand-subtitle">Trajets sûrs</div>
                 </div>
             </div>
-            <!-- Services removed per request -->
-                <!-- Business dropdown (header) -->
-                <div class="services-dropdown">
-                    <div class="services-label">Business</div>
-                    <div class="services-menu">
-                        <a href="business-taxi.html" class="service-item">
-                            <div class="service-menu-icon"><i class="fas fa-building"></i></div>
-                            <span class="service-menu-name">Transport Entreprises</span>
-                        </a>
-                        <a href="group-transport.html" class="service-item">
-                            <div class="service-menu-icon"><i class="fas fa-van-shuttle"></i></div>
-                            <span class="service-menu-name">Vans Corporate</span>
-                        </a>
-                        <a href="night-taxi.html" class="service-item">
-                            <div class="service-menu-icon"><i class="fas fa-bolt"></i></div>
-                            <span class="service-menu-name">Livraison urgente</span>
-                        </a>
-                        <a href="parcel-delivery.html" class="service-item">
-                            <div class="service-menu-icon"><i class="fas fa-box"></i></div>
-                            <span class="service-menu-name">Livraison Business</span>
-                        </a>
-                    </div>
+            <div class="services-dropdown">
+                <div class="services-label">Services</div>
+                <div class="services-menu">
+                    <a href="city-taxi.html" class="service-item">
+                        <div class="service-menu-icon"><i class="fas fa-taxi"></i></div>
+                        <span class="service-menu-name">Taxis de proximité</span>
+                    </a>
+                    <a href="group-transport.html" class="service-item">
+                        <div class="service-menu-icon"><i class="fas fa-plane"></i></div>
+                        <span class="service-menu-name">Navette aéroport</span>
+                    </a>
+                    <a href="pmr-taxi.html" class="service-item">
+                        <div class="service-menu-icon"><i class="fas fa-wheelchair"></i></div>
+                        <span class="service-menu-name">Transport PMR</span>
+                    </a>
+                    <a href="business-taxi.html" class="service-item">
+                        <div class="service-menu-icon"><i class="fas fa-building"></i></div>
+                        <span class="service-menu-name">Transport business</span>
+                    </a>
+                    <a href="parcel-delivery.html" class="service-item">
+                        <div class="service-menu-icon"><i class="fas fa-bolt"></i></div>
+                        <span class="service-menu-name">Colis express urgent</span>
+                    </a>
                 </div>
-
-                <!-- Passengers dropdown (header) -->
-                <div class="services-dropdown">
-                    <div class="services-label">Passengers</div>
-                    <div class="services-menu">
-                        <a href="city-taxi.html" class="service-item">
-                            <div class="service-menu-icon"><i class="fas fa-taxi"></i></div>
-                            <span class="service-menu-name">Taxi en Ville</span>
-                        </a>
-                        <a href="business-taxi.html" class="service-item">
-                            <div class="service-menu-icon"><i class="fas fa-briefcase"></i></div>
-                            <span class="service-menu-name">Taxi Affaires</span>
-                        </a>
-                        <a href="group-transport.html" class="service-item">
-                            <div class="service-menu-icon"><i class="fas fa-van-shuttle"></i></div>
-                            <span class="service-menu-name">Transport Groupe Van</span>
-                        </a>
-                        <a href="night-taxi.html" class="service-item">
-                            <div class="service-menu-icon"><i class="fas fa-moon"></i></div>
-                            <span class="service-menu-name">Taxi de Nuit</span>
-                        </a>
-                        <a href="parcel-delivery.html" class="service-item">
-                            <div class="service-menu-icon"><i class="fas fa-box"></i></div>
-                            <span class="service-menu-name">Livraison Express</span>
-                        </a>
-                        <a href="pmr-taxi.html" class="service-item">
-                            <div class="service-menu-icon"><i class="fas fa-wheelchair"></i></div>
-                            <span class="service-menu-name">Taxi PMR</span>
-                        </a>
-                    </div>
-                </div>
+            </div>
             <nav class="header-nav">
                 <a href="#booking" class="nav-button">Réserver</a>
             </nav>
@@ -86,7 +57,7 @@
         <div class="hero-container">
             <div class="hero-left" data-animate="fade-up">
                 <h1 class="hero-title">Prise rapide.<br>Trajet sûr.<br>Arrivée détente.</h1>
-                <p class="hero-subtitle"></p>
+                <p class="hero-subtitle">Taxis de proximité, navette aéroport, transport PMR, transport business et colis express urgent.</p>
                 <a href="#booking" class="hero-cta">Demander un trajet</a>
             </div>
             <div class="hero-right">
@@ -102,43 +73,37 @@
     <section class="services" id="services" data-animate="fade-up">
         <div class="section-container">
             <h2 class="section-heading" data-animate="fade-up">Nos Services</h2>
-            <p class="section-subtitle" data-animate="fade-up">Explorez tous nos services de mobilité en un coup d'oeil</p>
+            <p class="section-subtitle" data-animate="fade-up">Services disponibles selon vos besoins et vos horaires</p>
             <div class="services-grid">
-                <div class="service-card" data-animate="fade-up" data-animation-type="scale-fade">
+                <div class="service-card with-bg bg-proximite" data-animate="fade-up" data-animation-type="scale-fade">
                     <div class="service-icon"><i class="icon fas fa-taxi"></i></div>
-                    <h3 class="service-title">Taxi en Ville</h3>
-                    <p class="service-desc">Votre taxi à Charleroi disponible 24h/24 et 7j/7</p>
+                    <h3 class="service-title">Taxis de proximité</h3>
+                    <p class="service-desc">De 06h à 00h, et vendredi/samedi/dimanche de 06h à 02h.</p>
                     <a href="city-taxi.html" class="service-button">Réserver un taxi</a>
                 </div>
-                <div class="service-card" data-animate="fade-up" data-animation-type="scale-fade">
-                    <div class="service-icon"><i class="icon fas fa-briefcase"></i></div>
-                    <h3 class="service-title">Taxi Affaires</h3>
-                    <p class="service-desc">Solutions de transport adaptées aux entreprises</p>
-                    <a href="business-taxi.html" class="service-button">Réserver un taxi</a>
+                <div class="service-card with-bg bg-airport" data-animate="fade-up" data-animation-type="scale-fade">
+                    <div class="service-icon"><i class="icon fas fa-plane"></i></div>
+                    <h3 class="service-title">Navette aéroport</h3>
+                    <p class="service-desc">Service 7/7 uniquement sur réservation.</p>
+                    <a href="group-transport.html" class="service-button">Réserver une navette</a>
                 </div>
-                <div class="service-card" data-animate="fade-up" data-animation-type="scale-fade">
-                    <div class="service-icon"><i class="icon fas fa-van-shuttle"></i></div>
-                    <h3 class="service-title">Transport Groupe Van</h3>
-                    <p class="service-desc">Réservez un van pour vos trajets en groupe</p>
-                    <a href="group-transport.html" class="service-button">Réserver un taxi</a>
-                </div>
-                <div class="service-card" data-animate="fade-up" data-animation-type="scale-fade">
-                    <div class="service-icon"><i class="icon fas fa-moon"></i></div>
-                    <h3 class="service-title">Taxi de Nuit</h3>
-                    <p class="service-desc">Votre taxi de nuit à Charleroi, sûr et disponible</p>
-                    <a href="night-taxi.html" class="service-button">Réserver un taxi</a>
-                </div>
-                <div class="service-card" data-animate="fade-up" data-animation-type="scale-fade">
-                    <div class="service-icon"><i class="icon fas fa-box"></i></div>
-                    <h3 class="service-title">Livraison Express</h3>
-                    <p class="service-desc">Service de livraison rapide et sécurisé</p>
-                    <a href="parcel-delivery.html" class="service-button">Réserver un taxi</a>
-                </div>
-                <div class="service-card" data-animate="fade-up" data-animation-type="scale-fade">
+                <div class="service-card with-bg bg-pmr" data-animate="fade-up" data-animation-type="scale-fade">
                     <div class="service-icon"><i class="icon fas fa-wheelchair"></i></div>
-                    <h3 class="service-title">Taxi PMR</h3>
-                    <p class="service-desc">Transport adapté aux personnes à mobilité réduite</p>
-                    <a href="pmr-taxi.html" class="service-button">Réserver un taxi</a>
+                    <h3 class="service-title">Transport PMR</h3>
+                    <p class="service-desc">Disponible 7/7, sur réservation.</p>
+                    <a href="pmr-taxi.html" class="service-button">Réserver un trajet</a>
+                </div>
+                <div class="service-card with-bg bg-business" data-animate="fade-up" data-animation-type="scale-fade">
+                    <div class="service-icon"><i class="icon fas fa-briefcase"></i></div>
+                    <h3 class="service-title">Transport business</h3>
+                    <p class="service-desc">Solutions de transport adaptées aux entreprises.</p>
+                    <a href="business-taxi.html" class="service-button">Réserver un trajet</a>
+                </div>
+                <div class="service-card with-bg bg-colis" data-animate="fade-up" data-animation-type="scale-fade">
+                    <div class="service-icon"><i class="icon fas fa-box"></i></div>
+                    <h3 class="service-title">Transport de colis express</h3>
+                    <p class="service-desc">Service urgent, à la demande.</p>
+                    <a href="parcel-delivery.html" class="service-button">Demander une livraison</a>
                 </div>
             </div>
         </div>
@@ -243,14 +208,11 @@
                             <label for="service">Type de Service <span class="required">*</span></label>
                             <select id="service" name="service" class="form-input" required>
                                 <option value="">Sélectionnez un service...</option>
-                                <option>Taxi en ville</option>
-                                <option>Transferts aéroport</option>
-                                <option>Transport / entreprise</option>
-                                <option>Long trajets</option>
-                                <option>Transport événement</option>
-                                <option>Transport groupe</option>
-                                <option>Sur demande</option>
-                                <option>Trajet programmé</option>
+                                <option>Taxis de proximité</option>
+                                <option>Navette aéroport (7/7 sur réservation)</option>
+                                <option>Transport PMR (7/7 sur réservation)</option>
+                                <option>Transport business</option>
+                                <option>Transport de colis express (urgent à la demande)</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -362,10 +324,11 @@ Réservations à la demande, trajets programmés, transport d'entreprise et tran
             <div class="footer-section">
                 <h4 class="footer-heading">Services</h4>
                 <ul class="footer-links">
-                    <li><a href="#services">Taxi en Ville</a></li>
-                    <li><a href="#services">Transferts Aéroport</a></li>
-                    <li><a href="#services">Transport Entreprise</a></li>
-                    <li><a href="#services">Trajets de Groupe</a></li>
+                    <li><a href="city-taxi.html">Taxis de proximité</a></li>
+                    <li><a href="group-transport.html">Navette aéroport</a></li>
+                    <li><a href="pmr-taxi.html">Transport PMR</a></li>
+                    <li><a href="business-taxi.html">Transport business</a></li>
+                    <li><a href="parcel-delivery.html">Colis express urgent</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -443,3 +406,5 @@ Réservations à la demande, trajets programmés, transport d'entreprise et tran
     <script src="../js/scroll-animations.js"></script>
 </body>
 </html>
+
+
