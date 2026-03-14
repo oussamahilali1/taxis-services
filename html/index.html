@@ -11,46 +11,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="header-container">
-            <div class="header-brand">
-                <div class="brand-logo">V</div>
-                <div class="brand-text">
-                    <div class="brand-title">Services Taxis</div>
-                    <div class="brand-subtitle">Trajets sûrs</div>
-                </div>
-            </div>
-            <div class="services-dropdown">
-                <div class="services-label">Services</div>
-                <div class="services-menu">
-                    <a href="city-taxi.html" class="service-item">
-                        <div class="service-menu-icon"><i class="fas fa-taxi"></i></div>
-                        <span class="service-menu-name">Taxis de proximité</span>
-                    </a>
-                    <a href="group-transport.html" class="service-item">
-                        <div class="service-menu-icon"><i class="fas fa-plane"></i></div>
-                        <span class="service-menu-name">Navette aéroport</span>
-                    </a>
-                    <a href="pmr-taxi.html" class="service-item">
-                        <div class="service-menu-icon"><i class="fas fa-wheelchair"></i></div>
-                        <span class="service-menu-name">Transport PMR</span>
-                    </a>
-                    <a href="business-taxi.html" class="service-item">
-                        <div class="service-menu-icon"><i class="fas fa-building"></i></div>
-                        <span class="service-menu-name">Transport business</span>
-                    </a>
-                    <a href="parcel-delivery.html" class="service-item">
-                        <div class="service-menu-icon"><i class="fas fa-bolt"></i></div>
-                        <span class="service-menu-name">Colis express urgent</span>
-                    </a>
-                </div>
-            </div>
-            <nav class="header-nav">
-                <a href="#booking" class="nav-button">Réserver</a>
-            </nav>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Taxi Charleroi</div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#prices">Prices</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="cta-button">Book a Ride</button>
         </div>
-    </header>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#prices">Prices</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="cta-button">Book a Ride</button></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- HERO SECTION -->
     <section class="hero" data-animate="fade-up">
@@ -59,12 +46,6 @@
                 <h1 class="hero-title">Prise rapide.<br>Trajet sûr.<br>Arrivée détente.</h1>
                 <p class="hero-subtitle">Taxis de proximité, navette aéroport, transport PMR, transport business et colis express urgent.</p>
                 <a href="#booking" class="hero-cta">Demander un trajet</a>
-            </div>
-            <div class="hero-right">
-                <div class="hero-image-container">
-                    <img src="https://images.unsplash.com/photo-1556122071-e404eaedb77f?q=80&w=1134&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hero Taxi Service" class="hero-image">
-                    <div class="hero-blur-overlay"></div>
-                </div>
             </div>
         </div>
     </section>
@@ -404,6 +385,7 @@ Réservations à la demande, trajets programmés, transport d'entreprise et tran
         });
     </script>
     <script src="../js/scroll-animations.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
 
