@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
+﻿<!DOCTYPE html>
+<html lang="fr-BE">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Livraison de colis express à Anderlues – Transport rapide et sécurisé de colis dans toute la région du Centre belge. Service fiable, suivi en temps réel, livraison le jour même.">
-  <title>Livraison Colis Express – Anderlues | Taxi Anderlues</title>
+  <meta name="description" content="Livraison express de colis à Anderlues, Charleroi et dans le Hainaut avec prise en charge rapide.">
+  <title>Livraison express Anderlues | Taxi colis</title>
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.taxi-anderlues.be/parcel-delivery.html">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +18,9 @@
       <div class="nav-inner">
         <a href="index.html" class="nav-logo"><div class="nav-logo-icon">TA</div><span class="nav-logo-text">TAXI <span>ANDERLUES</span></span></a>
         <ul class="nav-links">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#zones">Zones</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a data-nav href="index.html">Accueil</a></li>
+          <li><a data-nav href="services.html">Services</a></li>
+          <li><a data-nav href="contact.html">Contact</a></li>
         </ul>
         <div class="nav-cta">
           <a href="tel:+32 486 06 79 27" class="nav-phone"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+32 486 06 79 27</a>
@@ -30,9 +31,11 @@
     </div>
   </nav>
 
-  <div class="mobile-menu">
-    <button class="mobile-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
-    <a href="index.html">Accueil</a><a href="index.html#services">Services</a><a href="index.html#zones">Zones</a><a href="index.html#contact">Contact</a>
+  <div class="mobile-menu" role="dialog" aria-modal="true">
+    <button class="mobile-close" aria-label="Fermer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
     <a href="tel:+32 486 06 79 27" class="text-gold">+32 486 06 79 27</a>
   </div>
 
@@ -56,13 +59,13 @@
           </p>
           <div style="display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeSlideUp .7s .6s var(--ease) forwards">
             <a href="tel:+32 486 06 79 27" class="btn btn-primary btn-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               Envoyer un colis
             </a>
-            <a href="index.html#contact" class="btn btn-outline btn-lg">Tarifs & devis</a>
+            <a href="contact.html" class="btn btn-outline btn-lg">Tarifs & devis</a>
           </div>
         </div>
-        <div class="page-hero-visual"><div class="page-icon-box">📦</div></div>
+        <div class="page-hero-visual"><div class="page-icon-box"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5-8 4.5-8-4.5L12 3z"/><path d="M4 7.5V16.5L12 21l8-4.5V7.5"/><path d="M12 12v9"/></svg></div></div>
       </div>
     </div>
   </section>
@@ -75,35 +78,35 @@
           <h2 class="page-features-title" data-animate>Livraison rapide, colis protégé</h2>
           <div class="page-features">
             <div class="page-feature" data-animate d1>
-              <div class="page-feature-icon">⚡</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 6 13h5l-1 9 7-11h-5l1-9z"/></svg></div>
               <div>
                 <h4>Livraison le jour même</h4>
                 <p>Envoyez votre colis et recevez-le dans la journée. Service express disponible dès réception de votre appel, 7j/7 dans la région du Centre.</p>
               </div>
             </div>
             <div class="page-feature" data-animate d2>
-              <div class="page-feature-icon">🔐</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V8a4 4 0 0 1 8 0v2"/></svg></div>
               <div>
                 <h4>Colis pris en charge de A à Z</h4>
                 <p>Enlèvement à domicile ou en commerce, transport sécurisé, remise en main propre au destinataire. Votre colis est entre de bonnes mains.</p>
               </div>
             </div>
             <div class="page-feature" data-animate d3>
-              <div class="page-feature-icon">📲</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="3.5" width="8" height="17" rx="2"/><path d="M11 17.5h2"/></svg></div>
               <div>
                 <h4>Suivi en temps réel</h4>
                 <p>Appelez-nous pour connaître l'état de votre livraison à tout moment. Nous vous tenons informé de chaque étape du transport.</p>
               </div>
             </div>
             <div class="page-feature" data-animate d4>
-              <div class="page-feature-icon">🏪</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9.5 6.5 5h11L19 9.5"/><path d="M6 9.5h12v9.5H6z"/><path d="M9 19V14h6v5"/></svg></div>
               <div>
                 <h4>Pour particuliers et professionnels</h4>
                 <p>Documents urgents, colis fragiles, envois réguliers pour commerces et PME — nous adaptons notre service à votre volume et vos contraintes.</p>
               </div>
             </div>
             <div class="page-feature" data-animate d5>
-              <div class="page-feature-icon">📏</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5h16v9H4z"/><path d="M8 7.5v3"/><path d="M12 7.5v2"/><path d="M16 7.5v3"/></svg></div>
               <div>
                 <h4>Tous formats acceptés</h4>
                 <p>Petits colis, enveloppes, paquets de taille moyenne. Poids jusqu'à 30 kg. Contactez-nous pour les envois spéciaux ou encombrants.</p>
@@ -140,7 +143,7 @@
             </div>
             <p>Indiquez-nous l'adresse d'enlèvement, la destination et les dimensions du colis. Nous vous donnons un tarif immédiatement.</p>
             <a href="tel:+32 486 06 79 27" class="btn btn-primary">Appeler pour envoyer</a>
-            <a href="index.html#contact" class="btn btn-outline">Demander un devis</a>
+            <a href="contact.html" class="btn btn-outline">Demander un devis</a>
             <div class="page-zones">
               <h4>Autres services</h4>
               <div class="zone-list" style="margin-top:10px">
@@ -300,7 +303,7 @@
         <div class="divider" data-animate></div>
         <p class="cta-sub" data-animate>Appelez maintenant et votre colis sera pris en charge dans l'heure.</p>
         <div class="cta-actions" data-animate>
-          <a href="tel:+32 486 06 79 27" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Appeler Maintenant</a>
+          <a href="tel:+32 486 06 79 27" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Appeler Maintenant</a>
         </div>
       </div>
     </div>
@@ -320,6 +323,15 @@
 
   <button class="scroll-top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
   <style>@keyframes fadeSlideUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}</style>
-  <script src="../js/main.js"></script>
+  <a href="tel:+32486067927" class="sticky-call" aria-label="Appeler maintenant"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call Now</a>
+
+  <script src="../js/main.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+

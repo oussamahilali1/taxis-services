@@ -3,32 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Taxi Anderlues 24h/24 pour trajets locaux, navette aéroport, transport PMR, chauffeur privé et réservations rapides depuis Anderlues et le Hainaut.">
+  <meta name="description" content="Contactez Taxi Anderlues par téléphone, email ou formulaire. Laissez un message et vos coordonnées pour être recontacté rapidement.">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://www.taxi-anderlues.be/">
-  <title>Taxi Anderlues | Service local 24h/24</title>
+  <title>Contact Taxi Anderlues | Réservation rapide</title>
+  <link rel="canonical" href="https://www.taxi-anderlues.be/contact.html">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "TaxiService",
+      "@type": "LocalBusiness",
       "name": "Taxi Anderlues",
-      "url": "https://www.taxi-anderlues.be/",
+      "url": "https://www.taxi-anderlues.be/contact.html",
       "telephone": "+32486067927",
       "email": "info@taxi-anderlues.be",
-      "areaServed": [
-        {"@type":"City","name":"Anderlues"},
-        {"@type":"City","name":"Charleroi"},
-        {"@type":"Airport","name":"Brussels South Charleroi Airport"}
-      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Anderlues",
         "addressRegion": "Hainaut",
         "addressCountry": "BE"
-      }
+      },
+      "areaServed": ["Anderlues", "Charleroi", "Brussels South Charleroi Airport"]
     }
   </script>
 </head>
@@ -82,10 +78,10 @@
             Disponible 24h/24 — 7j/7
           </div>
           <h1 class="hero-title" style="opacity:0;animation:fadeSlideUp .7s .25s var(--ease) forwards">
-            Taxi<br>Anderlues<br><span class="line-gold">24h/24</span>
+            Contact<br><span class="line-gold">Taxi Anderlues</span><br>24h/24
           </h1>
           <p class="hero-sub" style="opacity:0;animation:fadeSlideUp .7s .4s var(--ease) forwards">
-            Service de taxi professionnel à Anderlues et dans le Hainaut. Réservation rapide, navette aéroport, chauffeur privé, transport PMR et trajets locaux 24h/24 pour particuliers et professionnels.
+            Appelez-nous ou laissez un message depuis le formulaire. Indiquez votre besoin et nous vous recontactons rapidement avec une réponse claire.
           </p>
           <div class="hero-actions" style="opacity:0;animation:fadeSlideUp .7s .55s var(--ease) forwards">
             <a href="tel:+32 486 06 79 27" class="btn btn-primary btn-lg">
@@ -113,39 +109,29 @@
         <!-- Right: Booking card -->
         <div class="hero-visual">
           <div class="hero-card" style="opacity:0;animation:fadeSlideUp .8s .45s var(--ease) forwards">
-            <div class="hero-card-title">Réserver un Taxi</div>
-            <form class="booking-form" data-enhanced-form method="POST" action="https://formspree.io/f/mnoqnrrj">
+            <div class="hero-card-title">Envoyer un message</div>
+            <form class="booking-form" data-enhanced-form data-contact-form method="POST" action="https://formspree.io/f/mnoqnrrj">
               <div class="form-group">
-                <label>Départ</label>
-                <input type="text" placeholder="Adresse de départ" required>
-              </div>
-              <div class="form-group">
-                <label>Destination</label>
-                <input type="text" placeholder="Adresse d'arrivée" required>
+                <label for="contact-hero-name">Nom</label>
+                <input id="contact-hero-name" name="name" type="text" placeholder="Jean Dupont">
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label>Date</label>
-                  <input type="date" required>
+                  <label for="contact-hero-phone">Telephone</label>
+                  <input id="contact-hero-phone" name="phone" type="tel" placeholder="+32 470 12 34 56">
                 </div>
                 <div class="form-group">
-                  <label>Heure</label>
-                  <input type="time" required>
+                  <label for="contact-hero-email">Email</label>
+                  <input id="contact-hero-email" name="email" type="email" placeholder="votre@email.com">
                 </div>
               </div>
               <div class="form-group">
-                <label>Type de service</label>
-                <select>
-                  <option>Taxi Anderlues</option>
-                  <option>Taxi Charleroi</option>
-                  <option>Charleroi airport transfer</option>
-                  <option>Transport PMR</option>
-                  <option>Chauffeur privé</option>
-                </select>
+                <label for="contact-hero-message">Message <span class="required">*</span></label>
+                <textarea id="contact-hero-message" name="message" placeholder="Expliquez votre demande..." required></textarea>
               </div>
               <div class="form-message" aria-live="polite"></div>
               <button type="submit" class="btn btn-primary btn-lg form-submit">
-                Confirmer la réservation
+                Envoyer le message
               </button>
             </form>
           </div>
@@ -158,7 +144,7 @@
   <section id="services" class="section services">
     <div class="container">
       <div class="services-header">
-        <div class="label" data-animate>Nos Prestations</div>
+        <div class="label" data-animate>Contact & réservation</div>
         <h2 class="heading-xl" data-animate>Ce que nous<br><span class="text-gold">proposons</span></h2>
         <div class="divider" data-animate></div>
         <p class="text-muted" data-animate style="margin-top:18px">
@@ -408,134 +394,60 @@
     <div class="container">
       <div class="booking-inner">
         <div class="booking-details" data-animate="left">
-          <div class="label">Demander un trajet</div>
-          <h2 class="heading-xl">Reservation rapide<br><span class="text-gold">en quelques minutes</span></h2>
+          <div class="label">Nous contacter</div>
+          <h2 class="heading-xl">Laissez un message<br><span class="text-gold">et vos coordonnées</span></h2>
           <div class="divider divider-left"></div>
           <p class="text-muted">
-            Indiquez votre service, vos adresses et vos preferences. Nous confirmons rapidement votre prise en charge dans la region d'Anderlues.
+            Décrivez votre demande et laissez au moins votre numéro ou votre email. Nous vous recontactons rapidement.
           </p>
           <ul class="booking-list">
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14l-4-4 1.41-1.41L11 12.17l6.59-6.59L19 7l-8 8z"/></svg>
-              Chauffeurs agrees, vehicules confortables et ponctualite garantie.
+              Vous pouvez écrire un message librement depuis cette page.
             </li>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
-              Service disponible 24h/24, 7j/7 dans toute la region.
+              Laissez votre téléphone ou votre email selon votre préférence.
             </li>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 5H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-              Confirmation rapide et suivi de votre demande.
+              Réponse rapide de notre équipe après réception.
             </li>
           </ul>
         </div>
         <div class="booking-form-container" data-animate="right">
-          <div class="booking-form-title">Demander un trajet</div>
-          <form class="booking-form" id="rideForm" method="POST" action="https://formspree.io/f/mnoqnrrj">
+          <div class="booking-form-title">Formulaire de contact</div>
+          <form class="booking-form" data-enhanced-form data-contact-form method="POST" action="https://formspree.io/f/mnoqnrrj">
             <div class="form-row">
               <div class="form-group">
-                <label for="service">Type de service <span class="required">*</span></label>
-                <select id="service" name="service" required>
-                  <option value="">Selectionnez un service...</option>
-                  <option>Taxis de proximite</option>
-                  <option>Navette aeroport (7/7 sur reservation)</option>
-                  <option>Transport PMR (7/7 sur reservation)</option>
-                  <option>Transport business</option>
-                  <option>Transport de colis express (urgent a la demande)</option>
-                 
-                </select>
+                <label for="contact-name">Nom</label>
+                <input type="text" id="contact-name" name="name" placeholder="Jean Dupont">
               </div>
               <div class="form-group">
-                <label for="passengers">Passagers <span class="required">*</span></label>
-                <select id="passengers" name="passengers" required>
-                  <option value="">Selectionnez...</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5+</option>
-                </select>
+                <label for="contact-subject">Sujet</label>
+                <input type="text" id="contact-subject" name="subject" placeholder="Reservation, information, devis...">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label for="name">Nom complet <span class="required">*</span></label>
-                <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
+                <label for="contact-phone">Telephone</label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="+32 470 12 34 56">
               </div>
               <div class="form-group">
-                <label for="phone">Numero de telephone <span class="required">*</span></label>
-                <input type="tel" id="phone" name="phone" placeholder="+32 470 12 34 56" required>
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" placeholder="votre@email.com">
               </div>
             </div>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Adresse email <span class="required">*</span></label>
-                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
-              </div>
-              <div class="form-group">
-                <label for="company">Entreprise (optionnel)</label>
-                <input type="text" id="company" name="company" placeholder="Votre entreprise">
-              </div>
+            <div class="form-group">
+              <label for="contact-message">Message <span class="required">*</span></label>
+              <textarea id="contact-message" name="message" placeholder="Indiquez votre demande, votre trajet ou votre question..." required></textarea>
             </div>
 
-            <div class="form-row">
-              <div class="form-group full-width">
-                <label for="pickup">Adresse de prise en charge <span class="required">*</span></label>
-                <input type="text" id="pickup" name="pickup" placeholder="Centre Ville Bruxelles, 1000 Bruxelles" required>
-              </div>
-            </div>
+            <div class="form-message" aria-live="polite"></div>
 
-            <div class="form-row">
-              <div class="form-group full-width">
-                <label for="dropoff">Adresse de destination (optionnel)</label>
-                <input type="text" id="dropoff" name="dropoff" placeholder="Aeroport de Bruxelles (BRU)">
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="datetime">Date et heure de prise (optionnel)</label>
-                <input type="datetime-local" id="datetime" name="datetime">
-              </div>
-              <div class="form-group">
-                <label for="vehicle">Type de vehicule <span class="required">*</span></label>
-                <select id="vehicle" name="vehicle" required>
-                  <option value="">Selectionnez un vehicule...</option>
-                  <option>Standard (berline)</option>
-                  <option>Executif (premium)</option>
-                  <option>Fourgonnette (bagages)</option>
-                  <option>Minibus (groupes)</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="luggage">Bagages (optionnel)</label>
-                <input type="text" id="luggage" name="luggage" placeholder="ex. 1 bagage cabine, 1 valise">
-              </div>
-              <div class="form-group">
-                <label for="notes">Remarques speciales (optionnel)</label>
-                <input type="text" id="notes" name="notes" placeholder="Exigences particulieres...">
-              </div>
-            </div>
-
-            <div class="form-check-row">
-              <div class="form-check">
-                <input type="checkbox" id="child-seat" name="child-seat">
-                <label for="child-seat" class="check-label">Siege enfant necessaire</label>
-              </div>
-              <div class="form-check">
-                <input type="checkbox" id="accessibility" name="accessibility">
-                <label for="accessibility" class="check-label">Exigences d'accessibilite</label>
-              </div>
-            </div>
-
-            <div id="formMessage" class="form-message" style="display:none;"></div>
-
-            <button type="submit" class="btn btn-primary btn-lg form-submit">Demander un trajet</button>
+            <button type="submit" class="btn btn-primary btn-lg form-submit">Envoyer le message</button>
           </form>
         </div>
       </div>
@@ -647,14 +559,12 @@
     }
   </style>
 
-  <a href="tel:+32486067927" class="sticky-call" aria-label="Appeler maintenant">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-    Call Now
-  </a>
+  <a href="tel:+32486067927" class="sticky-call" aria-label="Appeler maintenant"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call Now</a>
 
   <script src="../js/main.js" defer></script>
 </body>
 </html>
+
 
 
 

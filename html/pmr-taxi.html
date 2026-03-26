@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
+﻿<!DOCTYPE html>
+<html lang="fr-BE">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Transport PMR à Anderlues – Taxi adapté aux personnes à mobilité réduite. Véhicules équipés, chauffeurs formés, confort et sécurité garantis dans la région du Centre belge.">
-  <title>Transport PMR – Anderlues | Taxi Anderlues</title>
+  <meta name="description" content="Transport PMR à Anderlues et Charleroi avec réservation claire, service fiable et accompagnement attentif.">
+  <title>Transport PMR Anderlues | Taxi accessible</title>
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.taxi-anderlues.be/pmr-taxi.html">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +18,9 @@
       <div class="nav-inner">
         <a href="index.html" class="nav-logo"><div class="nav-logo-icon">TA</div><span class="nav-logo-text">TAXI <span>ANDERLUES</span></span></a>
         <ul class="nav-links">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#zones">Zones</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a data-nav href="index.html">Accueil</a></li>
+          <li><a data-nav href="services.html">Services</a></li>
+          <li><a data-nav href="contact.html">Contact</a></li>
         </ul>
         <div class="nav-cta">
           <a href="tel:+32 486 06 79 27" class="nav-phone"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+32 486 06 79 27</a>
@@ -30,9 +31,11 @@
     </div>
   </nav>
 
-  <div class="mobile-menu">
-    <button class="mobile-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
-    <a href="index.html">Accueil</a><a href="index.html#services">Services</a><a href="index.html#zones">Zones</a><a href="index.html#contact">Contact</a>
+  <div class="mobile-menu" role="dialog" aria-modal="true">
+    <button class="mobile-close" aria-label="Fermer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
     <a href="tel:+32 486 06 79 27" class="text-gold">+32 486 06 79 27</a>
   </div>
 
@@ -56,13 +59,13 @@
           </p>
           <div style="display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeSlideUp .7s .6s var(--ease) forwards">
             <a href="tel:+32 486 06 79 27" class="btn btn-primary btn-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               Réserver maintenant
             </a>
-            <a href="index.html#contact" class="btn btn-outline btn-lg">Renseignements</a>
+            <a href="contact.html" class="btn btn-outline btn-lg">Renseignements</a>
           </div>
         </div>
-        <div class="page-hero-visual"><div class="page-icon-box">♿</div></div>
+        <div class="page-hero-visual"><div class="page-icon-box"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="5.5" r="1.75"/><circle cx="15.5" cy="16.5" r="3.5"/><path d="M10.5 7.5v4.5l2.25 2.25"/><path d="M12.75 11H16"/><path d="M9.5 12.5H7"/><path d="M12.5 14.5H9.5a3 3 0 0 0 0 6"/></svg></div></div>
       </div>
     </div>
   </section>
@@ -75,35 +78,35 @@
           <h2 class="page-features-title" data-animate>Un service pensé pour vous</h2>
           <div class="page-features">
             <div class="page-feature" data-animate d1>
-              <div class="page-feature-icon">🚐</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15.5V9.75A1.75 1.75 0 0 1 7.75 8h7.5A1.75 1.75 0 0 1 17 9.75v5.75"/><path d="M4.5 15.5h15"/><path d="M6.5 15.5v2"/><path d="M17.5 15.5v2"/><circle cx="8.5" cy="15.5" r="1"/><circle cx="15.5" cy="15.5" r="1"/></svg></div>
               <div>
                 <h4>Véhicules équipés PMR</h4>
                 <p>Nos véhicules sont équipés de rampes d'accès, de sangles de fixation pour fauteuils roulants et d'un espace suffisant pour voyager en toute sécurité.</p>
               </div>
             </div>
             <div class="page-feature" data-animate d2>
-              <div class="page-feature-icon">🤝</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12.5 10.5 10a2.5 2.5 0 0 1 3.5 0l2.5 2.5"/><path d="M4 13.5 7.5 10a2 2 0 0 1 2.83 0L12 11.67"/><path d="M20 13.5 16.5 10a2 2 0 0 0-2.83 0L12 11.67"/><path d="M6 15.5 8.5 18a2 2 0 0 0 2.83 0L12 17.33 12.67 18a2 2 0 0 0 2.83 0L18 15.5"/></svg></div>
               <div>
                 <h4>Chauffeurs formés et bienveillants</h4>
                 <p>Nos chauffeurs ont reçu une formation spécifique pour l'aide aux personnes à mobilité réduite. Patience, respect et professionnalisme sont au cœur de notre approche.</p>
               </div>
             </div>
             <div class="page-feature" data-animate d3>
-              <div class="page-feature-icon">🏥</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8"/><path d="M8 12h8"/></svg></div>
               <div>
                 <h4>Transport médical et hospitalier</h4>
                 <p>Rendez-vous médicaux, kinésithérapie, dialyse, consultations — nous assurons vos trajets vers tous les hôpitaux et centres de soins de la région.</p>
               </div>
             </div>
             <div class="page-feature" data-animate d4>
-              <div class="page-feature-icon">📅</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="14" rx="2"/><path d="M8 3.5v4"/><path d="M16 3.5v4"/><path d="M4 9.5h16"/></svg></div>
               <div>
                 <h4>Trajets réguliers planifiables</h4>
                 <p>Abonnement hebdomadaire ou mensuel pour vos trajets récurrents. Tarif avantageux et chauffeur habituel pour plus de confort et de familiarité.</p>
               </div>
             </div>
             <div class="page-feature" data-animate d5>
-              <div class="page-feature-icon">👨‍👩‍👧</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8.5" r="2"/><circle cx="16" cy="8.5" r="2"/><circle cx="12" cy="13" r="1.75"/><path d="M4.5 18a3.5 3.5 0 0 1 7 0"/><path d="M12.5 18a3.5 3.5 0 0 1 7 0"/><path d="M9 19a3 3 0 0 1 6 0"/></svg></div>
               <div>
                 <h4>Accompagnant possible</h4>
                 <p>Un membre de votre famille ou un aidant peut vous accompagner dans le véhicule sans supplément. Nous respectons votre besoin d'être entouré.</p>
@@ -122,7 +125,7 @@
             </div>
             <p>Expliquez-nous vos besoins spécifiques. Nous adapter à chaque situation est notre priorité.</p>
             <a href="tel:+32 486 06 79 27" class="btn btn-primary">Appeler</a>
-            <a href="index.html#contact" class="btn btn-outline">Formulaire de contact</a>
+            <a href="contact.html" class="btn btn-outline">Formulaire de contact</a>
             <div class="page-zones">
               <h4>Autres services</h4>
               <div class="zone-list" style="margin-top:10px">
@@ -282,7 +285,7 @@
         <div class="divider" data-animate></div>
         <p class="cta-sub" data-animate>Contactez-nous pour organiser votre transport PMR dès aujourd'hui.</p>
         <div class="cta-actions" data-animate>
-          <a href="tel:+32 486 06 79 27" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Nous contacter</a>
+          <a href="tel:+32 486 06 79 27" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Nous contacter</a>
         </div>
       </div>
     </div>
@@ -302,6 +305,15 @@
 
   <button class="scroll-top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
   <style>@keyframes fadeSlideUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}</style>
-  <script src="../js/main.js"></script>
+  <a href="tel:+32486067927" class="sticky-call" aria-label="Appeler maintenant"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call Now</a>
+
+  <script src="../js/main.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+

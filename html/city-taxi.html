@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
+﻿<!DOCTYPE html>
+<html lang="fr-BE">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Taxis de proximité à Anderlues – Courses locales rapides, disponibles 24h/24. Service taxi pour Anderlues, Chapelle-lez-Herlaimont, Courcelles et toute la région du Centre.">
-  <title>Taxis de Proximité – Anderlues | Taxi Anderlues</title>
+  <meta name="description" content="Service de taxi de proximité à Anderlues pour trajets locaux, rendez-vous, courses de quartier et liaisons vers Charleroi.">
+  <title>Taxi de proximité à Anderlues | Courses locales 24h/24</title>
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.taxi-anderlues.be/city-taxi.html">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,10 +22,9 @@
           <span class="nav-logo-text">TAXI <span>ANDERLUES</span></span>
         </a>
         <ul class="nav-links">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#zones">Zones</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a data-nav href="index.html">Accueil</a></li>
+          <li><a data-nav href="services.html">Services</a></li>
+          <li><a data-nav href="contact.html">Contact</a></li>
         </ul>
         <div class="nav-cta">
           <a href="tel:+32 486 06 79 27" class="nav-phone">
@@ -37,12 +38,11 @@
     </div>
   </nav>
 
-  <div class="mobile-menu">
-    <button class="mobile-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+  <div class="mobile-menu" role="dialog" aria-modal="true">
+    <button class="mobile-close" aria-label="Fermer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
     <a href="index.html">Accueil</a>
-    <a href="index.html#services">Services</a>
-    <a href="index.html#zones">Zones</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
     <a href="tel:+32 486 06 79 27" class="text-gold">+32 486 06 79 27</a>
   </div>
 
@@ -66,14 +66,14 @@
           </p>
           <div style="display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeSlideUp .7s .6s var(--ease) forwards">
             <a href="tel:+32 486 06 79 27" class="btn btn-primary btn-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               Appeler Maintenant
             </a>
-            <a href="index.html#contact" class="btn btn-outline btn-lg">Réserver en ligne</a>
+            <a href="contact.html" class="btn btn-outline btn-lg">Réserver en ligne</a>
           </div>
         </div>
         <div class="page-hero-visual">
-          <div class="page-icon-box">🚖</div>
+          <div class="page-icon-box"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 15.5 8.3 10.9A2 2 0 0 1 10.22 9.5h3.56a2 2 0 0 1 1.92 1.4l1.3 4.6"/><path d="M5.5 15.5h13"/><path d="M7.5 15.5v2"/><path d="M16.5 15.5v2"/><circle cx="8.5" cy="15.5" r="1"/><circle cx="15.5" cy="15.5" r="1"/></svg></div>
         </div>
       </div>
     </div>
@@ -87,35 +87,35 @@
           <h2 class="page-features-title" data-animate>Ce que nous offrons</h2>
           <div class="page-features">
             <div class="page-feature" data-animate d1>
-              <div class="page-feature-icon">⚡</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 6 13h5l-1 9 7-11h-5l1-9z"/></svg></div>
               <div>
                 <h4>Disponibilité immédiate</h4>
                 <p>Votre taxi arrive en moins de 5 minutes à Anderlues. Pas d'attente, pas de mauvaises surprises. Commande par téléphone, réponse instantanée.</p>
               </div>
             </div>
             <div class="page-feature" data-animate d2>
-              <div class="page-feature-icon">🗺️</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 4 6v14l5-2 6 2 5-2V4l-5 2-6-2z"/><path d="M9 4v14"/><path d="M15 6v14"/></svg></div>
               <div>
                 <h4>Connaissance parfaite du terrain</h4>
                 <p>Nos chauffeurs connaissent chaque rue d'Anderlues, Chapelle-lez-Herlaimont, Courcelles et des communes voisines. Trajet optimal garanti.</p>
               </div>
             </div>
             <div class="page-feature" data-animate d3>
-              <div class="page-feature-icon">💰</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6.5" width="18" height="11" rx="2"/><path d="M3 10.5h18"/><path d="M15 13h3"/></svg></div>
               <div>
                 <h4>Tarifs transparents</h4>
                 <p>Prix calculé selon le compteur officiel. Aucun supplément caché. Devis gratuit sur demande pour les trajets réguliers ou abonnements.</p>
               </div>
             </div>
             <div class="page-feature" data-animate d4>
-              <div class="page-feature-icon">🌙</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 14.5A6.5 6.5 0 0 1 9.5 6a7.5 7.5 0 1 0 8.5 8.5z"/></svg></div>
               <div>
                 <h4>Service nuit et week-end</h4>
                 <p>Disponible à toute heure, même la nuit, les week-ends et les jours fériés. Votre taxi est là quand vous en avez le plus besoin.</p>
               </div>
             </div>
             <div class="page-feature" data-animate d5>
-              <div class="page-feature-icon">👔</div>
+              <div class="page-feature-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7V5.75A1.75 1.75 0 0 1 10.75 4h2.5A1.75 1.75 0 0 1 15 5.75V7"/><rect x="4" y="7" width="16" height="11" rx="2"/><path d="M4 11h16"/></svg></div>
               <div>
                 <h4>Chauffeurs professionnels</h4>
                 <p>Tous nos chauffeurs sont agréés, assurés et formés. Tenue correcte, véhicule propre et climatisé. Un service qui vous respecte.</p>
@@ -153,7 +153,7 @@
             </div>
             <p>Appelez maintenant et votre taxi arrivera dans les plus brefs délais. Disponible 24h/24, 7j/7.</p>
             <a href="tel:+32 486 06 79 27" class="btn btn-primary">Appeler</a>
-            <a href="index.html#contact" class="btn btn-outline">Réserver en ligne</a>
+            <a href="contact.html" class="btn btn-outline">Réserver en ligne</a>
             <div class="page-zones">
               <h4>Autres services</h4>
               <div class="zone-list" style="margin-top:10px">
@@ -315,7 +315,7 @@
         <p class="cta-sub" data-animate>Un coup de fil suffit. Nous arrivons vite.</p>
         <div class="cta-actions" data-animate>
           <a href="tel:+32 486 06 79 27" class="btn btn-primary btn-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             Appeler Maintenant
           </a>
         </div>
@@ -367,6 +367,15 @@
   <button class="scroll-top" aria-label="Retour en haut"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
 
   <style>@keyframes fadeSlideUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}</style>
-  <script src="../js/main.js"></script>
+  <a href="tel:+32486067927" class="sticky-call" aria-label="Appeler maintenant"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call Now</a>
+
+  <script src="../js/main.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
