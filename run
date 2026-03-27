@@ -1,0 +1,7 @@
+the backend :
+cd backend 
+go run main.go 
+ 
+the frontend:
+cd frontend:
+npx serve 
