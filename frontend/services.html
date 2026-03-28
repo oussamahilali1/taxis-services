@@ -7,7 +7,9 @@
   <meta name="robots" content="index,follow">
   <title>Services Taxi Anderlues | Anderlues, Charleroi et aéroport</title>
   <link rel="canonical" href="https://www.taxi-anderlues.be/services.html">
-  <link rel="stylesheet" href="../css/style.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -22,16 +24,18 @@
           <span class="nav-logo-text">TAXI <span>ANDERLUES</span></span>
         </a>
         <ul class="nav-links">
-          <li><a data-nav href="index.html">Accueil</a></li>
-          <li><a data-nav href="services.html">Services</a></li>
-          <li><a data-nav href="contact.html">Contact</a></li>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="about.html">La Compagnie</a></li>
+          <li><a href="#zones">Zones</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-cta">
-          <a href="tel:+32 486 06 79 27" class="nav-phone">
+          <a href="tel:+32486067927" class="nav-phone">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             +32 486 06 79 27
           </a>
-          <a href="tel:+32 486 06 79 27" class="btn btn-primary nav-btn">Réserver</a>
+          <a href="#booking" class="btn btn-primary nav-btn">Réserver</a>
         </div>
         <div class="hamburger" aria-label="Menu" role="button" tabindex="0">
           <span></span><span></span><span></span>
@@ -42,97 +46,39 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" role="dialog" aria-modal="true">
-    <button class="mobile-close" aria-label="Fermer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+    <button class="mobile-close" aria-label="Fermer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
     <a href="index.html">Accueil</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-    <a href="tel:+32 486 06 79 27" class="text-gold">+32 486 06 79 27</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="about.html">La Compagnie</a>
+    <a href="#zones">Zones</a>
+    <a href="#booking">Reservation</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+32486067927" class="text-gold">+32 486 06 79 27</a>
   </div>
 
-  <!-- ════════════════════════ HERO ════════════════════════ -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
+  <!-- ════════════════════════ PAGE HERO (Bla Formulaire) ════════════════════════ -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
     <div class="container">
-      <div class="hero-inner">
-        <!-- Left -->
-        <div class="hero-left">
-          <div class="hero-tag" data-animate="fade" style="opacity:0;animation:fadeSlideUp .7s .1s var(--ease) forwards">
-            Disponible 24h/24 — 7j/7
-          </div>
-          <h1 class="hero-title" style="opacity:0;animation:fadeSlideUp .7s .25s var(--ease) forwards">
-            Nos <br>Services <br><span class="line-gold">Taxi</span>
-          </h1>
-          <p class="hero-sub" style="opacity:0;animation:fadeSlideUp .7s .4s var(--ease) forwards">
-            Découvrez l ensemble de nos services pour Anderlues, Charleroi et l aéroport de Charleroi : trajets locaux, transferts, chauffeur privé, PMR et réservations rapides.
-          </p>
-          <div class="hero-actions" style="opacity:0;animation:fadeSlideUp .7s .55s var(--ease) forwards">
-            <a href="tel:+32 486 06 79 27" class="btn btn-primary btn-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-              Appeler Maintenant
-            </a>
-            <a href="#services" class="btn btn-outline btn-lg">Nos Services</a>
-          </div>
-          <div class="hero-trust" style="opacity:0;animation:fadeSlideUp .7s .7s var(--ease) forwards">
-            <div class="hero-trust-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-              Chauffeurs certifiés
-            </div>
-            <div class="hero-trust-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-              Réponse rapide
-            </div>
-            <div class="hero-trust-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Zone du Centre belge
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Booking card -->
-        <div class="hero-visual">
-          <div class="hero-card" style="opacity:0;animation:fadeSlideUp .8s .45s var(--ease) forwards">
-            <div class="hero-card-title">Réserver un Taxi</div>
-            <form class="booking-form" novalidate>
-              <div class="form-group">
-                <label>Départ</label>
-                <input type="text" placeholder="Adresse de départ" required>
-              </div>
-              <div class="form-group">
-                <label>Destination</label>
-                <input type="text" placeholder="Adresse d'arrivée" required>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label>Date</label>
-                  <input type="date" required>
-                </div>
-                <div class="form-group">
-                  <label>Heure</label>
-                  <input type="time" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Type de service</label>
-                <select>
-                  <option>Taxi standard</option>
-                  <option>Navette aéroport</option>
-                  <option>Transport PMR</option>
-                  <option>Transport business</option>
-                  <option>Livraison colis</option>
-                </select>
-              </div>
-              <button type="submit" class="btn btn-primary btn-lg form-submit">
-                Confirmer la réservation
-              </button>
-            </form>
-          </div>
-        </div>
+      <div class="page-hero-content" data-animate>
+        <div class="label">Taxi Anderlues</div>
+        <h1 class="page-hero-title">Nos <span class="text-gold">Services</span></h1>
+        <p class="page-hero-sub">
+          Découvrez l'ensemble de nos services de transport sur-mesure pour Anderlues, Charleroi et toute la région du Centre. Trajets locaux, transferts aéroport, chauffeur privé, transport PMR et livraison express.
+        </p>
+        <nav class="breadcrumb-nav">
+          <a href="index.html">Accueil</a>
+          <span class="sep">/</span>
+          <span class="current">Services</span>
+        </nav>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════ SERVICES ════════════════════════ -->
+  <!-- ════════════════════════ SERVICES GRID ════════════════════════ -->
   <section id="services" class="section services">
     <div class="container">
       <div class="services-header">
@@ -177,8 +123,7 @@
           <p class="service-desc">Véhicules adaptés aux personnes à mobilité réduite. Confort, sécurité et respect pour chaque trajet.</p>
           <a href="pmr-taxi.html" class="service-link">
             En savoir plus
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C10.9 2 10 2.9 10 4s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-2 6h2v2h-2v-2zm6 10c0 1.1-.9 2-2 2s-2-.9-2-2h-2v-2h2v-2h2v2h2v2zm-5-6h-2v4h2v-4z"/>
-    </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C10.9 2 10 2.9 10 4s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-2 6h2v2h-2v-2zm6 10c0 1.1-.9 2-2 2s-2-.9-2-2h-2v-2h2v-2h2v2h2v2zm-5-6h-2v4h2v-4z"/></svg>
           </a>
         </div>
 
@@ -212,7 +157,7 @@
           </div>
           <div class="service-name text-gold">Réservation Rapide</div>
           <p class="service-desc">Besoin d'un taxi maintenant ? Appelez directement. Réponse garantie sous 5 minutes.</p>
-          <a href="tel:+32 486 06 79 27" class="btn btn-primary" style="width:fit-content">
+          <a href="tel:+32486067927" class="btn btn-primary" style="width:fit-content">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             Appeler
           </a>
@@ -304,27 +249,27 @@
       </div>
       <div class="areas-grid">
         <div class="area-card main" data-animate d1>
-          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.75l2.55 5.16 5.7.83-4.12 4.02.97 5.68L12 16.76 6.9 19.44l.97-5.68-4.12-4.02 5.7-.83L12 3.75z"/></svg></div>
+          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.75l2.55 5.16 5.7.83-4.12 4.02.97 5.68L12 16.76 6.9 19.44l.97-5.68-4.12-4.02 5.7-.83L12 3.75z"/></svg></div>
           <div class="area-name gold">Anderlues</div>
           <div class="area-sub">Siège principal</div>
         </div>
         <div class="area-card" data-animate d2>
-          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.58 6-11a6 6 0 1 0-12 0c0 5.42 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s6-5.58 6-11a6 6 0 1 0-12 0c0 5.42 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
           <div class="area-name">Chapelle-lez-Herlaimont</div>
           <div class="area-sub">~5 km</div>
         </div>
         <div class="area-card" data-animate d3>
-          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.58 6-11a6 6 0 1 0-12 0c0 5.42 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s6-5.58 6-11a6 6 0 1 0-12 0c0 5.42 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
           <div class="area-name">Courcelles</div>
           <div class="area-sub">~8 km</div>
         </div>
         <div class="area-card" data-animate d4>
-          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.58 6-11a6 6 0 1 0-12 0c0 5.42 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s6-5.58 6-11a6 6 0 1 0-12 0c0 5.42 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
           <div class="area-name">Fontaine-l'Évêque</div>
           <div class="area-sub">~10 km</div>
         </div>
         <div class="area-card" data-animate d5>
-          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.58 6-11a6 6 0 1 0-12 0c0 5.42 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s6-5.58 6-11a6 6 0 1 0-12 0c0 5.42 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
           <div class="area-name">Montigny-le-Tilleul</div>
           <div class="area-sub">~12 km</div>
         </div>
@@ -379,9 +324,7 @@
     </div>
   </section>
 
-  <!-- ════════════════════════ CTA ════════════════════════ -->
-  
-  <!-- BOOKING -->
+  <!-- ════════════════════════ BOOKING ════════════════════════ -->
   <section id="booking" class="section booking-section">
     <div class="container">
       <div class="booking-inner">
@@ -389,7 +332,7 @@
           <div class="label">Demander un trajet</div>
           <h2 class="heading-xl">Reservation rapide<br><span class="text-gold">en quelques minutes</span></h2>
           <div class="divider divider-left"></div>
-          <p class="text-muted">
+          <p class="text-muted" style="margin-top:20px;">
             Indiquez votre service, vos adresses et vos preferences. Nous confirmons rapidement votre prise en charge dans la region d'Anderlues.
           </p>
           <ul class="booking-list">
@@ -420,7 +363,6 @@
                   <option>Transport PMR (7/7 sur reservation)</option>
                   <option>Transport business</option>
                   <option>Transport de colis express (urgent a la demande)</option>
-                 
                 </select>
               </div>
               <div class="form-group">
@@ -520,7 +462,8 @@
     </div>
   </section>
 
-<section id="contact" class="section cta">
+  <!-- ════════════════════════ CONTACT CTA ════════════════════════ -->
+  <section id="contact" class="section cta">
     <div class="cta-bg"></div>
     <div class="container">
       <div class="cta-inner">
@@ -529,7 +472,7 @@
           Réservez votre taxi<br><span class="text-gold">dès maintenant</span>
         </h2>
         <div class="divider" data-animate></div>
-        <a href="tel:+32 486 06 79 27" class="cta-phone" data-animate>
+        <a href="tel:+32486067927" class="cta-phone" data-animate>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           +32 486 06 79 27
         </a>
@@ -537,7 +480,7 @@
           Disponible 24h/24 et 7j/7. Réponse immédiate. Service pour Anderlues, Chapelle-lez-Herlaimont, Courcelles, Fontaine-l'Évêque et Montigny-le-Tilleul.
         </p>
         <div class="cta-actions" data-animate>
-          <a href="tel:+32 486 06 79 27" class="btn btn-primary btn-lg">
+          <a href="tel:+32486067927" class="btn btn-primary btn-lg">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             Appeler Maintenant
           </a>
@@ -590,7 +533,7 @@
           <h5>Contact</h5>
           <div class="footer-contact-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            <a href="tel:+32 486 06 79 27">+32 486 06 79 27</a>
+            <a href="tel:+32486067927">+32 486 06 79 27</a>
           </div>
           <div class="footer-contact-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -618,20 +561,8 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
   </button>
 
-  <style>
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(32px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <!-- <a href="tel:+32486067927" class="sticky-call" aria-label="Appeler maintenant"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call Now</a> -->
 
-  <a href="tel:+32486067927" class="sticky-call" aria-label="Appeler maintenant"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call Now</a>
-
-  <script src="../js/main.js" defer></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-
-
-
-

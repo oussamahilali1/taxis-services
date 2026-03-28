@@ -3,34 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Taxi Anderlues 24h/24 pour trajets locaux, navette aéroport, transport PMR, chauffeur privé et réservations rapides depuis Anderlues et le Hainaut.">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://www.taxi-anderlues.be/">
-  <title>Taxi Anderlues | Service local 24h/24</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Taxi Anderlues – Service de taxi professionnel 24h/24 et 7j/7 à Anderlues, Chapelle-lez-Herlaimont, Courcelles, Fontaine-l'Évêque et Montigny-le-Tilleul.">
+  <meta name="keywords" content="taxi anderlues, taxi belgique, navette aeroport, transport pmr, taxi 24h, chauffeur privé">
+  <title>Taxi Anderlues | Service 24/7 – Rapide & Premium</title>
+  
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TaxiService",
-      "name": "Taxi Anderlues",
-      "url": "https://www.taxi-anderlues.be/",
-      "telephone": "+32486067927",
-      "email": "info@taxi-anderlues.be",
-      "areaServed": [
-        {"@type":"City","name":"Anderlues"},
-        {"@type":"City","name":"Charleroi"},
-        {"@type":"Airport","name":"Brussels South Charleroi Airport"}
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Anderlues",
-        "addressRegion": "Hainaut",
-        "addressCountry": "BE"
-      }
-    }
-  </script>
+
+
 </head>
 <body>
 
@@ -43,16 +25,18 @@
           <span class="nav-logo-text">TAXI <span>ANDERLUES</span></span>
         </a>
         <ul class="nav-links">
-          <li><a data-nav href="index.html">Accueil</a></li>
-          <li><a data-nav href="services.html">Services</a></li>
-          <li><a data-nav href="contact.html">Contact</a></li>
+          <li><a href="index.html" class="active">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">La Compagnie</a></li>
+          <li><a href="#zones">Zones</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="nav-cta">
-          <a href="tel:+32 486 06 79 27" class="nav-phone">
+          <a href="tel:+32486067927" class="nav-phone">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             +32 486 06 79 27
           </a>
-          <a href="tel:+32 486 06 79 27" class="btn btn-primary nav-btn">Réserver</a>
+          <a href="contact.html" class="btn btn-primary nav-btn">Réserver</a>
         </div>
         <div class="hamburger" aria-label="Menu" role="button" tabindex="0">
           <span></span><span></span><span></span>
@@ -63,89 +47,67 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" role="dialog" aria-modal="true">
-    <button class="mobile-close" aria-label="Fermer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
-    <a href="index.html">Accueil</a>
+    <button class="mobile-close" aria-label="Fermer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+    <a href="index.html" class="active">Accueil</a>
     <a href="services.html">Services</a>
+    <a href="about.html">La Compagnie</a>
+    <a href="#zones">Zones</a>
     <a href="contact.html">Contact</a>
-    <a href="tel:+32 486 06 79 27" class="text-gold">+32 486 06 79 27</a>
+    <a href="tel:+32486067927" class="text-gold">+32 486 06 79 27</a>
   </div>
 
   <!-- ════════════════════════ HERO ════════════════════════ -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-bg" id="heroBg"></div>
     <div class="hero-grid"></div>
     <div class="container">
       <div class="hero-inner">
-        <!-- Left -->
+        <!-- Text Hero -->
         <div class="hero-left">
-          <div class="hero-tag" data-animate="fade" style="opacity:0;animation:fadeSlideUp .7s .1s var(--ease) forwards">
+          <div class="hero-tag sr sr-up">
             Disponible 24h/24 — 7j/7
           </div>
-          <h1 class="hero-title" style="opacity:0;animation:fadeSlideUp .7s .25s var(--ease) forwards">
-            Taxi<br>Anderlues<br><span class="line-gold">24h/24</span>
+          <h1 class="hero-title sr sr-up d-1">
+            L'Excellence du Taxi<br>à <span class="line-gold">Anderlues</span>
           </h1>
-          <p class="hero-sub" style="opacity:0;animation:fadeSlideUp .7s .4s var(--ease) forwards">
-            Service de taxi professionnel à Anderlues et dans le Hainaut. Réservation rapide, navette aéroport, chauffeur privé, transport PMR et trajets locaux 24h/24 pour particuliers et professionnels.
+          <p class="hero-sub sr sr-up d-2">
+            Votre partenaire de confiance pour tous vos déplacements. Chauffeurs professionnels, véhicules premium et ponctualité garantie dans toute la Belgique.
           </p>
-          <div class="hero-actions" style="opacity:0;animation:fadeSlideUp .7s .55s var(--ease) forwards">
-            <a href="tel:+32 486 06 79 27" class="btn btn-primary btn-lg">
+          <div class="hero-actions sr sr-up d-3">
+            <a href="tel:+32486067927" class="btn btn-primary btn-lg">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               Appeler Maintenant
             </a>
-            <a href="#services" class="btn btn-outline btn-lg">Nos Services</a>
+            <a href="services.html" class="btn btn-outline btn-lg">Découvrir nos services</a>
           </div>
-          <div class="hero-trust" style="opacity:0;animation:fadeSlideUp .7s .7s var(--ease) forwards">
-            <div class="hero-trust-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-              Chauffeurs certifiés
-            </div>
-            <div class="hero-trust-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-              Réponse rapide
-            </div>
-            <div class="hero-trust-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Zone du Centre belge
-            </div>
+          
+          <div class="hero-trust sr sr-up d-4">
+            <div class="hero-trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg> 100% Sécurisé</div>
+            <div class="hero-trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg> Rapide (&lt; 5 min)</div>
           </div>
         </div>
 
-        <!-- Right: Booking card -->
-        <div class="hero-visual">
-          <div class="hero-card" style="opacity:0;animation:fadeSlideUp .8s .45s var(--ease) forwards">
-            <div class="hero-card-title">Réserver un Taxi</div>
-            <form class="booking-form" data-enhanced-form method="POST" action="https://formspree.io/f/mnoqnrrj">
-              <div class="form-group">
-                <label>Départ</label>
-                <input type="text" placeholder="Adresse de départ" required>
+        <!-- Quick Booking Form -->
+        <div class="hero-visual sr sr-scale d-2">
+          <div class="hero-card">
+            <div class="hero-card-title">Course Immédiate</div>
+            <form class="booking-form" method="POST" action="https://formspree.io/f/mnoqnrrj">
+              <div class="form-group" style="margin-bottom:16px">
+                <label>Adresse de Départ</label>
+                <input type="text" name="pickup" placeholder="Anderlues, Charleroi..." required>
               </div>
-              <div class="form-group">
+              <div class="form-group" style="margin-bottom:16px">
                 <label>Destination</label>
-                <input type="text" placeholder="Adresse d'arrivée" required>
+                <input type="text" name="dropoff" placeholder="Aéroport, Gare, Domicile..." required>
               </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label>Date</label>
-                  <input type="date" required>
-                </div>
-                <div class="form-group">
-                  <label>Heure</label>
-                  <input type="time" required>
-                </div>
+              <div class="form-group" style="margin-bottom:16px">
+                <label>Téléphone</label>
+                <input type="tel" name="phone" placeholder="+32 470 12 34 56" required>
               </div>
-              <div class="form-group">
-                <label>Type de service</label>
-                <select>
-                  <option>Taxi Anderlues</option>
-                  <option>Taxi Charleroi</option>
-                  <option>Charleroi airport transfer</option>
-                  <option>Transport PMR</option>
-                  <option>Chauffeur privé</option>
-                </select>
-              </div>
-              <div class="form-message" aria-live="polite"></div>
               <button type="submit" class="btn btn-primary btn-lg form-submit">
-                Confirmer la réservation
+                Demander un chauffeur
               </button>
             </form>
           </div>
@@ -154,158 +116,130 @@
     </div>
   </section>
 
-  <!-- ════════════════════════ SERVICES ════════════════════════ -->
-  <section id="services" class="section services">
+  <!-- ════════════════════════ SERVICES  ════════════════════════ -->
+  <section class="section services">
     <div class="container">
-      <div class="services-header">
-        <div class="label" data-animate>Nos Prestations</div>
-        <h2 class="heading-xl" data-animate>Ce que nous<br><span class="text-gold">proposons</span></h2>
-        <div class="divider" data-animate></div>
-        <p class="text-muted" data-animate style="margin-top:18px">
-          De la course locale aux transferts longue distance, nous couvrons tous vos besoins de transport avec sérieux et ponctualité.
+      <div class="services-header sr sr-up">
+        <div class="label">Nos Prestations</div>
+        <h2 class="heading-xl">Votre mobilité,<br><span class="text-gold">notre spécialité</span></h2>
+        <div class="divider"></div>
+        <p class="text-muted" style="margin-top:18px; max-width: 600px; margin-left:auto; margin-right:auto;">
+          Des solutions de transport adaptées à chaque besoin. Voyagez dans le confort avec nos chauffeurs professionnels.
         </p>
       </div>
+
       <div class="services-grid">
-
-        <div class="service-card" data-animate d1>
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+        
+        <!-- Taxi Local -->
+        <a href="city-taxi.html" class="service-img-card sr sr-up d-1">
+          <img src="assets/img/chauffeur-local.webp" alt="Taxi Local Anderlues" loading="lazy">
+          <div class="service-img-overlay">
+            <div class="si-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+            </div>
+            <h3 class="si-title">Taxis de Proximité</h3>
+            <p class="si-desc">Trajets rapides et sécurisés à Anderlues et dans le Centre. Chauffeurs disponibles 24h/24.</p>
+            <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
           </div>
-          <div class="service-name">Taxis de Proximité</div>
-          <p class="service-desc">Courses locales à Anderlues et dans toute la région du Centre. Rapides, ponctuels, disponibles 24h/24.</p>
-          <a href="city-taxi.html" class="service-link">
-            En savoir plus
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-          </a>
-        </div>
+        </a>
 
-        <div class="service-card" data-animate d2>
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+        <!-- Navette Aéroport -->
+        <a href="navette-aeroport.html" class="service-img-card sr sr-up d-2">
+          <img src="assets/img/navette-aeroport.jpg" alt="Navette Aéroport Charleroi Zaventem" loading="lazy">
+          <div class="service-img-overlay">
+            <div class="si-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+            </div>
+            <h3 class="si-title">Navette Aéroport</h3>
+            <p class="si-desc">Transferts vers Brussels Airport, Charleroi (CRL). Ponctualité et suivi de votre vol en temps réel.</p>
+            <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
           </div>
-          <div class="service-name">Navette Aéroport</div>
-          <p class="service-desc">Transferts vers Bruxelles-Zaventem, Charleroi (CRL) et tous aéroports. Suivi des vols en temps réel.</p>
-          <a href="navette-aeroport.html" class="service-link">
-            En savoir plus
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-          </a>
-        </div>
+        </a>
 
-        <div class="service-card" data-animate d3>
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C10.9 2 10 2.9 10 4s.9 2 2 2 2-.9 2-2-.9-2-2-2zm3 6h-1.5c-.28 0-.5.22-.5.5V11h-1.79l-2.5-3.15C8.43 7.32 7.98 7 7.5 7H6v2h1.5l2.5 3.15c.28.35.7.55 1.15.55H12v3.5c0 .83.67 1.5 1.5 1.5H18v-2h-4.5V8zM7 20c2.21 0 4-1.79 4-4H9c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2v-2c-2.21 0-4 1.79-4 4s1.79 4 4 4z"/></svg>
+        <!-- Business -->
+        <a href="business-taxi.html" class="service-img-card sr sr-up d-3">
+          <img src="assets/img/Transport_vip.jpg" alt="Chauffeur Privé Business" loading="lazy">
+          <div class="service-img-overlay">
+            <div class="si-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 8h-2V4c0-1.1-.9-2-2-2h-6c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2zm-8-4h4v4h-4V4zm8 15H5v-9h14v9z"/></svg>
+            </div>
+            <h3 class="si-title">Service Business VIP</h3>
+            <p class="si-desc">Véhicules de luxe, chauffeurs en costume, discrétion absolue pour vos rendez-vous pros.</p>
+            <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
           </div>
-          <div class="service-name">Transport PMR</div>
-          <p class="service-desc">Véhicules adaptés aux personnes à mobilité réduite. Confort, sécurité et respect pour chaque trajet.</p>
-          <a href="pmr-taxi.html" class="service-link">
-            En savoir plus
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C10.9 2 10 2.9 10 4s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-2 6h2v2h-2v-2zm6 10c0 1.1-.9 2-2 2s-2-.9-2-2h-2v-2h2v-2h2v2h2v2zm-5-6h-2v4h2v-4z"/>
-    </svg>
-          </a>
-        </div>
+        </a>
 
-        <div class="service-card" data-animate d1>
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8h-2V4c0-1.1-.9-2-2-2h-6c-1.1 0-2 .9-2 2v4H5c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2zm-8-4h4v4h-4V4zm8 15H5v-9h14v9z"/></svg>
+        <!-- PMR -->
+        <a href="pmr-taxi.html" class="service-img-card sr sr-up d-1">
+          <img src="assets/img/Transport-pmr.jpeg" alt="Transport PMR" loading="lazy">
+          <div class="service-img-overlay">
+            <div class="si-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4a4 4 0 0 0-4 4c0 2.21 1.79 4 4 4s4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm-1 2h2v2h3l-4 4-4-4h3v-2z"/></svg>
+            </div>
+            <h3 class="si-title">Transport PMR</h3>
+            <p class="si-desc">Véhicules adaptés, chauffeurs formés et bienveillants pour les personnes à mobilité réduite.</p>
+            <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
           </div>
-          <div class="service-name">Transport Business</div>
-          <p class="service-desc">Trajets professionnels haut de gamme. Véhicules premium, chauffeurs en tenue, discrétion assurée.</p>
-          <a href="business-taxi.html" class="service-link">
-            En savoir plus
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-          </a>
-        </div>
+        </a>
 
-        <div class="service-card" data-animate d2>
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        <!-- Colis -->
+        <a href="parcel-delivery.html" class="service-img-card sr sr-up d-2">
+          <img src="assets/img/colis.jpg" alt="Livraison colis urgent" loading="lazy">
+          <div class="service-img-overlay">
+            <div class="si-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+            </div>
+            <h3 class="si-title">Colis Express</h3>
+            <p class="si-desc">Livraison urgente et sécurisée de vos documents et colis dans toute la Belgique.</p>
+            <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
           </div>
-          <div class="service-name">Livraison Colis Express</div>
-          <p class="service-desc">Livraison rapide de colis dans toute la région. Service express, sécurisé et traçable en temps réel.</p>
-          <a href="parcel-delivery.html" class="service-link">
-            En savoir plus
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-          </a>
-        </div>
-
-        <div class="service-card" data-animate d3 style="background:var(--gold-dim);border-color:var(--gold-border)">
-          <div class="service-icon" style="background:var(--gold);border-color:var(--gold)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="#000"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          </div>
-          <div class="service-name text-gold">Réservation Rapide</div>
-          <p class="service-desc">Besoin d'un taxi maintenant ? Appelez directement. Réponse garantie sous 5 minutes.</p>
-          <a href="tel:+32 486 06 79 27" class="btn btn-primary" style="width:fit-content">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            Appeler
-          </a>
-        </div>
-
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════ TRUST ════════════════════════ -->
-  <section class="section trust">
+  <!-- ════════════════════════ TRUST SECTION ════════════════════════ -->
+  <section class="section trust" style="background: var(--bg-alt);">
     <div class="container">
-      <div class="trust-inner">
-        <div class="trust-content">
-          <div class="label divider-left" data-animate="left">Pourquoi nous choisir</div>
-          <h2 class="heading-xl trust-heading" data-animate="left">Le taxi qui<br><span class="text-gold">ne vous</span><br>laisse pas tomber</h2>
-          <p class="trust-sub" data-animate="left">Fiabilité, ponctualité et professionnalisme — les valeurs qui guident chacun de nos trajets depuis notre création à Anderlues.</p>
-          <div class="trust-stats" data-animate="left">
-            <div class="stat-box d1" data-animate="scale">
-              <div class="stat-num">24/7</div>
-              <div class="stat-label">Disponibilité totale, tous les jours</div>
-            </div>
-            <div class="stat-box d2" data-animate="scale">
-              <div class="stat-num">&lt; 5'</div>
-              <div class="stat-label">Temps de réponse moyen</div>
-            </div>
-            <div class="stat-box d3" data-animate="scale">
-              <div class="stat-num">5+</div>
-              <div class="stat-label">Villes et communes desservies</div>
-            </div>
-            <div class="stat-box d4" data-animate="scale">
-              <div class="stat-num">100%</div>
-              <div class="stat-label">Chauffeurs agréés et assurés</div>
-            </div>
+      <div class="home-trust-inner">
+        <!-- Image Gauche -->
+        <div class="home-trust-img-wrapper sr sr-left">
+          <img src="assets/img/se.jpg" alt="Chauffeur privé ouvrant la porte">
+          <div class="experience-badge">
+            <span>10+</span>
+            <p>Ans d'expérience</p>
           </div>
         </div>
-        <div class="trust-features" data-animate="right">
-          <div class="trust-feature">
-            <div class="feature-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+
+        <!-- Contenu Droite -->
+        <div class="home-trust-content sr sr-right">
+          <div class="label divider-left">Pourquoi nous choisir</div>
+          <h2 class="heading-xl trust-heading">Le service de transport<br>qui fait la <span class="text-gold">différence</span></h2>
+          <p class="trust-sub" style="margin-bottom: 30px;">
+            Plus qu'un simple trajet, nous vous offrons une véritable expérience. Sécurité, confort et ponctualité sont les maîtres-mots de Taxi Anderlues depuis notre création.
+          </p>
+
+          <div class="trust-features">
+            <div class="trust-feature" style="background: transparent; padding: 0; border: none; box-shadow: none; margin-bottom: 20px;">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+              <div class="feature-text">
+                <h4 style="font-size: 1.1rem;">Chauffeurs Professionnels</h4>
+                <p>Agréés, formés à la conduite préventive et toujours courtois.</p>
+              </div>
             </div>
-            <div class="feature-text">
-              <h4>Chauffeurs Certifiés</h4>
-              <p>Tous nos chauffeurs sont titulaires de l'autorisation de taxi en Wallonie et formés aux premiers secours.</p>
+            <div class="trust-feature" style="background: transparent; padding: 0; border: none; box-shadow: none; margin-bottom: 20px;">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div>
+              <div class="feature-text">
+                <h4 style="font-size: 1.1rem;">Ponctualité Garantie</h4>
+                <p>Nous anticipons le trafic pour être toujours à l'heure à vos rendez-vous.</p>
+              </div>
             </div>
-          </div>
-          <div class="trust-feature">
-            <div class="feature-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-            </div>
-            <div class="feature-text">
-              <h4>Ponctualité Garantie</h4>
-              <p>Nous suivons vos horaires. Que ce soit pour un vol ou un rendez-vous médical, nous sommes toujours à l'heure.</p>
-            </div>
-          </div>
-          <div class="trust-feature">
-            <div class="feature-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
-            </div>
-            <div class="feature-text">
-              <h4>Tarifs Transparents</h4>
-              <p>Prix fixés à l'avance, sans mauvaises surprises. Paiement en espèces ou par carte.</p>
-            </div>
-          </div>
-          <div class="trust-feature">
-            <div class="feature-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            </div>
-            <div class="feature-text">
-              <h4>Couverture Régionale</h4>
-              <p>Anderlues, Chapelle-lez-Herlaimont, Courcelles, Fontaine-l'Évêque, Montigny-le-Tilleul et au-delà.</p>
+            <div class="trust-feature" style="background: transparent; padding: 0; border: none; box-shadow: none;">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></div>
+              <div class="feature-text">
+                <h4 style="font-size: 1.1rem;">Tarifs Compétitifs</h4>
+                <p>Des prix clairs et justes, définis à l'avance pour les longues distances.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -313,257 +247,69 @@
     </div>
   </section>
 
-  <!-- ════════════════════════ AREAS ════════════════════════ -->
+  <!-- ════════════════════════ AREAS  ════════════════════════ -->
   <section id="zones" class="section areas">
     <div class="container">
-      <div class="areas-header">
-        <div class="label" data-animate>Zone de service</div>
-        <h2 class="heading-xl" data-animate>Nous intervenons<br><span class="text-gold">près de chez vous</span></h2>
-        <div class="divider" data-animate></div>
-        <p class="text-muted" data-animate style="margin-top:16px">
-          Notre service couvre Anderlues et toutes les communes voisines du Centre belge.
-        </p>
-      </div>
-      <div class="areas-grid">
-        <div class="area-card main" data-animate d1>
-          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.75l2.55 5.16 5.7.83-4.12 4.02.97 5.68L12 16.76 6.9 19.44l.97-5.68-4.12-4.02 5.7-.83L12 3.75z"/></svg></div>
-          <div class="area-name gold">Anderlues</div>
-          <div class="area-sub">Siège principal</div>
-        </div>
-        <div class="area-card" data-animate d2>
-          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.58 6-11a6 6 0 1 0-12 0c0 5.42 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-          <div class="area-name">Chapelle-lez-Herlaimont</div>
-          <div class="area-sub">~5 km</div>
-        </div>
-        <div class="area-card" data-animate d3>
-          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.58 6-11a6 6 0 1 0-12 0c0 5.42 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-          <div class="area-name">Courcelles</div>
-          <div class="area-sub">~8 km</div>
-        </div>
-        <div class="area-card" data-animate d4>
-          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.58 6-11a6 6 0 1 0-12 0c0 5.42 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-          <div class="area-name">Fontaine-l'Évêque</div>
-          <div class="area-sub">~10 km</div>
-        </div>
-        <div class="area-card" data-animate d5>
-          <div class="area-icon"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.58 6-11a6 6 0 1 0-12 0c0 5.42 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-          <div class="area-name">Montigny-le-Tilleul</div>
-          <div class="area-sub">~12 km</div>
-        </div>
-      </div>
-      <p class="text-muted" style="text-align:center;font-size:.875rem" data-animate>
-        Vous n'êtes pas dans cette liste ? Contactez-nous — nous nous déplaçons partout en Hainaut et au-delà.
-      </p>
-    </div>
-  </section>
-
-  <!-- ════════════════════════ MAP ════════════════════════ -->
-  <section class="section-sm map-section">
-    <div class="container">
-      <div class="map-inner">
-        <div class="map-info" data-animate="left">
-          <div class="label">Notre localisation</div>
-          <h2 class="heading-lg map-heading">Basé à<br><span class="text-gold">Anderlues</span></h2>
-          <p class="map-desc">Situés au cœur de la région du Centre, nous couvrons rapidement toutes les communes environnantes.</p>
-          <div class="map-locations">
-            <div class="map-loc primary">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Anderlues (siège)
+      <div class="home-areas-inner">
+        <!-- Contenu Gauche -->
+        <div class="home-areas-content sr sr-left">
+          <div class="label divider-left">Notre Zone d'action</div>
+          <h2 class="heading-xl">Toujours près<br>de <span class="text-gold">chez vous</span></h2>
+          <p class="text-muted" style="margin-top: 20px;">
+            Basés à Anderlues, nous couvrons rapidement toutes les communes de la région du Centre. Une urgence ? Nous sommes là.
+          </p>
+          
+          <div class="elegant-city-list">
+            <div class="elegant-city-item">
+              <div class="elegant-city-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <div class="elegant-city-text">
+                <h4>Anderlues</h4>
+                <p>Siège principal, intervention en - de 5 min</p>
+              </div>
             </div>
-            <div class="map-loc">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Chapelle-lez-Herlaimont
+            <div class="elegant-city-item">
+              <div class="elegant-city-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+              <div class="elegant-city-text">
+                <h4>Charleroi & Périphérie</h4>
+                <p>Courcelles, Fontaine-l'Évêque, Montigny...</p>
+              </div>
             </div>
-            <div class="map-loc">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Courcelles
-            </div>
-            <div class="map-loc">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Fontaine-l'Évêque
-            </div>
-            <div class="map-loc">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Montigny-le-Tilleul
+            <div class="elegant-city-item">
+              <div class="elegant-city-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div>
+              <div class="elegant-city-text">
+                <h4>Aéroports & Gares</h4>
+                <p>CRL (Charleroi), BRU (Zaventem), Gares TGV</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="map-frame" data-animate="right">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20184.15295842447!2d4.248!3d50.4028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c22f41f13c8c25%3A0x40099ab2f4d7900!2sAnderlues%2C%20Belgium!5e0!3m2!1sfr!2sbe!4v1680000000000"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Carte Anderlues et zone de service">
-          </iframe>
+
+        <div class="home-areas-img sr sr-right">
+          <img src="assets/img/ex.jpg" alt="Taxi sur la route">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════ CTA ════════════════════════ -->
-  
-  <!-- BOOKING -->
-  <section id="booking" class="section booking-section">
-    <div class="container">
-      <div class="booking-inner">
-        <div class="booking-details" data-animate="left">
-          <div class="label">Demander un trajet</div>
-          <h2 class="heading-xl">Reservation rapide<br><span class="text-gold">en quelques minutes</span></h2>
-          <div class="divider divider-left"></div>
-          <p class="text-muted">
-            Indiquez votre service, vos adresses et vos preferences. Nous confirmons rapidement votre prise en charge dans la region d'Anderlues.
-          </p>
-          <ul class="booking-list">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14l-4-4 1.41-1.41L11 12.17l6.59-6.59L19 7l-8 8z"/></svg>
-              Chauffeurs agrees, vehicules confortables et ponctualite garantie.
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
-              Service disponible 24h/24, 7j/7 dans toute la region.
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 5H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-              Confirmation rapide et suivi de votre demande.
-            </li>
-          </ul>
-        </div>
-        <div class="booking-form-container" data-animate="right">
-          <div class="booking-form-title">Demander un trajet</div>
-          <form class="booking-form" id="rideForm" method="POST" action="https://formspree.io/f/mnoqnrrj">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="service">Type de service <span class="required">*</span></label>
-                <select id="service" name="service" required>
-                  <option value="">Selectionnez un service...</option>
-                  <option>Taxis de proximite</option>
-                  <option>Navette aeroport (7/7 sur reservation)</option>
-                  <option>Transport PMR (7/7 sur reservation)</option>
-                  <option>Transport business</option>
-                  <option>Transport de colis express (urgent a la demande)</option>
-                 
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="passengers">Passagers <span class="required">*</span></label>
-                <select id="passengers" name="passengers" required>
-                  <option value="">Selectionnez...</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5+</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Nom complet <span class="required">*</span></label>
-                <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
-              </div>
-              <div class="form-group">
-                <label for="phone">Numero de telephone <span class="required">*</span></label>
-                <input type="tel" id="phone" name="phone" placeholder="+32 470 12 34 56" required>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Adresse email <span class="required">*</span></label>
-                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
-              </div>
-              <div class="form-group">
-                <label for="company">Entreprise (optionnel)</label>
-                <input type="text" id="company" name="company" placeholder="Votre entreprise">
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group full-width">
-                <label for="pickup">Adresse de prise en charge <span class="required">*</span></label>
-                <input type="text" id="pickup" name="pickup" placeholder="Centre Ville Bruxelles, 1000 Bruxelles" required>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group full-width">
-                <label for="dropoff">Adresse de destination (optionnel)</label>
-                <input type="text" id="dropoff" name="dropoff" placeholder="Aeroport de Bruxelles (BRU)">
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="datetime">Date et heure de prise (optionnel)</label>
-                <input type="datetime-local" id="datetime" name="datetime">
-              </div>
-              <div class="form-group">
-                <label for="vehicle">Type de vehicule <span class="required">*</span></label>
-                <select id="vehicle" name="vehicle" required>
-                  <option value="">Selectionnez un vehicule...</option>
-                  <option>Standard (berline)</option>
-                  <option>Executif (premium)</option>
-                  <option>Fourgonnette (bagages)</option>
-                  <option>Minibus (groupes)</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="luggage">Bagages (optionnel)</label>
-                <input type="text" id="luggage" name="luggage" placeholder="ex. 1 bagage cabine, 1 valise">
-              </div>
-              <div class="form-group">
-                <label for="notes">Remarques speciales (optionnel)</label>
-                <input type="text" id="notes" name="notes" placeholder="Exigences particulieres...">
-              </div>
-            </div>
-
-            <div class="form-check-row">
-              <div class="form-check">
-                <input type="checkbox" id="child-seat" name="child-seat">
-                <label for="child-seat" class="check-label">Siege enfant necessaire</label>
-              </div>
-              <div class="form-check">
-                <input type="checkbox" id="accessibility" name="accessibility">
-                <label for="accessibility" class="check-label">Exigences d'accessibilite</label>
-              </div>
-            </div>
-
-            <div id="formMessage" class="form-message" style="display:none;"></div>
-
-            <button type="submit" class="btn btn-primary btn-lg form-submit">Demander un trajet</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section id="contact" class="section cta">
-    <div class="cta-bg"></div>
+  <!-- ════════════════════════ CTA FINAL  ════════════════════════ -->
+  <section class="section cta sr sr-scale">
+    <div class="cta-bg" style="background: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.95)), url('https://images.unsplash.com/photo-1517676109075-9a94d44145d1?auto=format&fit=crop&w=1920&q=80') center/cover fixed;"></div>
     <div class="container">
       <div class="cta-inner">
-        <div class="label" data-animate>Prêt à partir ?</div>
-        <h2 class="heading-xl cta-heading" data-animate>
-          Réservez votre taxi<br><span class="text-gold">dès maintenant</span>
+        <div class="label">Prêt à partir ?</div>
+        <h2 class="heading-xl cta-heading" style="color: #fff;">
+          Réservez votre chauffeur<br><span class="text-gold">dès aujourd'hui</span>
         </h2>
-        <div class="divider" data-animate></div>
-        <a href="tel:+32 486 06 79 27" class="cta-phone" data-animate>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          +32 486 06 79 27
-        </a>
-        <p class="cta-sub" data-animate>
-          Disponible 24h/24 et 7j/7. Réponse immédiate. Service pour Anderlues, Chapelle-lez-Herlaimont, Courcelles, Fontaine-l'Évêque et Montigny-le-Tilleul.
+        <div class="divider"></div>
+        <p class="cta-sub">
+          Une course immédiate, une navette aéroport ou un devis pour votre entreprise ? Notre équipe est prête à répondre 24h/24.
         </p>
-        <div class="cta-actions" data-animate>
-          <a href="tel:+32 486 06 79 27" class="btn btn-primary btn-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            Appeler Maintenant
+        <div class="cta-actions">
+          <a href="tel:+32486067927" class="btn btn-primary btn-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            +32 486 06 79 27
           </a>
-          <a href="#services" class="btn btn-outline btn-lg">Voir les services</a>
+          <a href="contact.html" class="btn btn-outline btn-lg" style="color:#fff; border-color:#fff;">Nous contacter</a>
         </div>
       </div>
     </div>
@@ -612,19 +358,11 @@
           <h5>Contact</h5>
           <div class="footer-contact-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            <a href="tel:+32 486 06 79 27">+32 486 06 79 27</a>
+            <a href="tel:+32486067927">+32 486 06 79 27</a>
           </div>
           <div class="footer-contact-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             <a href="mailto:info@taxi-anderlues.be">info@taxi-anderlues.be</a>
-          </div>
-          <div class="footer-contact-item">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-            Anderlues, Hainaut, Belgique
-          </div>
-          <div class="footer-contact-item">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-            Disponible 24h/24 — 7j/7
           </div>
         </div>
       </div>
@@ -635,27 +373,39 @@
     </div>
   </footer>
 
-  <!-- Scroll to top -->
   <button class="scroll-top" aria-label="Retour en haut">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
   </button>
 
-  <style>
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(32px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-  </style>
 
-  <a href="tel:+32486067927" class="sticky-call" aria-label="Appeler maintenant">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-    Call Now
-  </a>
+  <script src="assets/js/main.js"></script>
 
-  <script src="../js/main.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const revealElements = document.querySelectorAll('.sr');
+      
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target); 
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      const heroBg = document.getElementById('heroBg');
+      window.addEventListener('scroll', () => {
+        if(window.scrollY < window.innerHeight) {
+          let scrollPosition = window.scrollY;
+          heroBg.style.transform = `translateY(${scrollPosition * 0.4}px)`;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
-
