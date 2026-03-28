@@ -2501,6 +2501,15 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: flex-end;
 }
 
+.page-hero-image {
+  width: min(100%, 480px);
+  aspect-ratio: 5 / 4;
+  border-radius: 28px;
+  object-fit: cover;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
 .page-icon-box svg {
   width: 100%;
   max-width: 380px;
