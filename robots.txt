@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /admin-login.html
 
 Sitemap: https://www.taxi-anderlues.be/sitemap.xml

@@ -1,7 +1,8 @@
-the backend :
-cd backend 
-go run main.go 
- 
-the frontend:
-cd frontend:
-npx serve 
+Backend:
+cd backend
+go run main.go
+
+Frontend:
+npm run build
+cd frontend
+npx serve
