@@ -20,6 +20,7 @@ const site = {
   areaLabel: 'Anderlues, Chapelle-lez-Herlaimont, Courcelles, Fontaine-l’Évêque, Montigny-le-Tilleul',
   formAction: 'https://formspree.io/f/mnoqnrrj',
   adminPath: 'admin-login.html',
+  legalPath: 'mentions-legales.html',
   faviconPath: 'assets/img/favicon.svg',
   ogImage: 'assets/img/Transport_vip.jpg',
   year: new Date().getFullYear(),
@@ -281,6 +282,12 @@ const staticPages = {
     description: 'Contactez Taxi Anderlues pour une réservation, une demande de course, un transfert aéroport ou un trajet professionnel.',
     navKey: 'contact',
   },
+  legal: {
+    file: site.legalPath,
+    title: 'Mentions légales | Taxi Anderlues',
+    description: 'Consultez les mentions légales, la politique de confidentialité, la déclaration d’accessibilité et les conditions générales de service d’TAXIS COURCELLOIS.',
+    navKey: '',
+  },
   admin: {
     file: site.adminPath,
     title: 'Accès privé | Taxi Anderlues',
@@ -449,6 +456,7 @@ function renderHead({ title, description, canonical, image = site.ogImage, noind
   <title>${escapeHtml(title)}</title>
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 ${renderJsonLd(schemas)}`;
 }
 
@@ -539,7 +547,11 @@ function renderFooter() {
       </div>
       <div class="footer-bottom">
         <span>© ${site.year} ${site.legalName}. Tous droits réservés.</span>
-        <span>Service local à Anderlues • <a href="${site.adminPath}" rel="nofollow" class="footer-admin-link">Espace pro</a></span>
+        <div class="footer-bottom-links">
+          <span class="footer-bottom-tag">Service local à Anderlues</span>
+          <a href="${site.legalPath}" class="footer-bottom-link">Mentions légales</a>
+          <a href="${site.adminPath}" rel="nofollow" class="footer-admin-link">Espace pro</a>
+        </div>
       </div>
     </div>
   </footer>`;
@@ -561,6 +573,9 @@ ${mainContent}
   ${renderFooter()}
   <button class="scroll-top" type="button" aria-label="Retour en haut">${icon('chevronUp')}</button>
   <script src="assets/js/main.js" defer></script>
+  <a href="tel:${site.phone}" class="call-button" aria-label="Appeler ${site.legalName}">
+    <i class="fas fa-phone" aria-hidden="true"></i>
+  </a>
 </body>
 </html>`;
 }
@@ -1357,6 +1372,227 @@ function renderContactPage() {
   });
 }
 
+function renderLegalPage() {
+  const meta = staticPages.legal;
+  return renderLayout({
+    pageKey: meta.navKey,
+    title: meta.title,
+    description: meta.description,
+    canonical: pageLink(meta.file),
+    schemas: [
+      breadcrumbSchema([
+        { name: 'Accueil', file: 'index.html' },
+        { name: 'Mentions légales', file: meta.file },
+      ]),
+    ],
+    mainContent: `    ${renderPageHero({
+      label: 'Informations légales',
+      title: 'Mentions légales, confidentialité',
+      highlight: 'et accessibilité',
+      text: 'Cette page regroupe les informations légales communiquées par TAXIS COURCELLOIS pour TAXIS COURCELLOIS, conformément à la législation belge en vigueur.',
+      breadcrumb: [
+        { name: 'Accueil', file: 'index.html' },
+        { name: 'Mentions légales', file: meta.file },
+      ],
+    })}
+    <section class="section legal-overview">
+      <div class="container">
+        <div class="legal-overview-grid">
+          <article class="legal-card legal-card-highlight" data-animate="left">
+            <div class="legal-card-icon">${icon('briefcase')}</div>
+            <p class="legal-card-label">Entreprise</p>
+            <h2>TAXIS COURCELLOIS</h2>
+            <p>Responsable de la publication : TAXIS COURCELLOIS</p>
+            <p>Rue du Pasteur Noir 30<br>6180 Courcelles<br>Belgique</p>
+          </article>
+          <article class="legal-card" data-animate="scale">
+            <div class="legal-card-icon">${icon('phone')}</div>
+            <p class="legal-card-label">Contact</p>
+            <h2>Coordonnées utiles</h2>
+            <p><a href="tel:+32486067927">+32 486 06 79 27</a></p>
+            <p><a href="mailto:info@taxi-anderlues.be">info@taxi-anderlues.be</a></p>
+          </article>
+          <article class="legal-card" data-animate="right">
+            <div class="legal-card-icon">${icon('shield')}</div>
+            <p class="legal-card-label">Identification</p>
+            <h2>Données légales</h2>
+            <p>Numéro d'entreprise (BCE/KBO) : 0435.919.978</p>
+            <p>Numéro de TVA : BE 0435.919.978</p>
+            <p>Hébergement : Combell NV, Belgique</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section legal-content">
+      <div class="container">
+        <div class="legal-layout">
+          <div class="legal-main">
+            <article id="informations-legales" class="legal-section-card" data-animate="left">
+              <div class="legal-section-head">
+                <span class="legal-chip">Éditeur</span>
+                <h2>Mentions légales</h2>
+              </div>
+              <p>Conformément à la législation belge en vigueur, les informations suivantes sont portées à la connaissance des utilisateurs du site.</p>
+              <div class="legal-detail-grid">
+                <div class="legal-detail-block">
+                  <h3>Nom de l'entreprise</h3>
+                  <p>TAXIS COURCELLOIS</p>
+                </div>
+                <div class="legal-detail-block">
+                  <h3>Adresse du siège</h3>
+                  <p>Rue du Pasteur Noir 30<br>6180 Courcelles<br>Belgique</p>
+                </div>
+                <div class="legal-detail-block">
+                  <h3>Contact</h3>
+                  <p>Téléphone : <a href="tel:+32486067927">+32 486 06 79 27</a><br>Email : <a href="mailto:info@taxi-anderlues.be">info@taxi-anderlues.be</a></p>
+                </div>
+                <div class="legal-detail-block">
+                  <h3>Responsable de la publication</h3>
+                  <p>TAXIS COURCELLOIS</p>
+                </div>
+                <div class="legal-detail-block">
+                  <h3>Identification de l'entreprise</h3>
+                  <p>Numéro d'entreprise (BCE/KBO) : 0435.919.978<br>Numéro de TVA : BE 0435.919.978</p>
+                </div>
+                <div class="legal-detail-block">
+                  <h3>Hébergement</h3>
+                  <p>Le site est hébergé par Combell NV, prestataire situé en Belgique.</p>
+                </div>
+              </div>
+              <p class="legal-note">TAXIS COURCELLOIS se réserve le droit de modifier le contenu du site à tout moment, sans préavis.</p>
+            </article>
+
+            <article id="politique-confidentialite" class="legal-section-card" data-animate="right">
+              <div class="legal-section-head">
+                <span class="legal-chip">RGPD</span>
+                <h2>Politique de confidentialité</h2>
+              </div>
+              <p>Chez TAXIS COURCELLOIS, la protection de vos données personnelles est une priorité. Cette politique explique comment vos données sont collectées et utilisées conformément au Règlement Général sur la Protection des Données (RGPD).</p>
+              <div class="legal-content-block">
+                <h3>Responsable du traitement</h3>
+                <p>TAXIS COURCELLOIS<br>Rue du Pasteur Noir 30, 6180 Courcelles, Belgique<br>Email : <a href="mailto:info@taxi-anderlues.be">info@taxi-anderlues.be</a></p>
+              </div>
+              <div class="legal-content-block">
+                <h3>Données collectées</h3>
+                <ul class="legal-list">
+                  <li>Nom et prénom</li>
+                  <li>Numéro de téléphone et adresse email</li>
+                  <li>Informations relatives au transport (lieu de prise en charge, lieu de destination, date, horaires)</li>
+                  <li>Informations concernant le type de mobilité (par exemple : fauteuil roulant, aide à la marche), strictement nécessaires à la prestation</li>
+                </ul>
+                <p class="legal-note"><strong>Important :</strong> TAXIS COURCELLOIS ne collecte aucune donnée médicale et ne demande aucun document de santé.</p>
+              </div>
+              <div class="legal-content-block">
+                <h3>Finalités du traitement</h3>
+                <ul class="legal-list">
+                  <li>Répondre à vos demandes</li>
+                  <li>Organiser et fournir des services de transport adaptés</li>
+                  <li>Communiquer avec vous dans le cadre du service</li>
+                </ul>
+                <p>La base légale du traitement est l'exécution d'un service demandé par le client et l'intérêt légitime d'TAXIS COURCELLOIS.</p>
+              </div>
+              <div class="legal-content-block">
+                <h3>Conservation des données</h3>
+                <p>Les données personnelles sont supprimées après la prestation du service, sauf obligation légale ou accord explicite du client pour une conservation ultérieure.</p>
+              </div>
+              <div class="legal-content-block">
+                <h3>Partage des données</h3>
+                <p>Vos données personnelles ne sont ni vendues ni cédées. Elles peuvent être partagées uniquement avec les personnes ou partenaires strictement impliqués dans l'exécution du service (par exemple les chauffeurs).</p>
+              </div>
+              <div class="legal-content-block">
+                <h3>Vos droits</h3>
+                <p>Conformément au RGPD, vous disposez des droits suivants : droit d'accès, de rectification, à l'effacement et d'opposition.</p>
+                <p>Pour exercer vos droits, vous pouvez contacter TAXIS COURCELLOIS à l'adresse suivante : <a href="mailto:info@taxi-anderlues.be">info@taxi-anderlues.be</a>. Les demandes sont traitées dans un délai raisonnable, conformément à la législation en vigueur.</p>
+              </div>
+              <div class="legal-content-block">
+                <h3>Réclamation</h3>
+                <p>Vous avez le droit d'introduire une réclamation auprès de l'Autorité de protection des données belge (APD/GBA).</p>
+              </div>
+            </article>
+
+            <article id="declaration-accessibilite" class="legal-section-card" data-animate="left">
+              <div class="legal-section-head">
+                <span class="legal-chip">Accessibilité</span>
+                <h2>Déclaration d'accessibilité</h2>
+              </div>
+              <p>TAXIS COURCELLOIS s'engage à rendre son site internet accessible à toutes les personnes, y compris les personnes à mobilité réduite ou en situation de handicap.</p>
+              <div class="legal-content-block">
+                <h3>Engagement</h3>
+                <p>Notre objectif est de garantir un accès équitable à l'information et aux services proposés sur ce site.</p>
+              </div>
+              <div class="legal-content-block">
+                <h3>Mesures mises en place</h3>
+                <ul class="legal-list">
+                  <li>Navigation claire et structurée</li>
+                  <li>Contenus lisibles et compréhensibles</li>
+                  <li>Formulaires conçus pour être accessibles au plus grand nombre</li>
+                </ul>
+              </div>
+              <div class="legal-content-block">
+                <h3>Limitations</h3>
+                <p>Malgré notre vigilance, certaines sections du site peuvent encore présenter des limitations d'accessibilité. Des améliorations continues sont en cours.</p>
+              </div>
+              <div class="legal-content-block">
+                <h3>Contact accessibilité</h3>
+                <p>Si vous rencontrez une difficulté d'accès ou souhaitez une alternative, vous pouvez nous contacter :</p>
+                <p>Téléphone : <a href="tel:+32486067927">+32 486 06 79 27</a><br>Email : <a href="mailto:info@taxi-anderlues.be">info@taxi-anderlues.be</a></p>
+                <p>Nous nous engageons à vous répondre dans les meilleurs délais.</p>
+              </div>
+            </article>
+
+            <article id="conditions-service" class="legal-section-card" data-animate="right">
+              <div class="legal-section-head">
+                <span class="legal-chip">Service</span>
+                <h2>Conditions générales de service</h2>
+              </div>
+              <ol class="legal-numbered-list">
+                <li>
+                  <strong>Services</strong>
+                  <p>TAXIS COURCELLOIS propose des services de transport adaptés aux personnes à mobilité réduite, sur demande et selon disponibilité.</p>
+                </li>
+                <li>
+                  <strong>Réservation et annulation</strong>
+                  <p>Toute demande de transport doit être confirmée par TAXIS COURCELLOIS pour être considérée comme acceptée. Toute annulation doit être signalée dès que possible par téléphone ou par email.</p>
+                </li>
+                <li>
+                  <strong>Tarifs</strong>
+                  <p>Les tarifs sont communiqués au client avant la confirmation du service.</p>
+                </li>
+                <li>
+                  <strong>Responsabilité</strong>
+                  <p>TAXIS COURCELLOIS s'engage à fournir ses services avec sérieux et professionnalisme.</p>
+                  <p>L'entreprise ne peut être tenue responsable des retards ou annulations dus à des circonstances indépendantes de sa volonté, telles que le trafic, les conditions météorologiques ou tout cas de force majeure.</p>
+                </li>
+                <li>
+                  <strong>Droit applicable</strong>
+                  <p>Les présentes conditions sont soumises au droit belge. Tout litige relève de la compétence exclusive des juridictions belges.</p>
+                </li>
+              </ol>
+            </article>
+          </div>
+          <aside class="legal-sidebar" data-animate="scale">
+            <div class="legal-sidebar-card">
+              <h3>Accès rapide</h3>
+              <nav aria-label="Navigation des mentions légales">
+                <a href="#informations-legales">Mentions légales</a>
+                <a href="#politique-confidentialite">Politique de confidentialité</a>
+                <a href="#declaration-accessibilite">Déclaration d'accessibilité</a>
+                <a href="#conditions-service">Conditions générales</a>
+              </nav>
+            </div>
+            <div class="legal-sidebar-card legal-sidebar-contact">
+              <h3>Besoin d'une alternative ?</h3>
+              <p>Si vous avez besoin d'une aide pour consulter ces informations ou préférez un autre format, contactez directement TAXIS COURCELLOIS.</p>
+              <a href="tel:+32486067927" class="btn btn-primary btn-lg">${icon('phone')} +32 486 06 79 27</a>
+              <a href="mailto:info@taxi-anderlues.be" class="btn btn-outline btn-lg">info@taxi-anderlues.be</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>`,
+  });
+}
+
 function renderAdminPage() {
   const meta = staticPages.admin;
   return `<!DOCTYPE html>
@@ -1409,6 +1645,7 @@ function renderSitemap() {
     '/services.html',
     '/about.html',
     '/contact.html',
+    `/${site.legalPath}`,
     ...services.map((service) => `/${service.file}`),
   ];
 
@@ -1427,6 +1664,7 @@ async function main() {
     { file: staticPages.services.file, content: renderServicesPage() },
     { file: staticPages.about.file, content: renderAboutPage() },
     { file: staticPages.contact.file, content: renderContactPage() },
+    { file: staticPages.legal.file, content: renderLegalPage() },
     { file: staticPages.admin.file, content: renderAdminPage() },
     ...services.map((service) => ({ file: service.file, content: renderServiceDetailPage(service) })),
   ];
