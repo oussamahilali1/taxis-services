@@ -33,8 +33,8 @@
   }
 
   function getApiUrl(path) {
-    if (window.TaxiAnderluesConfig && typeof window.TaxiAnderluesConfig.apiUrl === 'function') {
-      return window.TaxiAnderluesConfig.apiUrl(path);
+    if (window.TaxisServicesConfig && typeof window.TaxisServicesConfig.apiUrl === 'function') {
+      return window.TaxisServicesConfig.apiUrl(path);
     }
 
     return path;
@@ -100,6 +100,104 @@
       escapeHtml(formatStatusLabel(status || '')) +
       '</span>'
     );
+  }
+
+  function getBookingMetadata(booking) {
+    return booking && booking.metadata && typeof booking.metadata === 'object' && !Array.isArray(booking.metadata)
+      ? booking.metadata
+      : {};
+  }
+
+  function formatInlineContactSummary(item) {
+    if (item.phone && item.email) {
+      return item.phone + ' / ' + item.email;
+    }
+
+    return item.phone || item.email || 'Coordonnee a confirmer';
+  }
+
+  function formatBooleanLabel(value) {
+    if (value === true) {
+      return 'Oui';
+    }
+
+    if (value === false) {
+      return 'Non';
+    }
+
+    return 'Non renseigne';
+  }
+
+  function formatAirportDetails(metadata) {
+    var airportDetails =
+      metadata.airportDetails && typeof metadata.airportDetails === 'object' && !Array.isArray(metadata.airportDetails)
+        ? metadata.airportDetails
+        : null;
+    var parts = [];
+
+    if (!airportDetails) {
+      return 'Non renseigne';
+    }
+
+    if (airportDetails.airportName) {
+      parts.push(airportDetails.airportName);
+    }
+
+    if (airportDetails.terminal) {
+      parts.push('Terminal: ' + airportDetails.terminal);
+    }
+
+    if (airportDetails.flightNumber) {
+      parts.push('Vol: ' + airportDetails.flightNumber);
+    }
+
+    if (airportDetails.direction) {
+      parts.push('Sens: ' + airportDetails.direction);
+    }
+
+    return parts.length ? parts.join('\n') : 'Non renseigne';
+  }
+
+  function formatCoverageDetails(metadata) {
+    var serviceRules =
+      metadata.serviceRules && typeof metadata.serviceRules === 'object' && !Array.isArray(metadata.serviceRules)
+        ? metadata.serviceRules
+        : null;
+    var lines = [];
+
+    if (!serviceRules) {
+      return 'Non renseigne';
+    }
+
+    if (serviceRules.summary) {
+      lines.push(serviceRules.summary);
+    }
+
+    if (serviceRules.coverageMode) {
+      lines.push('Mode: ' + serviceRules.coverageMode);
+    }
+
+    if (serviceRules.requiresManualReview) {
+      lines.push('Revue manuelle requise.');
+    }
+
+    if (
+      serviceRules.localAreaValidation &&
+      typeof serviceRules.localAreaValidation === 'object' &&
+      serviceRules.localAreaValidation.message
+    ) {
+      lines.push(serviceRules.localAreaValidation.message);
+    }
+
+    if (
+      serviceRules.airportSupport &&
+      typeof serviceRules.airportSupport === 'object' &&
+      serviceRules.airportSupport.nationwideCoverage
+    ) {
+      lines.push('Couverture aeroport: Belgique entiere.');
+    }
+
+    return lines.length ? lines.join('\n') : 'Non renseigne';
   }
 
   function buildQuery(params) {
@@ -273,7 +371,7 @@
           '<td><span class="admin-meta-strong">' +
           escapeHtml(item.fullName) +
           '</span><span class="admin-meta-sub">' +
-          escapeHtml(item.email || item.phone || 'Coordonnée à confirmer') +
+          escapeHtml(formatInlineContactSummary(item)) +
           '</span></td>' +
           '<td>' +
           escapeHtml(formatStatusLabel(item.serviceType)) +
@@ -320,7 +418,7 @@
           '<td><span class="admin-meta-strong">' +
           escapeHtml(item.fullName) +
           '</span><span class="admin-meta-sub">' +
-          escapeHtml(item.email || item.phone || 'Coordonnée à confirmer') +
+          escapeHtml(formatInlineContactSummary(item)) +
           '</span></td>' +
           '<td>' +
           escapeHtml(item.subject) +
@@ -404,10 +502,12 @@
   function openBooking(id) {
     apiRequest('/api/admin/bookings/' + encodeURIComponent(id)).then(function (payload) {
       var booking = payload.data;
+      var metadata = getBookingMetadata(booking);
       state.bookings.selectedId = booking.id;
       renderDataList(qs('#booking-detail-fields'), [
         { label: 'Client', value: booking.fullName },
-        { label: 'Contact', value: booking.email || booking.phone || 'Coordonnée à confirmer' },
+        { label: 'Telephone', value: booking.phone || 'Non renseigne' },
+        { label: 'Email', value: booking.email || 'Non renseigne' },
         { label: 'Service', value: formatStatusLabel(booking.serviceType) },
         {
           label: 'Trajet',
@@ -417,7 +517,14 @@
           label: 'Horaire',
           value: [booking.pickupDate, booking.pickupTime].filter(Boolean).join(' '),
         },
-        { label: 'Passagers', value: booking.passengers || 'Non renseigné' },
+        { label: 'Passagers', value: booking.passengers || 'Non renseigne' },
+        { label: 'Entreprise', value: metadata.company || 'Non renseigne' },
+        { label: 'Vehicule', value: metadata.vehicleType || metadata.vehiclePreference || 'Non renseigne' },
+        { label: 'Bagages', value: metadata.luggage || 'Non renseigne' },
+        { label: 'Siege enfant', value: formatBooleanLabel(metadata.childSeatNeeded) },
+        { label: 'Accessibilite', value: formatBooleanLabel(metadata.accessibilityNeeded) },
+        { label: 'Details aeroport', value: formatAirportDetails(metadata) },
+        { label: 'Couverture', value: formatCoverageDetails(metadata) },
         { label: 'Notes', value: booking.notes || 'Aucune note' },
         { label: 'Source', value: booking.sourcePage || 'Site web' },
         { label: 'Créée', value: formatDate(booking.createdAt) },

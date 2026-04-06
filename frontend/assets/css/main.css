@@ -669,6 +669,13 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-light);
 }
 
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea {
+  border-color: #ef4444;
+  background: rgba(239,68,68,0.04);
+}
+
 .form-group select {
   cursor: pointer;
   appearance: none;
@@ -712,6 +719,17 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-muted);
   cursor: pointer;
   font-weight: 500;
+}
+
+.form-check.has-error .check-label {
+  color: #dc2626;
+}
+
+.field-error {
+  margin-top: 6px;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: #dc2626;
 }
 
 .form-submit {

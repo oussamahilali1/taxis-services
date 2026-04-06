@@ -14,7 +14,7 @@
     base = isLocalhost ? 'http://localhost:4000' : window.location.origin;
   }
 
-  window.TaxiAnderluesConfig = {
+  window.TaxisServicesConfig = {
     apiBaseUrl: base,
     apiUrl: function (path) {
       if (/^https?:\/\//i.test(path)) {

@@ -9,6 +9,10 @@ export function sanitizeText(value, { maxLength = 255, multiline = false } = {})
     return undefined;
   }
 
+  if (Array.isArray(value) || (typeof value === 'object' && !(value instanceof Date))) {
+    return undefined;
+  }
+
   let sanitized = String(value)
     .replace(/\u0000/g, '')
     .replace(HTML_TAG_PATTERN, ' ');

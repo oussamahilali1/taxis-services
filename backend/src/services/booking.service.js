@@ -1,6 +1,7 @@
 import { BookingStatus } from '@prisma/client';
 import { prisma } from '../lib/prisma.js';
 import { HttpError } from '../lib/http-error.js';
+import { applyBookingBusinessRules } from './booking-rules.service.js';
 
 function buildBookingWhere({ status, serviceType, search }) {
   const where = {};
@@ -28,10 +29,11 @@ function buildBookingWhere({ status, serviceType, search }) {
 
 export async function createBooking(data) {
   const { website, ...bookingData } = data;
+  const enrichedBookingData = applyBookingBusinessRules(bookingData);
 
   return prisma.booking.create({
     data: {
-      ...bookingData,
+      ...enrichedBookingData,
       status: website ? BookingStatus.SPAM : BookingStatus.PENDING,
     },
   });

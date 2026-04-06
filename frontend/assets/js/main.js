@@ -206,13 +206,85 @@
     element.hidden = false;
   }
 
+  function getFieldContainer(field) {
+    return field.closest('.form-group, .form-check');
+  }
+
+  function getFieldErrorElement(field, createIfMissing) {
+    var container = getFieldContainer(field);
+    var fieldKey = field.name || field.id;
+
+    if (!container || !fieldKey) {
+      return null;
+    }
+
+    var existing = container.querySelector('.field-error[data-field="' + fieldKey + '"]');
+    if (existing) {
+      return existing;
+    }
+
+    if (!createIfMissing) {
+      return null;
+    }
+
+    var errorEl = document.createElement('div');
+    errorEl.className = 'field-error';
+    errorEl.dataset.field = fieldKey;
+    errorEl.hidden = true;
+    container.appendChild(errorEl);
+    return errorEl;
+  }
+
   function clearFieldState(field) {
+    var container = getFieldContainer(field);
+    var errorEl = getFieldErrorElement(field, false);
+
     field.style.borderColor = '';
     field.removeAttribute('aria-invalid');
+    field.removeAttribute('aria-describedby');
+
+    if (container) {
+      container.classList.remove('has-error');
+    }
+
+    if (errorEl) {
+      errorEl.hidden = true;
+      errorEl.textContent = '';
+      errorEl.removeAttribute('id');
+    }
+  }
+
+  function setFieldError(field, message) {
+    var container = getFieldContainer(field);
+    var errorEl = getFieldErrorElement(field, true);
+    var errorId = (field.id || field.name || 'field') + '-error';
+
+    field.style.borderColor = '#ef4444';
+    field.setAttribute('aria-invalid', 'true');
+
+    if (container) {
+      container.classList.add('has-error');
+    }
+
+    if (errorEl) {
+      errorEl.id = errorId;
+      errorEl.textContent = message;
+      errorEl.hidden = false;
+      field.setAttribute('aria-describedby', errorId);
+    }
+  }
+
+  function clearFormFieldStates(form) {
+    form.querySelectorAll('input, select, textarea').forEach(function (field) {
+      clearFieldState(field);
+    });
   }
 
   document.querySelectorAll('input, select, textarea').forEach(function (field) {
     field.addEventListener('input', function () {
+      clearFieldState(field);
+    });
+    field.addEventListener('change', function () {
       clearFieldState(field);
     });
     field.addEventListener('focus', function () {
@@ -221,8 +293,8 @@
   });
 
   function getApiUrl(path) {
-    if (window.TaxiAnderluesConfig && typeof window.TaxiAnderluesConfig.apiUrl === 'function') {
-      return window.TaxiAnderluesConfig.apiUrl(path);
+    if (window.TaxisServicesConfig && typeof window.TaxisServicesConfig.apiUrl === 'function') {
+      return window.TaxisServicesConfig.apiUrl(path);
     }
 
     return path;
@@ -240,6 +312,35 @@
     };
   }
 
+  function normalizeLookupKey(value) {
+    return String(value || '')
+      .trim()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/\s+/g, ' ')
+      .toLowerCase();
+  }
+
+  function normalizeServiceType(value) {
+    var normalized = normalizeLookupKey(value);
+    var serviceMap = {
+      local_taxi: 'LOCAL_TAXI',
+      'taxi de proximite': 'LOCAL_TAXI',
+      airport_shuttle: 'AIRPORT_SHUTTLE',
+      'navette aeroport': 'AIRPORT_SHUTTLE',
+      business: 'BUSINESS',
+      'transport business': 'BUSINESS',
+      pmr: 'PMR',
+      'transport pmr': 'PMR',
+      parcel_delivery: 'PARCEL_DELIVERY',
+      'livraison de colis': 'PARCEL_DELIVERY',
+      quick_request: 'QUICK_REQUEST',
+      'demande rapide': 'QUICK_REQUEST',
+    };
+
+    return serviceMap[normalized] || String(value || '').trim();
+  }
+
   function toBoolean(value) {
     return value === 'on' || value === 'true' || value === true;
   }
@@ -254,29 +355,272 @@
     messageEl.className = 'form-message';
   }
 
+  function getFieldByName(form, name) {
+    var field = form.elements.namedItem(name);
+    return field && field.tagName ? field : null;
+  }
+
+  function normalizeServerFieldPath(path) {
+    var aliases = {
+      fullName: 'name',
+      pickupLocation: 'pickup',
+      dropoffLocation: 'dropoff',
+      serviceType: 'service',
+      datetime: 'datetime',
+      pickupDate: 'datetime',
+      pickupTime: 'datetime',
+      contactQuick: 'contact_quick',
+      'metadata.company': 'company',
+      'metadata.vehicleType': 'vehicle',
+      'metadata.vehiclePreference': 'vehicle',
+      'metadata.luggage': 'luggage',
+      'metadata.childSeatNeeded': 'child_seat',
+      'metadata.accessibilityNeeded': 'accessibility',
+      'metadata.airportDetails.flightNumber': 'flight_number',
+      'metadata.airportDetails.airportName': 'airport_name',
+      'metadata.airportDetails.terminal': 'terminal',
+      'metadata.airportDetails.direction': 'airport_direction',
+    };
+
+    return aliases[path] || path;
+  }
+
+  function applyFieldErrors(form, errors) {
+    var firstField = null;
+
+    errors.forEach(function (error) {
+      var fieldName = normalizeServerFieldPath(error.path || error.field || '');
+      var field = getFieldByName(form, fieldName);
+
+      if (!field) {
+        return;
+      }
+
+      setFieldError(field, error.message);
+
+      if (!firstField) {
+        firstField = field;
+      }
+    });
+
+    return firstField;
+  }
+
+  function buildApiError(payload) {
+    var error = new Error(
+      payload && payload.error && payload.error.message
+        ? payload.error.message
+        : 'Une erreur est survenue.'
+    );
+
+    error.details = payload && payload.error ? payload.error.details : undefined;
+    error.code = payload && payload.error ? payload.error.code : undefined;
+    return error;
+  }
+
+  function normalizePhoneValue(value) {
+    return String(value || '')
+      .trim()
+      .replace(/[^0-9+()./\-\s]/g, '');
+  }
+
+  function isPhoneLike(value) {
+    var normalized = normalizePhoneValue(value);
+    var digits = normalized.replace(/[^0-9]/g, '');
+
+    return normalized.length >= 6 && normalized.length <= 25 && digits.length >= 6;
+  }
+
+  function isEmailLike(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim());
+  }
+
+  function validateBookingPayload(form, payload) {
+    var errors = [];
+    var isQuickRequest =
+      payload.requestVariant === 'quick' ||
+      payload.serviceType === 'QUICK_REQUEST' ||
+      payload.serviceType === 'Demande rapide';
+
+    if (!payload.pickupLocation) {
+      errors.push({
+        path: 'pickup',
+        message: "L'adresse de prise en charge est obligatoire.",
+      });
+    }
+
+    if (!payload.dropoffLocation) {
+      errors.push({
+        path: 'dropoff',
+        message: "L'adresse de destination est obligatoire.",
+      });
+    }
+
+    if (isQuickRequest) {
+      if (!payload.contactQuick) {
+        errors.push({
+          path: 'contact_quick',
+          message: 'Veuillez indiquer un telephone ou un email.',
+        });
+      } else if (!isEmailLike(payload.contactQuick) && !isPhoneLike(payload.contactQuick)) {
+        errors.push({
+          path: 'contact_quick',
+          message: 'Veuillez indiquer un telephone ou un email valide.',
+        });
+      }
+
+      return errors;
+    }
+
+    if (!payload.serviceType) {
+      errors.push({
+        path: 'service',
+        message: 'Veuillez selectionner un service.',
+      });
+    }
+
+    if (!payload.passengers) {
+      errors.push({
+        path: 'passengers',
+        message: 'Veuillez indiquer le nombre de passagers.',
+      });
+    }
+
+    if (!payload.fullName) {
+      errors.push({
+        path: 'name',
+        message: 'Le nom complet est obligatoire.',
+      });
+    }
+
+    if (!payload.phone) {
+      errors.push({
+        path: 'phone',
+        message: 'Le numero de telephone est obligatoire.',
+      });
+    } else if (!isPhoneLike(payload.phone)) {
+      errors.push({
+        path: 'phone',
+        message: 'Le numero de telephone est invalide.',
+      });
+    }
+
+    if (payload.email && !isEmailLike(payload.email)) {
+      errors.push({
+        path: 'email',
+        message: "L'adresse email est invalide.",
+      });
+    }
+
+    if (!payload.dateTime && !(payload.pickupDate && payload.pickupTime)) {
+      errors.push({
+        path: 'datetime',
+        message: "La date et l'heure souhaitees sont obligatoires.",
+      });
+    }
+
+    if (payload.company && payload.company.length > 120) {
+      errors.push({
+        path: 'company',
+        message: "Le nom de l'entreprise est trop long.",
+      });
+    }
+
+    if (payload.luggage && payload.luggage.length > 160) {
+      errors.push({
+        path: 'luggage',
+        message: 'La description des bagages est trop longue.',
+      });
+    }
+
+    if (payload.notes && payload.notes.length > 500) {
+      errors.push({
+        path: 'notes',
+        message: 'Les precisions utiles ne doivent pas depasser 500 caracteres.',
+      });
+    }
+
+    return errors;
+  }
+
+  function validateContactPayload(payload) {
+    var errors = [];
+
+    if (!payload.fullName) {
+      errors.push({
+        path: 'name',
+        message: 'Le nom complet est obligatoire.',
+      });
+    }
+
+    if (!payload.message || payload.message.length < 10) {
+      errors.push({
+        path: 'message',
+        message: 'Veuillez decrire votre demande en quelques mots.',
+      });
+    }
+
+    if (!payload.phone && !payload.email && !payload.contactQuick) {
+      errors.push({
+        path: 'phone',
+        message: 'Veuillez indiquer un telephone ou une adresse email.',
+      });
+    }
+
+    if (payload.phone && !isPhoneLike(payload.phone)) {
+      errors.push({
+        path: 'phone',
+        message: 'Le numero de telephone est invalide.',
+      });
+    }
+
+    if (payload.email && !isEmailLike(payload.email)) {
+      errors.push({
+        path: 'email',
+        message: "L'adresse email est invalide.",
+      });
+    }
+
+    return errors;
+  }
+
+  function validateFormPayload(form, payload) {
+    return form.getAttribute('data-api-form') === 'contact'
+      ? validateContactPayload(payload)
+      : validateBookingPayload(form, payload);
+  }
+
   function buildBookingPayload(form) {
     var data = new FormData(form);
+    var dateTime = (data.get('datetime') || '').trim();
     var schedule = splitDateTime(data.get('datetime'));
+    var vehicleType = (data.get('vehicle') || '').trim();
 
     return {
-      fullName: (data.get('name') || '').trim() || 'Client web',
+      fullName: (data.get('name') || '').trim(),
       phone: (data.get('phone') || '').trim(),
       email: (data.get('email') || '').trim(),
       contactQuick: (data.get('contact_quick') || '').trim(),
       pickupLocation: (data.get('pickup') || '').trim(),
       dropoffLocation: (data.get('dropoff') || '').trim(),
+      dateTime: dateTime,
       pickupDate: (data.get('pickupDate') || '').trim() || schedule.pickupDate,
       pickupTime: (data.get('pickupTime') || '').trim() || schedule.pickupTime,
       passengers: (data.get('passengers') || '').trim(),
-      serviceType: (data.get('service') || '').trim(),
+      serviceType: normalizeServiceType(data.get('service')),
       notes: (data.get('notes') || '').trim(),
       sourcePage: (data.get('source_page') || '').trim(),
       website: (data.get('website') || '').trim(),
       company: (data.get('company') || '').trim(),
-      vehiclePreference: (data.get('vehicle') || '').trim(),
+      vehicleType: vehicleType,
+      vehiclePreference: vehicleType,
       luggage: (data.get('luggage') || '').trim(),
       childSeat: toBoolean(data.get('child_seat')),
       accessibility: toBoolean(data.get('accessibility')),
+      flightNumber: (data.get('flight_number') || data.get('flightNumber') || '').trim(),
+      airportName: (data.get('airport_name') || data.get('airportName') || data.get('airport') || '').trim(),
+      airportTerminal: (data.get('airport_terminal') || data.get('airportTerminal') || data.get('terminal') || '').trim(),
+      airportDirection: (data.get('airport_direction') || data.get('airportDirection') || '').trim(),
       requestVariant: form.getAttribute('data-form-variant') || 'full',
     };
   }
@@ -320,39 +664,19 @@
       var submitBtn = form.querySelector('.form-submit');
       var messageEl = form.querySelector('.form-message');
       var originalText = submitBtn ? submitBtn.textContent : '';
-      var requiredFields = Array.prototype.slice.call(form.querySelectorAll('[required]'));
-      var contactFields = Array.prototype.slice.call(form.querySelectorAll('[data-contact-field]'));
-      var valid = true;
+      var payload = getFormPayload(form);
+      var clientErrors = [];
+      var firstField = null;
 
       resetFormUi(messageEl);
+      clearFormFieldStates(form);
+      clientErrors = validateFormPayload(form, payload);
+      firstField = applyFieldErrors(form, clientErrors);
 
-      requiredFields.forEach(function (field) {
-        clearFieldState(field);
-        if (!field.value.trim()) {
-          field.style.borderColor = '#ef4444';
-          field.setAttribute('aria-invalid', 'true');
-          valid = false;
-        }
-      });
-
-      if (form.hasAttribute('data-requires-contact') && contactFields.length > 0) {
-        var hasContact = contactFields.some(function (field) {
-          return field.value.trim() !== '';
-        });
-
-        if (!hasContact) {
-          contactFields.forEach(function (field) {
-            field.style.borderColor = '#ef4444';
-            field.setAttribute('aria-invalid', 'true');
-          });
-          valid = false;
-          showFormMessage(messageEl, 'Veuillez indiquer au moins un telephone ou une adresse email.', 'error');
-        }
-      }
-
-      if (!valid) {
-        if (messageEl && messageEl.hidden) {
-          showFormMessage(messageEl, 'Veuillez completer les champs obligatoires.', 'error');
+      if (clientErrors.length > 0) {
+        showFormMessage(messageEl, 'Veuillez corriger les champs signales.', 'error');
+        if (firstField && typeof firstField.focus === 'function') {
+          firstField.focus();
         }
         return;
       }
@@ -369,7 +693,7 @@
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(getFormPayload(form)),
+        body: JSON.stringify(payload),
       })
         .then(function (response) {
           return response
@@ -379,19 +703,22 @@
             })
             .then(function (payload) {
               if (!response.ok) {
-                throw new Error(
-                  payload && payload.error && payload.error.message
-                    ? payload.error.message
-                    : 'Une erreur est survenue.'
-                );
+                throw buildApiError(payload);
               }
 
               form.reset();
               resetFormUi(messageEl);
+              clearFormFieldStates(form);
               showFormMessage(messageEl, getSuccessMessage(form), 'success');
             });
         })
         .catch(function (error) {
+          var invalidField = null;
+
+          if (error && error.details && error.details.length) {
+            invalidField = applyFieldErrors(form, error.details);
+          }
+
           showFormMessage(
             messageEl,
             error && error.message
@@ -399,6 +726,10 @@
               : "Une erreur s'est produite. Vous pouvez aussi nous appeler directement.",
             'error'
           );
+
+          if (invalidField && typeof invalidField.focus === 'function') {
+            invalidField.focus();
+          }
         })
         .finally(function () {
           if (submitBtn) {

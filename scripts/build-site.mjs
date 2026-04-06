@@ -286,7 +286,7 @@ const staticPages = {
   legal: {
     file: site.legalPath,
     title: 'Mentions légales | Taxis Services',
-    description: 'Consultez les mentions l?gales, la politique de confidentialit?, la d?claration d?accessibilit? et les conditions g?n?rales de service de Taxis Services.',
+    description: 'Consultez les mentions legales, la politique de confidentialite, la declaration d accessibilite et les conditions generales de service de Taxis Services.',
     navKey: '',
   },
   admin: {
