@@ -1,0 +1,39 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "frontend",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "taxi-anderlues.be"
+        }
+      ],
+      "destination": "https://taxis-services.be/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.taxi-anderlues.be"
+        }
+      ],
+      "destination": "https://taxis-services.be/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.taxis-services.be"
+        }
+      ],
+      "destination": "https://taxis-services.be/:path*",
+      "permanent": true
+    }
+  ]
+}

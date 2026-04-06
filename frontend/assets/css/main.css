@@ -3179,69 +3179,6 @@ a.zone-tag:hover {
   }
 }
 
-.admin-private-page {
-  min-height: 100vh;
-  background:
-    linear-gradient(180deg, rgba(12,12,12,0.92), rgba(12,12,12,0.96)),
-    url('../img/ex.jpg') center/cover no-repeat;
-}
-
-.admin-private-shell {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 32px 20px;
-}
-
-.admin-private-card {
-  width: min(100%, 620px);
-  background: rgba(12,12,12,0.9);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-xl);
-  padding: 40px 32px;
-  box-shadow: var(--shadow-xl);
-}
-
-.admin-private-card .nav-logo {
-  margin-bottom: 28px;
-}
-
-.admin-private-card h1 {
-  color: var(--white);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-bottom: 18px;
-}
-
-.admin-private-card p {
-  color: rgba(255,255,255,0.68);
-  margin-bottom: 16px;
-}
-
-.admin-private-badge {
-  display: inline-flex;
-  margin-bottom: 16px;
-  padding: 8px 14px;
-  border-radius: var(--radius-full);
-  background: rgba(245,199,26,0.12);
-  color: var(--gold);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.admin-private-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 24px 0;
-}
-
-.admin-private-note {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.52);
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

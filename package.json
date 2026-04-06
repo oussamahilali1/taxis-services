@@ -1,8 +1,16 @@
 {
-  "name": "taxi-anderlues-site",
+  "name": "taxis-services-site",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "build": "node scripts/build-site.mjs"
+    "build": "node scripts/build-site.mjs",
+    "backend:dev": "npm --prefix backend run dev",
+    "backend:start": "npm --prefix backend run start",
+    "backend:generate": "npm --prefix backend run prisma:generate",
+    "backend:migrate": "npm --prefix backend run prisma:migrate:deploy",
+    "backend:seed": "npm --prefix backend run db:seed"
   }
 }

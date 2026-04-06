@@ -1,8 +1,13 @@
-Backend:
-cd backend
-go run main.go
-
-Frontend:
+Frontend build:
 npm run build
-cd frontend
-npx serve
+
+Backend dev:
+cd backend
+copy .env.example .env
+npm install
+npx prisma migrate dev
+npm run db:seed
+npm run dev
+
+Frontend preview:
+npx serve frontend

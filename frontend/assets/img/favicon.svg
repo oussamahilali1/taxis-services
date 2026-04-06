@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
-  <title>Taxi Anderlues</title>
+  <title>Taxis Services</title>
   <rect width="128" height="128" rx="28" fill="#0c0c0c"/>
   <rect x="10" y="10" width="108" height="108" rx="22" fill="none" stroke="#f5c71a" stroke-width="4"/>
-  <path d="M34 38h60v10H69v42H57V48H34z" fill="#f5c71a"/>
-  <path d="M74 38h20l13 52H95l-3-12H73l-3 12H58l16-52zm15 30-6-21-6 21h12z" fill="#f5c71a"/>
+  <text x="64" y="78" text-anchor="middle" font-size="42" font-weight="700" font-family="Segoe UI, Arial, sans-serif" fill="#f5c71a">TS</text>
 </svg>

@@ -6,20 +6,21 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
 const frontendDir = path.join(rootDir, 'frontend');
 const site = {
-  name: 'Taxi Anderlues',
-  legalName: 'Taxi Anderlues',
-  baseUrl: 'https://www.taxi-anderlues.be',
+  name: 'Taxis Services',
+  legalName: 'Taxis Services',
+  baseUrl: 'https://taxis-services.be',
+  apiBaseUrl: process.env.PUBLIC_API_BASE_URL || '',
   locale: 'fr_BE',
   lang: 'fr-BE',
   phone: '+32486067927',
   phoneDisplay: '+32 486 06 79 27',
   whatsapp: 'https://wa.me/32486067927',
-  email: 'info@taxi-anderlues.be',
-  emailHref: 'mailto:info@taxi-anderlues.be',
+  email: 'info@taxis-services.be',
+  emailHref: 'mailto:info@taxis-services.be',
   address: 'Anderlues, Hainaut, Belgique',
   areaLabel: 'Anderlues, Chapelle-lez-Herlaimont, Courcelles, Fontaine-l’Évêque, Montigny-le-Tilleul',
-  formAction: 'https://formspree.io/f/mnoqnrrj',
   adminPath: 'admin-login.html',
+  adminDashboardPath: 'admin-dashboard.html',
   legalPath: 'mentions-legales.html',
   faviconPath: 'assets/img/favicon.svg',
   ogImage: 'assets/img/Transport_vip.jpg',
@@ -67,7 +68,7 @@ const services = [
     label: 'Service local',
     title: 'Taxi local à Anderlues et dans la région du Centre',
     highlight: 'simple et réactif',
-    metaTitle: 'Taxi local à Anderlues | Taxi Anderlues',
+    metaTitle: 'Taxi local à Anderlues | Taxis Services',
     metaDescription: 'Déplacements locaux à Anderlues, Chapelle-lez-Herlaimont, Courcelles et alentours avec un service professionnel et réactif.',
     cardSummary: 'Courses locales, rendez-vous, gares et trajets du quotidien avec prise en charge rapide selon disponibilité.',
     heroSummary: 'Pour un déplacement en ville, un rendez-vous médical, une course urgente ou un transfert vers la gare, nous organisons votre trajet avec sérieux et clarté.',
@@ -106,7 +107,7 @@ const services = [
     label: 'Transferts',
     title: 'Navette aéroport depuis Anderlues vers Charleroi et Bruxelles',
     highlight: 'ponctuelle et sereine',
-    metaTitle: 'Navette aéroport Charleroi et Bruxelles | Taxi Anderlues',
+    metaTitle: 'Navette aéroport Charleroi et Bruxelles | Taxis Services',
     metaDescription: 'Transferts aéroport depuis Anderlues vers Charleroi, Bruxelles et les principales gares avec organisation anticipée.',
     cardSummary: 'Réservations anticipées pour aéroports et gares avec suivi de l’horaire communiqué et prise en charge planifiée.',
     heroSummary: 'Nous préparons vos transferts aéroport avec une heure de départ cohérente, un véhicule adapté à vos bagages et une communication claire avant le trajet.',
@@ -145,7 +146,7 @@ const services = [
     label: 'Professionnels',
     title: 'Chauffeur business pour vos déplacements professionnels',
     highlight: 'sobre et fiable',
-    metaTitle: 'Chauffeur business à Anderlues | Taxi Anderlues',
+    metaTitle: 'Chauffeur business à Anderlues | Taxis Services',
     metaDescription: 'Transport business pour rendez-vous, séminaires, hôtels et transferts professionnels en Belgique.',
     cardSummary: 'Déplacements professionnels avec une présentation soignée, un service discret et une organisation adaptée à votre agenda.',
     heroSummary: 'Pour un rendez-vous client, une réunion, un transfert hôtel ou une journée planifiée, nous proposons un accompagnement professionnel et discret.',
@@ -184,7 +185,7 @@ const services = [
     label: 'Accessibilité',
     title: 'Transport PMR avec organisation adaptée',
     highlight: 'respectueuse et rassurante',
-    metaTitle: 'Transport PMR à Anderlues | Taxi Anderlues',
+    metaTitle: 'Transport PMR à Anderlues | Taxis Services',
     metaDescription: 'Transport PMR sur réservation avec préparation adaptée au besoin annoncé et accompagnement attentionné.',
     cardSummary: 'Déplacements organisés avec attention pour les personnes à mobilité réduite, sur réservation et selon le besoin communiqué.',
     heroSummary: 'Nous préparons les trajets PMR avec sérieux, en tenant compte du niveau d’assistance souhaité, du matériel annoncé et du temps nécessaire.',
@@ -223,7 +224,7 @@ const services = [
     label: 'Express',
     title: 'Livraison urgente de documents et colis',
     highlight: 'directe et suivie',
-    metaTitle: 'Livraison urgente de colis | Taxi Anderlues',
+    metaTitle: 'Livraison urgente de colis | Taxis Services',
     metaDescription: 'Livraison rapide de documents et colis avec retrait sur demande et confirmation de la prise en charge.',
     cardSummary: 'Acheminement direct de documents, enveloppes et petits colis avec une communication simple du retrait à la remise.',
     heroSummary: 'Pour un document important, un colis urgent ou une remise locale à organiser, nous proposons une solution directe et réactive selon disponibilité.',
@@ -260,38 +261,45 @@ const services = [
 const staticPages = {
   home: {
     file: 'index.html',
-    title: 'Taxi Anderlues | Taxi local, aéroport, business et PMR',
+    title: 'Taxis Services | Taxi local, aéroport, business et PMR',
     description: 'Service de taxi professionnel à Anderlues pour les trajets locaux, navettes aéroport, déplacements business, transport PMR et livraisons urgentes.',
     navKey: 'home',
   },
   services: {
     file: 'services.html',
-    title: 'Nos services | Taxi Anderlues',
-    description: 'Découvrez les services de Taxi Anderlues: taxi local, navette aéroport, transport business, transport PMR et livraison de colis.',
+    title: 'Nos services | Taxis Services',
+    description: 'Découvrez les services de Taxis Services: taxi local, navette aéroport, transport business, transport PMR et livraison de colis.',
     navKey: 'services',
   },
   about: {
     file: 'about.html',
-    title: 'À propos | Taxi Anderlues',
-    description: 'Taxi Anderlues présente son approche: proximité, ponctualité, clarté et organisation professionnelle pour chaque trajet.',
+    title: 'À propos | Taxis Services',
+    description: 'Taxis Services présente son approche: proximité, ponctualité, clarté et organisation professionnelle pour chaque trajet.',
     navKey: 'about',
   },
   contact: {
     file: 'contact.html',
-    title: 'Contact et réservation | Taxi Anderlues',
-    description: 'Contactez Taxi Anderlues pour une réservation, une demande de course, un transfert aéroport ou un trajet professionnel.',
+    title: 'Contact et réservation | Taxis Services',
+    description: 'Contactez Taxis Services pour une réservation, une demande de course, un transfert aéroport ou un trajet professionnel.',
     navKey: 'contact',
   },
   legal: {
     file: site.legalPath,
-    title: 'Mentions légales | Taxi Anderlues',
-    description: 'Consultez les mentions légales, la politique de confidentialité, la déclaration d’accessibilité et les conditions générales de service d’TAXIS COURCELLOIS.',
+    title: 'Mentions légales | Taxis Services',
+    description: 'Consultez les mentions l?gales, la politique de confidentialit?, la d?claration d?accessibilit? et les conditions g?n?rales de service de Taxis Services.',
     navKey: '',
   },
   admin: {
     file: site.adminPath,
-    title: 'Accès privé | Taxi Anderlues',
-    description: 'Page d’accès privé non indexée dans l’attente d’une authentification réelle côté hébergement.',
+    title: 'Accès privé | Taxis Services',
+    description: 'Connexion administrateur sécurisée pour gérer les réservations et messages du site.',
+    navKey: '',
+    noindex: true,
+  },
+  adminDashboard: {
+    file: site.adminDashboardPath,
+    title: 'Tableau de bord | Taxis Services',
+    description: 'Interface d’administration pour gérer les réservations et messages entrants.',
     navKey: '',
     noindex: true,
   },
@@ -440,6 +448,7 @@ function renderHead({ title, description, canonical, image = site.ogImage, noind
   <meta name="description" content="${escapeHtml(description)}">
   <meta name="robots" content="${robots}">
   <meta name="theme-color" content="#0c0c0c">
+  <meta name="app-api-base-url" content="${escapeHtml(site.apiBaseUrl)}">
   <link rel="canonical" href="${escapeHtml(canonical)}">
   <link rel="icon" href="${site.faviconPath}" type="image/svg+xml">
   <meta property="og:locale" content="${site.locale}">
@@ -481,9 +490,9 @@ function renderNav(pageKey) {
   return `<nav class="navbar">
     <div class="container">
       <div class="nav-inner">
-        <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil de Taxi Anderlues">
-          <div class="nav-logo-icon">TA</div>
-          <span class="nav-logo-text">TAXI <span>ANDERLUES</span></span>
+        <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil de Taxis Services">
+          <div class="nav-logo-icon">TS</div>
+          <span class="nav-logo-text">TAXIS <span>SERVICES</span></span>
         </a>
         <ul class="nav-links">
           ${navLinks}
@@ -520,9 +529,9 @@ function renderFooter() {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo" aria-label="Taxi Anderlues">
-            <div class="nav-logo-icon">TA</div>
-            <span class="nav-logo-text">TAXI <span>ANDERLUES</span></span>
+          <a href="index.html" class="nav-logo" aria-label="Taxis Services">
+            <div class="nav-logo-icon">TS</div>
+            <span class="nav-logo-text">TAXIS <span>SERVICES</span></span>
           </a>
           <p>Service de transport professionnel à Anderlues pour vos trajets locaux, transferts aéroport, déplacements business et demandes spécifiques.</p>
           <div class="footer-social">
@@ -572,6 +581,7 @@ ${mainContent}
   </main>
   ${renderFooter()}
   <button class="scroll-top" type="button" aria-label="Retour en haut">${icon('chevronUp')}</button>
+  <script src="assets/js/app-config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <a href="tel:${site.phone}" class="call-button" aria-label="Appeler ${site.legalName}">
     <i class="fas fa-phone" aria-hidden="true"></i>
@@ -592,12 +602,20 @@ function renderVehicleSelect() {
     .join('');
 }
 
+function renderHoneypotField(fieldId = 'website-hp') {
+  return `<div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" aria-hidden="true">
+      <label for="${fieldId}">Website</label>
+      <input id="${fieldId}" type="text" name="website" tabindex="-1" autocomplete="off">
+    </div>`;
+}
+
 function renderQuickRequestForm(selectedService = '') {
   return `<div class="hero-card" data-animate="scale">
     <div class="hero-card-title">Demande rapide</div>
-    <form class="booking-form" method="POST" action="${site.formAction}" data-requires-contact="true">
+    <form class="booking-form" method="POST" action="/api/bookings" data-api-form="booking" data-form-variant="quick" data-requires-contact="true">
       <input type="hidden" name="service" value="${escapeHtml(selectedService || 'Demande rapide')}">
       <input type="hidden" name="source_page" value="Accueil">
+      ${renderHoneypotField('hero-website')}
       <div class="form-group hero-form-group">
         <label for="hero-pickup">Adresse de départ</label>
         <input id="hero-pickup" type="text" name="pickup" placeholder="Anderlues, gare, domicile…" required>
@@ -617,8 +635,9 @@ function renderQuickRequestForm(selectedService = '') {
 }
 
 function renderBookingForm({ formId, sourceLabel, selectedService = '' }) {
-  return `<form class="booking-form" id="${formId}" method="POST" action="${site.formAction}" data-requires-contact="true">
+  return `<form class="booking-form" id="${formId}" method="POST" action="/api/bookings" data-api-form="booking" data-form-variant="full" data-requires-contact="true">
     <input type="hidden" name="source_page" value="${escapeHtml(sourceLabel)}">
+    ${renderHoneypotField(`${formId}-website`)}
     <div class="form-row">
       <div class="form-group">
         <label for="${formId}-service">Type de service <span class="required">*</span></label>
@@ -738,8 +757,9 @@ function renderBookingSection({ pageLabel, selectedService = '' }) {
 }
 
 function renderContactForm() {
-  return `<form class="booking-form" method="POST" action="${site.formAction}" data-requires-contact="true">
+  return `<form class="booking-form" method="POST" action="/api/contacts" data-api-form="contact" data-form-variant="contact" data-requires-contact="true">
     <input type="hidden" name="source_page" value="Contact">
+    ${renderHoneypotField('contact-website')}
     <div class="form-row">
       <div class="form-group">
         <label for="contact-name">Nom complet <span class="required">*</span></label>
@@ -881,7 +901,7 @@ function renderHomeHero() {
           <div class="hero-tag" data-animate="left">Service local • Réservation • Transferts professionnels</div>
           <h1 class="hero-title" data-animate="left">Votre chauffeur à Anderlues,<br><span class="line-gold">clairement organisé</span></h1>
           <p class="hero-sub" data-animate="left">
-            Taxi Anderlues vous accompagne pour les trajets du quotidien, les navettes aéroport, les déplacements business, les besoins PMR et les courses urgentes avec une communication simple et professionnelle.
+            Taxis Services vous accompagne pour les trajets du quotidien, les navettes aéroport, les déplacements business, les besoins PMR et les courses urgentes avec une communication simple et professionnelle.
           </p>
           <div class="hero-actions" data-animate="left">
             <a href="tel:${site.phone}" class="btn btn-primary btn-lg">${icon('phone')} Appeler maintenant</a>
@@ -1389,7 +1409,7 @@ function renderLegalPage() {
       label: 'Informations légales',
       title: 'Mentions légales, confidentialité',
       highlight: 'et accessibilité',
-      text: 'Cette page regroupe les informations légales communiquées par TAXIS COURCELLOIS pour TAXIS COURCELLOIS, conformément à la législation belge en vigueur.',
+      text: 'Cette page regroupe les informations légales communiquées par Taxis Services, conformément à la législation belge en vigueur.',
       breadcrumb: [
         { name: 'Accueil', file: 'index.html' },
         { name: 'Mentions légales', file: meta.file },
@@ -1401,8 +1421,8 @@ function renderLegalPage() {
           <article class="legal-card legal-card-highlight" data-animate="left">
             <div class="legal-card-icon">${icon('briefcase')}</div>
             <p class="legal-card-label">Entreprise</p>
-            <h2>TAXIS COURCELLOIS</h2>
-            <p>Responsable de la publication : TAXIS COURCELLOIS</p>
+            <h2>Taxis Services</h2>
+            <p>Responsable de la publication : Taxis Services</p>
             <p>Rue du Pasteur Noir 30<br>6180 Courcelles<br>Belgique</p>
           </article>
           <article class="legal-card" data-animate="scale">
@@ -1410,7 +1430,7 @@ function renderLegalPage() {
             <p class="legal-card-label">Contact</p>
             <h2>Coordonnées utiles</h2>
             <p><a href="tel:+32486067927">+32 486 06 79 27</a></p>
-            <p><a href="mailto:info@taxi-anderlues.be">info@taxi-anderlues.be</a></p>
+            <p><a href="mailto:info@taxis-services.be">info@taxis-services.be</a></p>
           </article>
           <article class="legal-card" data-animate="right">
             <div class="legal-card-icon">${icon('shield')}</div>
@@ -1436,7 +1456,7 @@ function renderLegalPage() {
               <div class="legal-detail-grid">
                 <div class="legal-detail-block">
                   <h3>Nom de l'entreprise</h3>
-                  <p>TAXIS COURCELLOIS</p>
+                  <p>Taxis Services</p>
                 </div>
                 <div class="legal-detail-block">
                   <h3>Adresse du siège</h3>
@@ -1444,11 +1464,11 @@ function renderLegalPage() {
                 </div>
                 <div class="legal-detail-block">
                   <h3>Contact</h3>
-                  <p>Téléphone : <a href="tel:+32486067927">+32 486 06 79 27</a><br>Email : <a href="mailto:info@taxi-anderlues.be">info@taxi-anderlues.be</a></p>
+                  <p>Téléphone : <a href="tel:+32486067927">+32 486 06 79 27</a><br>Email : <a href="mailto:info@taxis-services.be">info@taxis-services.be</a></p>
                 </div>
                 <div class="legal-detail-block">
                   <h3>Responsable de la publication</h3>
-                  <p>TAXIS COURCELLOIS</p>
+                  <p>Taxis Services</p>
                 </div>
                 <div class="legal-detail-block">
                   <h3>Identification de l'entreprise</h3>
@@ -1459,7 +1479,7 @@ function renderLegalPage() {
                   <p>Le site est hébergé par Combell NV, prestataire situé en Belgique.</p>
                 </div>
               </div>
-              <p class="legal-note">TAXIS COURCELLOIS se réserve le droit de modifier le contenu du site à tout moment, sans préavis.</p>
+              <p class="legal-note">Taxis Services se réserve le droit de modifier le contenu du site à tout moment, sans préavis.</p>
             </article>
 
             <article id="politique-confidentialite" class="legal-section-card" data-animate="right">
@@ -1467,10 +1487,10 @@ function renderLegalPage() {
                 <span class="legal-chip">RGPD</span>
                 <h2>Politique de confidentialité</h2>
               </div>
-              <p>Chez TAXIS COURCELLOIS, la protection de vos données personnelles est une priorité. Cette politique explique comment vos données sont collectées et utilisées conformément au Règlement Général sur la Protection des Données (RGPD).</p>
+              <p>Chez Taxis Services, la protection de vos données personnelles est une priorité. Cette politique explique comment vos données sont collectées et utilisées conformément au Règlement Général sur la Protection des Données (RGPD).</p>
               <div class="legal-content-block">
                 <h3>Responsable du traitement</h3>
-                <p>TAXIS COURCELLOIS<br>Rue du Pasteur Noir 30, 6180 Courcelles, Belgique<br>Email : <a href="mailto:info@taxi-anderlues.be">info@taxi-anderlues.be</a></p>
+                <p>Taxis Services<br>Rue du Pasteur Noir 30, 6180 Courcelles, Belgique<br>Email : <a href="mailto:info@taxis-services.be">info@taxis-services.be</a></p>
               </div>
               <div class="legal-content-block">
                 <h3>Données collectées</h3>
@@ -1480,7 +1500,7 @@ function renderLegalPage() {
                   <li>Informations relatives au transport (lieu de prise en charge, lieu de destination, date, horaires)</li>
                   <li>Informations concernant le type de mobilité (par exemple : fauteuil roulant, aide à la marche), strictement nécessaires à la prestation</li>
                 </ul>
-                <p class="legal-note"><strong>Important :</strong> TAXIS COURCELLOIS ne collecte aucune donnée médicale et ne demande aucun document de santé.</p>
+                <p class="legal-note"><strong>Important :</strong> Taxis Services ne collecte aucune donnée médicale et ne demande aucun document de santé.</p>
               </div>
               <div class="legal-content-block">
                 <h3>Finalités du traitement</h3>
@@ -1489,7 +1509,7 @@ function renderLegalPage() {
                   <li>Organiser et fournir des services de transport adaptés</li>
                   <li>Communiquer avec vous dans le cadre du service</li>
                 </ul>
-                <p>La base légale du traitement est l'exécution d'un service demandé par le client et l'intérêt légitime d'TAXIS COURCELLOIS.</p>
+                <p>La base légale du traitement est l'exécution d'un service demandé par le client et l'intérêt légitime de Taxis Services.</p>
               </div>
               <div class="legal-content-block">
                 <h3>Conservation des données</h3>
@@ -1502,7 +1522,7 @@ function renderLegalPage() {
               <div class="legal-content-block">
                 <h3>Vos droits</h3>
                 <p>Conformément au RGPD, vous disposez des droits suivants : droit d'accès, de rectification, à l'effacement et d'opposition.</p>
-                <p>Pour exercer vos droits, vous pouvez contacter TAXIS COURCELLOIS à l'adresse suivante : <a href="mailto:info@taxi-anderlues.be">info@taxi-anderlues.be</a>. Les demandes sont traitées dans un délai raisonnable, conformément à la législation en vigueur.</p>
+                <p>Pour exercer vos droits, vous pouvez contacter Taxis Services à l'adresse suivante : <a href="mailto:info@taxis-services.be">info@taxis-services.be</a>. Les demandes sont traitées dans un délai raisonnable, conformément à la législation en vigueur.</p>
               </div>
               <div class="legal-content-block">
                 <h3>Réclamation</h3>
@@ -1515,7 +1535,7 @@ function renderLegalPage() {
                 <span class="legal-chip">Accessibilité</span>
                 <h2>Déclaration d'accessibilité</h2>
               </div>
-              <p>TAXIS COURCELLOIS s'engage à rendre son site internet accessible à toutes les personnes, y compris les personnes à mobilité réduite ou en situation de handicap.</p>
+              <p>Taxis Services s'engage à rendre son site internet accessible à toutes les personnes, y compris les personnes à mobilité réduite ou en situation de handicap.</p>
               <div class="legal-content-block">
                 <h3>Engagement</h3>
                 <p>Notre objectif est de garantir un accès équitable à l'information et aux services proposés sur ce site.</p>
@@ -1535,7 +1555,7 @@ function renderLegalPage() {
               <div class="legal-content-block">
                 <h3>Contact accessibilité</h3>
                 <p>Si vous rencontrez une difficulté d'accès ou souhaitez une alternative, vous pouvez nous contacter :</p>
-                <p>Téléphone : <a href="tel:+32486067927">+32 486 06 79 27</a><br>Email : <a href="mailto:info@taxi-anderlues.be">info@taxi-anderlues.be</a></p>
+                <p>Téléphone : <a href="tel:+32486067927">+32 486 06 79 27</a><br>Email : <a href="mailto:info@taxis-services.be">info@taxis-services.be</a></p>
                 <p>Nous nous engageons à vous répondre dans les meilleurs délais.</p>
               </div>
             </article>
@@ -1548,11 +1568,11 @@ function renderLegalPage() {
               <ol class="legal-numbered-list">
                 <li>
                   <strong>Services</strong>
-                  <p>TAXIS COURCELLOIS propose des services de transport adaptés aux personnes à mobilité réduite, sur demande et selon disponibilité.</p>
+                  <p>Taxis Services propose des services de transport adaptés aux personnes à mobilité réduite, sur demande et selon disponibilité.</p>
                 </li>
                 <li>
                   <strong>Réservation et annulation</strong>
-                  <p>Toute demande de transport doit être confirmée par TAXIS COURCELLOIS pour être considérée comme acceptée. Toute annulation doit être signalée dès que possible par téléphone ou par email.</p>
+                  <p>Toute demande de transport doit être confirmée par Taxis Services pour être considérée comme acceptée. Toute annulation doit être signalée dès que possible par téléphone ou par email.</p>
                 </li>
                 <li>
                   <strong>Tarifs</strong>
@@ -1560,7 +1580,7 @@ function renderLegalPage() {
                 </li>
                 <li>
                   <strong>Responsabilité</strong>
-                  <p>TAXIS COURCELLOIS s'engage à fournir ses services avec sérieux et professionnalisme.</p>
+                  <p>Taxis Services s'engage à fournir ses services avec sérieux et professionnalisme.</p>
                   <p>L'entreprise ne peut être tenue responsable des retards ou annulations dus à des circonstances indépendantes de sa volonté, telles que le trafic, les conditions météorologiques ou tout cas de force majeure.</p>
                 </li>
                 <li>
@@ -1582,9 +1602,9 @@ function renderLegalPage() {
             </div>
             <div class="legal-sidebar-card legal-sidebar-contact">
               <h3>Besoin d'une alternative ?</h3>
-              <p>Si vous avez besoin d'une aide pour consulter ces informations ou préférez un autre format, contactez directement TAXIS COURCELLOIS.</p>
+              <p>Si vous avez besoin d'une aide pour consulter ces informations ou préférez un autre format, contactez directement Taxis Services.</p>
               <a href="tel:+32486067927" class="btn btn-primary btn-lg">${icon('phone')} +32 486 06 79 27</a>
-              <a href="mailto:info@taxi-anderlues.be" class="btn btn-outline btn-lg">info@taxi-anderlues.be</a>
+              <a href="mailto:info@taxis-services.be" class="btn btn-outline btn-lg">info@taxis-services.be</a>
             </div>
           </aside>
         </div>
@@ -1605,27 +1625,231 @@ ${renderHead({
   noindex: true,
   schemas: [],
 })}
+  <link rel="stylesheet" href="assets/css/admin.css">
 </head>
-<body class="admin-private-page">
+<body class="admin-page admin-login-page" data-admin-page="login">
   <!-- Generated by scripts/build-site.mjs -->
-  <main class="admin-private-shell">
-    <section class="admin-private-card">
-      <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil de Taxi Anderlues">
-        <div class="nav-logo-icon">TA</div>
-        <span class="nav-logo-text">TAXI <span>ANDERLUES</span></span>
+  <main class="admin-shell">
+    <section class="admin-auth-card">
+      <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil de Taxis Services">
+        <div class="nav-logo-icon">TS</div>
+        <span class="nav-logo-text">TAXIS <span>SERVICES</span></span>
       </a>
-      <p class="admin-private-badge">Accès privé</p>
-      <h1>Zone réservée à l’administration</h1>
-      <p>Cette page reste en ligne uniquement comme point d’entrée discret. Elle est exclue de l’indexation, mais cela ne constitue pas une protection réelle.</p>
-      <p>Sans authentification côté hébergement ou côté backend, tout lien masqué reste accessible à une personne qui connaît l’URL.</p>
-      <div class="admin-private-actions">
-        <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+      <p class="admin-auth-badge">Accès administrateur</p>
+      <h1>Connexion sécurisée</h1>
+      <p class="admin-auth-intro">Cet accès utilise désormais une authentification backend réelle. Connectez-vous pour consulter et gérer les réservations et messages entrants.</p>
+      <form id="admin-login-form" class="admin-auth-form" novalidate>
+        <div class="form-row">
+          <div class="form-group full-width">
+            <label for="admin-email">Adresse email</label>
+            <input id="admin-email" type="email" name="email" placeholder="admin@taxis-services.be" autocomplete="username" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group full-width">
+            <label for="admin-password">Mot de passe</label>
+            <input id="admin-password" type="password" name="password" placeholder="Votre mot de passe" autocomplete="current-password" required>
+          </div>
+        </div>
+        <div class="form-message" aria-live="polite" hidden></div>
+        <button type="submit" class="btn btn-primary btn-lg form-submit">Se connecter</button>
+      </form>
+      <div class="admin-auth-links">
         <a href="index.html" class="btn btn-outline">Retour au site</a>
+        <a href="contact.html" class="btn btn-outline">Besoin d’aide ?</a>
       </div>
-      <p class="admin-private-note">Recommandation professionnelle: activer une vraie protection serveur ou une authentification backend avant tout usage administratif.</p>
+      <p class="admin-auth-note">Astuce déploiement: utilisez de préférence un domaine frontend et un sous-domaine API sous la même racine pour des cookies d’administration plus fiables.</p>
     </section>
   </main>
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/app-config.js" defer></script>
+  <script src="assets/js/admin.js" defer></script>
+</body>
+</html>`;
+}
+
+function renderAdminDashboardPage() {
+  const meta = staticPages.adminDashboard;
+  return `<!DOCTYPE html>
+<html lang="${site.lang}">
+<head>
+${renderHead({
+  title: meta.title,
+  description: meta.description,
+  canonical: pageLink(meta.file),
+  noindex: true,
+  schemas: [],
+})}
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin-page admin-dashboard-page" data-admin-page="dashboard">
+  <!-- Generated by scripts/build-site.mjs -->
+  <main class="admin-shell admin-dashboard-shell">
+    <header class="admin-topbar">
+      <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil de Taxis Services">
+        <div class="nav-logo-icon">TS</div>
+        <span class="nav-logo-text">TAXIS <span>SERVICES</span></span>
+      </a>
+      <div class="admin-topbar-actions">
+        <span id="admin-session-email" class="admin-session-email">Chargement...</span>
+        <button id="admin-logout-button" type="button" class="btn btn-outline">Se déconnecter</button>
+      </div>
+    </header>
+
+    <section class="admin-summary-grid">
+      <article class="admin-summary-card">
+        <p class="admin-summary-label">Réservations</p>
+        <strong id="summary-bookings-total" class="admin-summary-value">0</strong>
+        <span id="summary-bookings-pending" class="admin-summary-foot">En attente: 0</span>
+      </article>
+      <article class="admin-summary-card">
+        <p class="admin-summary-label">Messages</p>
+        <strong id="summary-contacts-total" class="admin-summary-value">0</strong>
+        <span id="summary-contacts-new" class="admin-summary-foot">Nouveaux: 0</span>
+      </article>
+      <article class="admin-summary-card">
+        <p class="admin-summary-label">Dernière activité</p>
+        <strong id="summary-last-activity" class="admin-summary-value">Aucune</strong>
+        <span class="admin-summary-foot">Mise à jour depuis l’API</span>
+      </article>
+    </section>
+
+    <section class="admin-manage-grid">
+      <section class="admin-card">
+        <div class="admin-card-head">
+          <div>
+            <p class="admin-card-kicker">Gestion</p>
+            <h2>Réservations</h2>
+          </div>
+          <div class="admin-filter-row">
+            <input id="bookings-search" type="search" placeholder="Nom, email, téléphone..." aria-label="Rechercher une réservation">
+            <select id="bookings-status-filter" aria-label="Filtrer les réservations par statut">
+              <option value="">Tous les statuts</option>
+              <option value="PENDING">En attente</option>
+              <option value="IN_REVIEW">En cours</option>
+              <option value="CONFIRMED">Confirmée</option>
+              <option value="COMPLETED">Terminée</option>
+              <option value="CANCELLED">Annulée</option>
+              <option value="SPAM">Spam</option>
+            </select>
+          </div>
+        </div>
+        <div id="bookings-inline-message" class="admin-inline-message" hidden></div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Client</th>
+                <th>Service</th>
+                <th>Trajet</th>
+                <th>Statut</th>
+                <th>Créée</th>
+              </tr>
+            </thead>
+            <tbody id="bookings-table-body"></tbody>
+          </table>
+        </div>
+        <div class="admin-pagination">
+          <button id="bookings-prev" type="button" class="btn btn-outline">Précédent</button>
+          <span id="bookings-page-info">Page 1</span>
+          <button id="bookings-next" type="button" class="btn btn-outline">Suivant</button>
+        </div>
+      </section>
+
+      <aside class="admin-detail-card">
+        <div class="admin-card-head">
+          <div>
+            <p class="admin-card-kicker">Détail</p>
+            <h2>Réservation sélectionnée</h2>
+          </div>
+        </div>
+        <div id="booking-detail-empty" class="admin-empty-state">Sélectionnez une réservation pour afficher ses détails.</div>
+        <div id="booking-detail-content" hidden>
+          <dl id="booking-detail-fields" class="admin-data-list"></dl>
+          <label class="admin-detail-label" for="booking-status-select">Statut</label>
+          <select id="booking-status-select">
+            <option value="PENDING">En attente</option>
+            <option value="IN_REVIEW">En cours</option>
+            <option value="CONFIRMED">Confirmée</option>
+            <option value="COMPLETED">Terminée</option>
+            <option value="CANCELLED">Annulée</option>
+            <option value="SPAM">Spam</option>
+          </select>
+          <div class="admin-action-row">
+            <button id="booking-save-button" type="button" class="btn btn-primary">Mettre à jour</button>
+            <button id="booking-delete-button" type="button" class="btn btn-outline">Supprimer</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="admin-manage-grid">
+      <section class="admin-card">
+        <div class="admin-card-head">
+          <div>
+            <p class="admin-card-kicker">Gestion</p>
+            <h2>Messages de contact</h2>
+          </div>
+          <div class="admin-filter-row">
+            <input id="contacts-search" type="search" placeholder="Nom, email, sujet..." aria-label="Rechercher un message">
+            <select id="contacts-status-filter" aria-label="Filtrer les messages par statut">
+              <option value="">Tous les statuts</option>
+              <option value="NEW">Nouveau</option>
+              <option value="IN_PROGRESS">En cours</option>
+              <option value="RESOLVED">Résolu</option>
+              <option value="ARCHIVED">Archivé</option>
+              <option value="SPAM">Spam</option>
+            </select>
+          </div>
+        </div>
+        <div id="contacts-inline-message" class="admin-inline-message" hidden></div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Contact</th>
+                <th>Sujet</th>
+                <th>Statut</th>
+                <th>Créé</th>
+              </tr>
+            </thead>
+            <tbody id="contacts-table-body"></tbody>
+          </table>
+        </div>
+        <div class="admin-pagination">
+          <button id="contacts-prev" type="button" class="btn btn-outline">Précédent</button>
+          <span id="contacts-page-info">Page 1</span>
+          <button id="contacts-next" type="button" class="btn btn-outline">Suivant</button>
+        </div>
+      </section>
+
+      <aside class="admin-detail-card">
+        <div class="admin-card-head">
+          <div>
+            <p class="admin-card-kicker">Détail</p>
+            <h2>Message sélectionné</h2>
+          </div>
+        </div>
+        <div id="contact-detail-empty" class="admin-empty-state">Sélectionnez un message pour afficher ses détails.</div>
+        <div id="contact-detail-content" hidden>
+          <dl id="contact-detail-fields" class="admin-data-list"></dl>
+          <label class="admin-detail-label" for="contact-status-select">Statut</label>
+          <select id="contact-status-select">
+            <option value="NEW">Nouveau</option>
+            <option value="IN_PROGRESS">En cours</option>
+            <option value="RESOLVED">Résolu</option>
+            <option value="ARCHIVED">Archivé</option>
+            <option value="SPAM">Spam</option>
+          </select>
+          <div class="admin-action-row">
+            <button id="contact-save-button" type="button" class="btn btn-primary">Mettre à jour</button>
+            <button id="contact-delete-button" type="button" class="btn btn-outline">Supprimer</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script src="assets/js/app-config.js" defer></script>
+  <script src="assets/js/admin.js" defer></script>
 </body>
 </html>`;
 }
@@ -1634,6 +1858,7 @@ function renderRobots() {
   return `User-agent: *
 Allow: /
 Disallow: /${site.adminPath}
+Disallow: /${site.adminDashboardPath}
 
 Sitemap: ${site.baseUrl}/sitemap.xml
 `;
@@ -1666,6 +1891,7 @@ async function main() {
     { file: staticPages.contact.file, content: renderContactPage() },
     { file: staticPages.legal.file, content: renderLegalPage() },
     { file: staticPages.admin.file, content: renderAdminPage() },
+    { file: staticPages.adminDashboard.file, content: renderAdminDashboardPage() },
     ...services.map((service) => ({ file: service.file, content: renderServiceDetailPage(service) })),
   ];
 

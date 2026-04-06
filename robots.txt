@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /admin-login.html
+Disallow: /admin-dashboard.html
 
-Sitemap: https://www.taxi-anderlues.be/sitemap.xml
+Sitemap: https://taxis-services.be/sitemap.xml
