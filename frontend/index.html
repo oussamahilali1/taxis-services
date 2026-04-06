@@ -21,6 +21,7 @@
   <meta name="twitter:description" content="Service de taxi professionnel à Anderlues pour les trajets locaux, navettes aéroport, déplacements business, transport PMR et livraisons urgentes.">
   <meta name="twitter:image" content="https://taxis-services.be/assets/img/Transport_vip.jpg">
   <title>Taxis Services | Taxi local, aéroport, business et PMR</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -129,6 +130,7 @@
       <div class="service-img-overlay">
         <div class="si-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.92 6.01A1.5 1.5 0 0 0 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-8l-2.08-5.99zM6.5 16A1.5 1.5 0 1 1 8 14.5 1.5 1.5 0 0 1 6.5 16zm11 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
         <h3 class="si-title">Taxi de proximité</h3>
+        <div class="service-coverage-note"><strong>Couverture</strong><span>Zone locale uniquement.</span></div>
         <p class="si-desc">Courses locales, rendez-vous, gares et trajets du quotidien avec prise en charge rapide selon disponibilité.</p>
         <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
       </div>
@@ -138,6 +140,7 @@
       <div class="service-img-overlay">
         <div class="si-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5C13 2.67 12.33 2 11.5 2S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div>
         <h3 class="si-title">Navette aéroport</h3>
+        <div class="service-coverage-note"><strong>Couverture</strong><span>Belgique entière sur réservation.</span></div>
         <p class="si-desc">Réservations anticipées pour aéroports et gares avec suivi de l’horaire communiqué et prise en charge planifiée.</p>
         <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
       </div>
@@ -147,6 +150,7 @@
       <div class="service-img-overlay">
         <div class="si-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 7h-3V6a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1H5a2 2 0 0 0-2 2v9a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V9a2 2 0 0 0-2-2zM10 6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4zm9 12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-5h14zm0-7H5V9h14z"/></svg></div>
         <h3 class="si-title">Transport business</h3>
+        <div class="service-coverage-note"><strong>Couverture</strong><span>Sur réservation selon itinéraire.</span></div>
         <p class="si-desc">Déplacements professionnels avec une présentation soignée, un service discret et une organisation adaptée à votre agenda.</p>
         <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
       </div>
@@ -156,6 +160,7 @@
       <div class="service-img-overlay">
         <div class="si-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14-4-4 1.41-1.41L11 12.17l5.59-5.58L18 8l-7 7z"/></svg></div>
         <h3 class="si-title">Transport PMR</h3>
+        <div class="service-coverage-note"><strong>Couverture</strong><span>Sur réservation selon besoin.</span></div>
         <p class="si-desc">Déplacements organisés avec attention pour les personnes à mobilité réduite, sur réservation et selon le besoin communiqué.</p>
         <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
       </div>
@@ -165,6 +170,7 @@
       <div class="service-img-overlay">
         <div class="si-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
         <h3 class="si-title">Livraison de colis</h3>
+        <div class="service-coverage-note"><strong>Couverture</strong><span>Sur demande selon retrait et destination.</span></div>
         <p class="si-desc">Acheminement direct de documents, enveloppes et petits colis avec une communication simple du retrait à la remise.</p>
         <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
       </div>
@@ -215,39 +221,37 @@
       </div>
     </div>
   </section>
-    <section id="zones" class="section areas">
+    <section id="zones" class="section areas service-area-section">
     <div class="container">
-      <div class="home-areas-inner">
-        <div class="home-areas-content" data-animate="left">
-          <div class="label divider-left">Zones desservies</div>
-          <h2 class="heading-xl">Une base locale,<br><span class="text-gold">des trajets dans toute la région</span></h2>
+      <div class="home-areas-inner service-area-layout">
+        <div class="home-areas-content service-area-content" data-animate="left">
+          <div class="label divider-left">Zone de service</div>
+          <h2 class="heading-xl">Nos trajets locaux dans la zone affichée,<br><span class="text-gold">la navette aéroport partout en Belgique</span></h2>
           <p class="text-muted" style="margin-top: 20px;">
-            Depuis Anderlues, nous préparons les trajets dans la région du Centre, vers Charleroi, les aéroports, les gares et d’autres destinations en Belgique selon la demande.
+            Nos trajets locaux sont assurés dans la zone ci-dessous.
           </p>
-          <div class="elegant-city-list">
-            <div class="elegant-city-item">
-                <div class="elegant-city-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
-                <div class="elegant-city-text">
-                  <h4>Anderlues</h4>
-                  <p>Base locale pour les départs rapides et les trajets du quotidien.</p>
-                </div>
-              </div><div class="elegant-city-item">
-                <div class="elegant-city-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
-                <div class="elegant-city-text">
-                  <h4>Région du Centre</h4>
-                  <p>Chapelle-lez-Herlaimont, Courcelles, Fontaine-l’Évêque et alentours.</p>
-                </div>
-              </div><div class="elegant-city-item">
-                <div class="elegant-city-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
-                <div class="elegant-city-text">
-                  <h4>Belgique</h4>
-                  <p>Aéroports, gares, rendez-vous professionnels et longues distances.</p>
-                </div>
-              </div>
+          <p class="text-muted service-area-secondary">
+            La navette aéroport est disponible partout en Belgique sur réservation.
+          </p>
+          <div class="service-area-badges">
+            <span class="service-area-badge">Zone locale</span>
+            <span class="service-area-badge service-area-badge--dark">Navette aéroport : Belgique entière</span>
           </div>
+          <div class="service-area-note">
+            <strong>Important</strong>
+            <p>La carte montre uniquement la zone locale des courses régulières. Elle ne représente pas la couverture nationale de la navette aéroport.</p>
+          </div>
+          <a href="services.html#zones" class="btn btn-primary btn-lg">Voir nos services</a>
         </div>
-        <div class="home-areas-img" data-animate="right">
-          <img src="assets/img/ex.jpg" alt="Taxi sur la route en Belgique" width="1024" height="683" loading="lazy">
+        <div class="home-areas-img service-area-map-panel" data-animate="right">
+          <div class="service-area-map-shell">
+            <div class="service-area-map-head">
+              <span class="service-area-map-tag">Carte locale</span>
+              <p class="service-area-map-subtitle">Le polygone représente uniquement les trajets locaux. La navette aéroport suit une règle de couverture différente.</p>
+            </div>
+            <div class="service-area-map service-area-map--compact" data-service-area-map aria-label="Carte de la zone locale de service"></div>
+            <p class="service-area-map-caption">Base affichée : Anderlues. Vous pourrez remplacer plus tard le GeoJSON par votre polygone définitif.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -425,6 +429,8 @@
   </footer>
   <button class="scroll-top" type="button" aria-label="Retour en haut"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7.41 15.41 4.59-4.58 4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
   <script src="assets/js/app-config.js" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="assets/js/service-area.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <a href="tel:+32486067927" class="call-button" aria-label="Appeler Taxis Services">
     <i class="fas fa-phone" aria-hidden="true"></i>

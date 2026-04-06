@@ -21,6 +21,7 @@
   <meta name="twitter:description" content="Découvrez les services de Taxis Services: taxi local, navette aéroport, transport business, transport PMR et livraison de colis.">
   <meta name="twitter:image" content="https://taxis-services.be/assets/img/Transport_vip.jpg">
   <title>Nos services | Taxis Services</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -89,6 +90,7 @@
       <div class="service-img-overlay">
         <div class="si-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.92 6.01A1.5 1.5 0 0 0 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-8l-2.08-5.99zM6.5 16A1.5 1.5 0 1 1 8 14.5 1.5 1.5 0 0 1 6.5 16zm11 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
         <h3 class="si-title">Taxi de proximité</h3>
+        <div class="service-coverage-note"><strong>Couverture</strong><span>Zone locale uniquement.</span></div>
         <p class="si-desc">Courses locales, rendez-vous, gares et trajets du quotidien avec prise en charge rapide selon disponibilité.</p>
         <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
       </div>
@@ -98,6 +100,7 @@
       <div class="service-img-overlay">
         <div class="si-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5C13 2.67 12.33 2 11.5 2S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div>
         <h3 class="si-title">Navette aéroport</h3>
+        <div class="service-coverage-note"><strong>Couverture</strong><span>Belgique entière sur réservation.</span></div>
         <p class="si-desc">Réservations anticipées pour aéroports et gares avec suivi de l’horaire communiqué et prise en charge planifiée.</p>
         <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
       </div>
@@ -107,6 +110,7 @@
       <div class="service-img-overlay">
         <div class="si-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 7h-3V6a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1H5a2 2 0 0 0-2 2v9a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V9a2 2 0 0 0-2-2zM10 6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4zm9 12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-5h14zm0-7H5V9h14z"/></svg></div>
         <h3 class="si-title">Transport business</h3>
+        <div class="service-coverage-note"><strong>Couverture</strong><span>Sur réservation selon itinéraire.</span></div>
         <p class="si-desc">Déplacements professionnels avec une présentation soignée, un service discret et une organisation adaptée à votre agenda.</p>
         <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
       </div>
@@ -116,6 +120,7 @@
       <div class="service-img-overlay">
         <div class="si-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14-4-4 1.41-1.41L11 12.17l5.59-5.58L18 8l-7 7z"/></svg></div>
         <h3 class="si-title">Transport PMR</h3>
+        <div class="service-coverage-note"><strong>Couverture</strong><span>Sur réservation selon besoin.</span></div>
         <p class="si-desc">Déplacements organisés avec attention pour les personnes à mobilité réduite, sur réservation et selon le besoin communiqué.</p>
         <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
       </div>
@@ -125,6 +130,7 @@
       <div class="service-img-overlay">
         <div class="si-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
         <h3 class="si-title">Livraison de colis</h3>
+        <div class="service-coverage-note"><strong>Couverture</strong><span>Sur demande selon retrait et destination.</span></div>
         <p class="si-desc">Acheminement direct de documents, enveloppes et petits colis avec une communication simple du retrait à la remise.</p>
         <span class="si-link">Découvrir <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></span>
       </div>
@@ -132,29 +138,86 @@
         </div>
       </div>
     </section>
-    <section id="zones" class="section services" style="background: var(--bg-alt);">
+    <section id="zones" class="section services service-area-section-alt">
       <div class="container">
-        <div class="services-header">
-          <div class="label">Zones desservies</div>
-          <h2 class="heading-xl">Au départ d’Anderlues<br><span class="text-gold">vers la région et la Belgique</span></h2>
+        <div class="services-header" data-animate="scale">
+          <div class="label">Zone de service</div>
+          <h2 class="heading-xl">Couverture selon le service</h2>
+          <div class="divider"></div>
+          <p class="text-muted" style="margin-top:18px; max-width: 760px; margin-left:auto; margin-right:auto;">
+            La zone de couverture dépend du type de trajet choisi. Les courses locales sont assurées dans notre zone de service. Les navettes aéroport sont disponibles dans toute la Belgique sur réservation.
+          </p>
         </div>
-        <div class="services-grid">
-          <article class="service-card" data-animate="left">
-      <div class="service-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
-      <h3 class="service-name">Anderlues</h3>
-      <p class="service-desc">Base locale pour les départs rapides et les trajets du quotidien.</p>
-      <a href="index.html#zones" class="service-link">Voir la zone <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
-    </article><article class="service-card" data-animate="right">
-      <div class="service-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
-      <h3 class="service-name">Région du Centre</h3>
-      <p class="service-desc">Chapelle-lez-Herlaimont, Courcelles, Fontaine-l’Évêque et alentours.</p>
-      <a href="index.html#zones" class="service-link">Voir la zone <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
-    </article><article class="service-card" data-animate="left">
-      <div class="service-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5C13 2.67 12.33 2 11.5 2S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div>
-      <h3 class="service-name">Belgique</h3>
-      <p class="service-desc">Aéroports, gares, rendez-vous professionnels et longues distances.</p>
-      <a href="services.html#zones" class="service-link">Voir la zone <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
-    </article>
+        <div class="service-area-layout service-area-layout--wide">
+          <div class="service-area-map-panel" data-animate="left">
+            <div class="service-area-map-shell">
+              <div class="service-area-map-head">
+                <span class="service-area-map-tag">Zone locale</span>
+                <p class="service-area-map-subtitle">La carte ne représente que le service local. Elle ne doit pas être utilisée pour interpréter la couverture de la navette aéroport.</p>
+              </div>
+              <div class="service-area-map" data-service-area-map aria-label="Carte de la zone locale de service"></div>
+              <p class="service-area-map-caption">Le marqueur indique la base d’Anderlues. Le polygone est stocké séparément pour pouvoir être remplacé facilement par vos coordonnées finales.</p>
+            </div>
+          </div>
+          <div class="service-area-card" data-animate="right">
+            <h3>La carte ne s’applique qu’au service local</h3>
+            <p>Le polygone affiché correspond uniquement aux courses locales. La navette aéroport peut être réservée partout en Belgique. Les autres prestations sont confirmées selon le trajet, la destination et la réservation.</p>
+            <div class="service-area-badges">
+              <span class="service-area-badge">Zone locale</span>
+              <span class="service-area-badge service-area-badge--dark">Navette aéroport : Belgique entière</span>
+            </div>
+            <div class="service-area-rules">
+              <div class="service-area-rule">
+                <strong>Service local</strong>
+                <span>La carte ci-contre définit la zone des courses locales.</span>
+              </div>
+              <div class="service-area-rule">
+                <strong>Navette aéroport</strong>
+                <span>Disponible dans toute la Belgique sur réservation.</span>
+              </div>
+              <div class="service-area-rule">
+                <strong>Autres services</strong>
+                <span>Business, PMR et livraisons sont étudiés selon le trajet et la destination annoncés.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="services-grid service-coverage-grid">
+          <article class="service-card service-coverage-card" data-animate="left">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.92 6.01A1.5 1.5 0 0 0 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-8l-2.08-5.99zM6.5 16A1.5 1.5 0 1 1 8 14.5 1.5 1.5 0 0 1 6.5 16zm11 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
+            <h3 class="service-name">Service local</h3>
+            <p class="service-desc">Disponible dans notre zone locale affichée sur la carte.</p>
+            <div class="coverage-pill">Couverture : zone locale uniquement.</div>
+            <a href="city-taxi.html" class="service-link">Voir le service <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+          </article>
+          <article class="service-card service-coverage-card" data-animate="scale">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5C13 2.67 12.33 2 11.5 2S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div>
+            <h3 class="service-name">Navette aéroport</h3>
+            <p class="service-desc">Disponible dans toute la Belgique avec réservation préalable.</p>
+            <div class="coverage-pill">Couverture : Belgique entière sur réservation.</div>
+            <a href="navette-aeroport.html" class="service-link">Voir le service <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+          </article>
+          <article class="service-card service-coverage-card" data-animate="right">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 7h-3V6a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1H5a2 2 0 0 0-2 2v9a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V9a2 2 0 0 0-2-2zM10 6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4zm9 12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-5h14zm0-7H5V9h14z"/></svg></div>
+            <h3 class="service-name">Transport business</h3>
+            <p class="service-desc">Disponible sur réservation selon le trajet et l’itinéraire professionnel.</p>
+            <div class="coverage-pill">Couverture : sur réservation selon le trajet.</div>
+            <a href="business-taxi.html" class="service-link">Voir le service <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+          </article>
+          <article class="service-card service-coverage-card" data-animate="left">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14-4-4 1.41-1.41L11 12.17l5.59-5.58L18 8l-7 7z"/></svg></div>
+            <h3 class="service-name">Transport PMR</h3>
+            <p class="service-desc">Disponible sur réservation selon le besoin d’assistance et le trajet communiqué.</p>
+            <div class="coverage-pill">Couverture : sur réservation selon besoin.</div>
+            <a href="pmr-taxi.html" class="service-link">Voir le service <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+          </article>
+          <article class="service-card service-coverage-card" data-animate="scale">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
+            <h3 class="service-name">Livraison de colis</h3>
+            <p class="service-desc">Disponible sur demande selon le retrait, la destination et l’urgence annoncée.</p>
+            <div class="coverage-pill">Couverture : sur demande selon retrait et destination.</div>
+            <a href="parcel-delivery.html" class="service-link">Voir le service <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+          </article>
         </div>
       </div>
     </section>
@@ -331,6 +394,8 @@
   </footer>
   <button class="scroll-top" type="button" aria-label="Retour en haut"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7.41 15.41 4.59-4.58 4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
   <script src="assets/js/app-config.js" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="assets/js/service-area.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <a href="tel:+32486067927" class="call-button" aria-label="Appeler Taxis Services">
     <i class="fas fa-phone" aria-hidden="true"></i>
