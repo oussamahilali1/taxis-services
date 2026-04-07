@@ -6,7 +6,10 @@
   <meta name="description" content="Découvrez les services de Taxis Services: taxi local, navette aéroport, transport business, transport PMR et livraison de colis.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0c0c0c">
-  <meta name="app-api-base-url" content="http://localhost:4000">
+  <meta name="app-api-base-url" content="">
+  <meta name="app-captcha-mode" content="">
+  <meta name="app-captcha-provider" content="">
+  <meta name="app-captcha-site-key" content="">
   <link rel="canonical" href="https://taxis-services.be/services.html">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <meta property="og:locale" content="fr_BE">
@@ -22,6 +25,7 @@
   <meta name="twitter:image" content="https://taxis-services.be/assets/img/Transport_vip.jpg">
   <title>Nos services | Taxis Services</title>
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TaxiService","name":"Taxis Services","url":"https://taxis-services.be","telephone":"+32486067927","email":"info@taxis-services.be","address":{"@type":"PostalAddress","addressLocality":"Anderlues","addressRegion":"Hainaut","addressCountry":"BE"},"areaServed":["Anderlues","Chapelle-lez-Herlaimont","Courcelles","Fontaine-l’Évêque","Montigny-le-Tilleul","Belgique"],"serviceType":["Taxi de proximité","Navette aéroport","Transport business","Transport PMR","Livraison de colis"]}</script>
@@ -132,14 +136,55 @@
         </div>
       </div>
     </section>
-    <section id="zones" class="section services" style="background: var(--bg-alt);">
-      <div class="container">
-        <div class="services-header">
+    <section id="zones" class="section service-area-section-alt">
+    <div class="container">
+      <div class="service-area-layout service-area-layout--wide">
+        <div class="service-area-content" data-animate="left">
           <div class="label">Zones desservies</div>
           <h2 class="heading-xl">Au départ d’Anderlues<br><span class="text-gold">vers la région et la Belgique</span></h2>
+          <p class="text-muted" style="margin-top: 20px;">La carte locale complète désormais la page Services pour distinguer clairement la couverture de proximité des trajets aéroport, business et longue distance qui restent organisés sur demande.</p>
+          <div class="service-area-badges">
+            <span class="service-area-badge service-area-badge--dark">Anderlues</span><span class="service-area-badge">Région du Centre</span><span class="service-area-badge">Belgique</span>
+          </div>
+          <div class="service-area-note">
+            <strong>Important</strong>
+            <p>La carte ci-dessous montre la zone locale préparée pour les courses de proximité. Les navettes aéroport, les trajets business et les longues distances restent possibles au-delà de cette zone selon la demande.</p>
+          </div>
+          <div class="service-area-card">
+            <h3>Comment lire cette zone</h3>
+            <div class="service-area-rules">
+              <div class="service-area-rule">
+                <strong>Courses locales</strong>
+                <span>La zone affichée correspond à la couverture de proximité autour d'Anderlues pour les départs du quotidien.</span>
+              </div>
+              <div class="service-area-rule">
+                <strong>Navettes aéroport</strong>
+                <span>Les transferts aéroport et gares peuvent partir au-delà de cette zone, avec organisation anticipée.</span>
+              </div>
+              <div class="service-area-rule">
+                <strong>Demandes spécifiques</strong>
+                <span>PMR, business et longues distances sont confirmés selon le trajet, l'horaire et les contraintes annoncées.</span>
+              </div>
+            </div>
+          </div>
+          <a href="#booking" class="btn btn-primary btn-lg">Demander un trajet</a>
         </div>
-        <div class="services-grid">
-          <article class="service-card" data-animate="left">
+        <div class="service-area-map-panel" data-animate="right">
+          <div class="service-area-map-shell">
+            <div class="service-area-map-head">
+              <div>
+                <span class="service-area-map-tag">Anderlues</span>
+                <h3>Visualisation de la zone locale</h3>
+              </div>
+              <p class="service-area-map-subtitle">Affichage indicatif de la zone de proximité actuellement intégrée au site.</p>
+            </div>
+            <div class="service-area-map service-area-map--compact" data-service-area-map data-service-area-src="assets/data/service-area.geojson"></div>
+            <p class="service-area-map-caption">La base d'Anderlues est indiquée sur la carte. Pour les demandes hors zone, utilisez le formulaire ou contactez directement Taxis Services.</p>
+          </div>
+        </div>
+      </div>
+      <div class="services-grid service-coverage-grid">
+        <article class="service-card" data-animate="left">
       <div class="service-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
       <h3 class="service-name">Anderlues</h3>
       <p class="service-desc">Base locale pour les départs rapides et les trajets du quotidien.</p>
@@ -155,9 +200,9 @@
       <p class="service-desc">Aéroports, gares, rendez-vous professionnels et longues distances.</p>
       <a href="services.html#zones" class="service-link">Voir la zone <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
     </article>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
     <section id="booking" class="section booking-section">
     <div class="container">
       <div class="booking-inner">
@@ -191,8 +236,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="services-booking-passengers">Passagers</label>
-        <select id="services-booking-passengers" name="passengers">
+        <label for="services-booking-passengers">Passagers <span class="required">*</span></label>
+        <select id="services-booking-passengers" name="passengers" required>
           <option value="">Selon votre besoin</option>
           <option value="1">1 passager</option>
           <option value="2">2 passagers</option>
@@ -208,8 +253,8 @@
         <input id="services-booking-name" type="text" name="name" placeholder="Votre nom" required>
       </div>
       <div class="form-group">
-        <label for="services-booking-phone">Téléphone</label>
-        <input id="services-booking-phone" type="tel" name="phone" placeholder="+32 470 12 34 56" data-contact-field>
+        <label for="services-booking-phone">Téléphone <span class="required">*</span></label>
+        <input id="services-booking-phone" type="tel" name="phone" placeholder="+32 470 12 34 56" data-contact-field required>
       </div>
     </div>
     <div class="form-row">
@@ -230,14 +275,14 @@
     </div>
     <div class="form-row">
       <div class="form-group full-width">
-        <label for="services-booking-dropoff">Adresse de destination</label>
-        <input id="services-booking-dropoff" type="text" name="dropoff" placeholder="Adresse d’arrivée ou lieu à desservir">
+        <label for="services-booking-dropoff">Adresse de destination <span class="required">*</span></label>
+        <input id="services-booking-dropoff" type="text" name="dropoff" placeholder="Adresse d’arrivée ou lieu à desservir" required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="services-booking-datetime">Date et heure souhaitées</label>
-        <input id="services-booking-datetime" type="datetime-local" name="datetime">
+        <label for="services-booking-datetime">Date et heure souhaitées <span class="required">*</span></label>
+        <input id="services-booking-datetime" type="datetime-local" name="datetime" required>
       </div>
       <div class="form-group">
         <label for="services-booking-vehicle">Type de véhicule</label>
@@ -267,6 +312,7 @@
         <label for="services-booking-accessibility" class="check-label">Besoin d’accessibilité ou d’assistance</label>
       </div>
     </div>
+    <input type="hidden" name="captchaToken" value="">
     <div class="form-message" aria-live="polite" hidden></div>
     <button type="submit" class="btn btn-primary btn-lg form-submit">Envoyer la demande</button>
   </form>
@@ -332,6 +378,8 @@
   <button class="scroll-top" type="button" aria-label="Retour en haut"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7.41 15.41 4.59-4.58 4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
   <script src="assets/js/app-config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+  <script src="assets/js/service-area.js" defer></script>
   <a href="tel:+32486067927" class="call-button" aria-label="Appeler Taxis Services">
     <i class="fas fa-phone" aria-hidden="true"></i>
   </a>

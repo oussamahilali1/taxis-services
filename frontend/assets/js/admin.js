@@ -102,10 +102,14 @@
     );
   }
 
-  function getBookingMetadata(booking) {
-    return booking && booking.metadata && typeof booking.metadata === 'object' && !Array.isArray(booking.metadata)
-      ? booking.metadata
+  function getRecordMetadata(record) {
+    return record && record.metadata && typeof record.metadata === 'object' && !Array.isArray(record.metadata)
+      ? record.metadata
       : {};
+  }
+
+  function getBookingMetadata(booking) {
+    return getRecordMetadata(booking);
   }
 
   function formatInlineContactSummary(item) {
@@ -195,6 +199,38 @@
       serviceRules.airportSupport.nationwideCoverage
     ) {
       lines.push('Couverture aeroport: Belgique entiere.');
+    }
+
+    return lines.length ? lines.join('\n') : 'Non renseigne';
+  }
+
+  function formatSubmissionSecurity(metadata) {
+    var submissionSecurity =
+      metadata.submissionSecurity &&
+      typeof metadata.submissionSecurity === 'object' &&
+      !Array.isArray(metadata.submissionSecurity)
+        ? metadata.submissionSecurity
+        : null;
+    var lines = [];
+
+    if (!submissionSecurity) {
+      return 'Non renseigne';
+    }
+
+    if (submissionSecurity.duplicateDetected) {
+      lines.push('Doublon probable detecte.');
+    }
+
+    if (submissionSecurity.honeypotTriggered) {
+      lines.push('Le honeypot a ete renseigne.');
+    }
+
+    if (submissionSecurity.captchaVerified) {
+      lines.push('Captcha verifie.');
+    }
+
+    if (submissionSecurity.captchaProvider) {
+      lines.push('Provider: ' + submissionSecurity.captchaProvider);
     }
 
     return lines.length ? lines.join('\n') : 'Non renseigne';
@@ -295,6 +331,31 @@
       .join('');
   }
 
+  function bindSelectableRows(rows, idAttribute, openItem, labelPrefix) {
+    rows.forEach(function (row) {
+      var itemId = row.getAttribute(idAttribute);
+      if (!itemId) {
+        return;
+      }
+
+      row.setAttribute('tabindex', '0');
+      row.setAttribute('role', 'button');
+      row.setAttribute('aria-pressed', row.classList.contains('is-active') ? 'true' : 'false');
+      row.setAttribute('aria-label', labelPrefix + ' ' + row.textContent.trim().replace(/\s+/g, ' '));
+
+      row.addEventListener('click', function () {
+        openItem(itemId);
+      });
+
+      row.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openItem(itemId);
+        }
+      });
+    });
+  }
+
   function setLoadingRows(tbody, colspan, message) {
     tbody.innerHTML =
       '<tr><td colspan="' +
@@ -390,11 +451,7 @@
       })
       .join('');
 
-    tbody.querySelectorAll('tr[data-booking-id]').forEach(function (row) {
-      row.addEventListener('click', function () {
-        openBooking(row.getAttribute('data-booking-id'));
-      });
-    });
+    bindSelectableRows(tbody.querySelectorAll('tr[data-booking-id]'), 'data-booking-id', openBooking, 'Ouvrir la réservation');
   }
 
   function renderContactsTable(items) {
@@ -434,11 +491,7 @@
       })
       .join('');
 
-    tbody.querySelectorAll('tr[data-contact-id]').forEach(function (row) {
-      row.addEventListener('click', function () {
-        openContact(row.getAttribute('data-contact-id'));
-      });
-    });
+    bindSelectableRows(tbody.querySelectorAll('tr[data-contact-id]'), 'data-contact-id', openContact, 'Ouvrir le message');
   }
 
   function loadBookings() {
@@ -525,6 +578,7 @@
         { label: 'Accessibilite', value: formatBooleanLabel(metadata.accessibilityNeeded) },
         { label: 'Details aeroport', value: formatAirportDetails(metadata) },
         { label: 'Couverture', value: formatCoverageDetails(metadata) },
+        { label: 'Securite', value: formatSubmissionSecurity(metadata) },
         { label: 'Notes', value: booking.notes || 'Aucune note' },
         { label: 'Source', value: booking.sourcePage || 'Site web' },
         { label: 'Créée', value: formatDate(booking.createdAt) },
@@ -540,12 +594,14 @@
   function openContact(id) {
     apiRequest('/api/admin/contacts/' + encodeURIComponent(id)).then(function (payload) {
       var contact = payload.data;
+      var metadata = getRecordMetadata(contact);
       state.contacts.selectedId = contact.id;
       renderDataList(qs('#contact-detail-fields'), [
         { label: 'Contact', value: contact.fullName },
         { label: 'Coordonnées', value: contact.email || contact.phone || 'Coordonnée à confirmer' },
         { label: 'Sujet', value: contact.subject },
         { label: 'Message', value: contact.message },
+        { label: 'Securite', value: formatSubmissionSecurity(metadata) },
         { label: 'Source', value: contact.sourcePage || 'Site web' },
         { label: 'Créé', value: formatDate(contact.createdAt) },
       ]);

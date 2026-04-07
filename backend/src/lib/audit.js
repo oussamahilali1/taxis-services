@@ -1,18 +1,13 @@
 import crypto from 'node:crypto';
 import { sanitizeText } from './sanitize.js';
 
+function normalizeIp(value) {
+  const normalized = sanitizeText(value, { maxLength: 120 }) || 'unknown';
+  return normalized.startsWith('::ffff:') ? normalized.slice(7) : normalized;
+}
+
 export function getClientIp(req) {
-  const forwardedFor = req.headers['x-forwarded-for'];
-  if (typeof forwardedFor === 'string' && forwardedFor.trim()) {
-    return forwardedFor.split(',')[0].trim();
-  }
-
-  const realIp = req.headers['x-real-ip'];
-  if (typeof realIp === 'string' && realIp.trim()) {
-    return realIp.trim();
-  }
-
-  return req.ip || req.socket?.remoteAddress || 'unknown';
+  return normalizeIp(req.ip || req.socket?.remoteAddress || '');
 }
 
 export function getUserAgent(req) {

@@ -73,7 +73,7 @@ export async function createContact(data, { captcha } = {}) {
     data: {
       ...contactData,
       metadata: Object.keys(nextMetadata).length > 0 ? nextMetadata : undefined,
-      status: website || duplicateDetected ? ContactStatus.SPAM : ContactStatus.NEW,
+      status: website ? ContactStatus.SPAM : ContactStatus.NEW,
     },
   });
 }

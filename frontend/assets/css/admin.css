@@ -277,6 +277,12 @@ body.admin-page {
   background: rgba(245, 199, 26, 0.08);
 }
 
+.admin-table tbody tr:focus-visible {
+  outline: none;
+  background: rgba(245, 199, 26, 0.12);
+  box-shadow: inset 0 0 0 2px rgba(245, 199, 26, 0.72);
+}
+
 .admin-meta-strong {
   display: block;
   font-weight: 700;

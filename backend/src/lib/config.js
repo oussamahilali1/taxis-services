@@ -113,6 +113,10 @@ export const config = {
     captchaProvider: parseCaptchaProvider(process.env.PUBLIC_CAPTCHA_PROVIDER),
     captchaSecret: process.env.PUBLIC_CAPTCHA_SECRET || '',
   },
+  maintenance: {
+    cleanupIntervalMs: parseDurationMs(process.env.MAINTENANCE_CLEANUP_INTERVAL_MS, 30 * 60 * 1000),
+    rateLimitBucketRetentionMs: parseDurationMs(process.env.RATE_LIMIT_BUCKET_RETENTION_MS, 2 * 24 * 60 * 60 * 1000),
+  },
 };
 
 if (config.auth.cookieSameSite === 'none' && !config.auth.cookieSecure) {

@@ -6,7 +6,10 @@
   <meta name="description" content="Livraison rapide de documents et colis avec retrait sur demande et confirmation de la prise en charge.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0c0c0c">
-  <meta name="app-api-base-url" content="http://localhost:4000">
+  <meta name="app-api-base-url" content="">
+  <meta name="app-captcha-mode" content="">
+  <meta name="app-captcha-provider" content="">
+  <meta name="app-captcha-site-key" content="">
   <link rel="canonical" href="https://taxis-services.be/parcel-delivery.html">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <meta property="og:locale" content="fr_BE">
@@ -22,6 +25,7 @@
   <meta name="twitter:image" content="https://taxis-services.be/assets/img/colis.jpg">
   <title>Livraison urgente de colis | Taxis Services</title>
   <link rel="stylesheet" href="assets/css/main.css">
+
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TaxiService","name":"Taxis Services","url":"https://taxis-services.be","telephone":"+32486067927","email":"info@taxis-services.be","address":{"@type":"PostalAddress","addressLocality":"Anderlues","addressRegion":"Hainaut","addressCountry":"BE"},"areaServed":["Anderlues","Chapelle-lez-Herlaimont","Courcelles","Fontaine-l’Évêque","Montigny-le-Tilleul","Belgique"],"serviceType":["Taxi de proximité","Navette aéroport","Transport business","Transport PMR","Livraison de colis"]}</script>
@@ -163,8 +167,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="livraison-de-colis-booking-passengers">Passagers</label>
-        <select id="livraison-de-colis-booking-passengers" name="passengers">
+        <label for="livraison-de-colis-booking-passengers">Passagers <span class="required">*</span></label>
+        <select id="livraison-de-colis-booking-passengers" name="passengers" required>
           <option value="">Selon votre besoin</option>
           <option value="1">1 passager</option>
           <option value="2">2 passagers</option>
@@ -180,8 +184,8 @@
         <input id="livraison-de-colis-booking-name" type="text" name="name" placeholder="Votre nom" required>
       </div>
       <div class="form-group">
-        <label for="livraison-de-colis-booking-phone">Téléphone</label>
-        <input id="livraison-de-colis-booking-phone" type="tel" name="phone" placeholder="+32 470 12 34 56" data-contact-field>
+        <label for="livraison-de-colis-booking-phone">Téléphone <span class="required">*</span></label>
+        <input id="livraison-de-colis-booking-phone" type="tel" name="phone" placeholder="+32 470 12 34 56" data-contact-field required>
       </div>
     </div>
     <div class="form-row">
@@ -202,14 +206,14 @@
     </div>
     <div class="form-row">
       <div class="form-group full-width">
-        <label for="livraison-de-colis-booking-dropoff">Adresse de destination</label>
-        <input id="livraison-de-colis-booking-dropoff" type="text" name="dropoff" placeholder="Adresse d’arrivée ou lieu à desservir">
+        <label for="livraison-de-colis-booking-dropoff">Adresse de destination <span class="required">*</span></label>
+        <input id="livraison-de-colis-booking-dropoff" type="text" name="dropoff" placeholder="Adresse d’arrivée ou lieu à desservir" required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label for="livraison-de-colis-booking-datetime">Date et heure souhaitées</label>
-        <input id="livraison-de-colis-booking-datetime" type="datetime-local" name="datetime">
+        <label for="livraison-de-colis-booking-datetime">Date et heure souhaitées <span class="required">*</span></label>
+        <input id="livraison-de-colis-booking-datetime" type="datetime-local" name="datetime" required>
       </div>
       <div class="form-group">
         <label for="livraison-de-colis-booking-vehicle">Type de véhicule</label>
@@ -239,6 +243,7 @@
         <label for="livraison-de-colis-booking-accessibility" class="check-label">Besoin d’accessibilité ou d’assistance</label>
       </div>
     </div>
+    <input type="hidden" name="captchaToken" value="">
     <div class="form-message" aria-live="polite" hidden></div>
     <button type="submit" class="btn btn-primary btn-lg form-submit">Envoyer la demande</button>
   </form>
@@ -304,6 +309,8 @@
   <button class="scroll-top" type="button" aria-label="Retour en haut"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7.41 15.41 4.59-4.58 4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
   <script src="assets/js/app-config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+  
+  
   <a href="tel:+32486067927" class="call-button" aria-label="Appeler Taxis Services">
     <i class="fas fa-phone" aria-hidden="true"></i>
   </a>

@@ -300,6 +300,176 @@
     return path;
   }
 
+  var captchaConfig = (function () {
+    var modeMeta = document.querySelector('meta[name="app-captcha-mode"]');
+    var providerMeta = document.querySelector('meta[name="app-captcha-provider"]');
+    var siteKeyMeta = document.querySelector('meta[name="app-captcha-site-key"]');
+    var mode = modeMeta ? String(modeMeta.getAttribute('content') || '').trim().toLowerCase() : '';
+    var provider = providerMeta ? String(providerMeta.getAttribute('content') || '').trim().toLowerCase() : '';
+    var siteKey = siteKeyMeta ? String(siteKeyMeta.getAttribute('content') || '').trim() : '';
+
+    return {
+      mode: mode,
+      provider: provider,
+      siteKey: siteKey,
+      enabled: Boolean(siteKey && provider && mode && mode !== 'off'),
+    };
+  })();
+
+  var captchaScriptPromise = null;
+
+  function getCaptchaApi() {
+    if (captchaConfig.provider === 'turnstile') {
+      return window.turnstile || null;
+    }
+
+    if (captchaConfig.provider === 'hcaptcha') {
+      return window.hcaptcha || null;
+    }
+
+    return null;
+  }
+
+  function loadCaptchaScript() {
+    if (!captchaConfig.enabled) {
+      return Promise.resolve(null);
+    }
+
+    var existingApi = getCaptchaApi();
+    if (existingApi) {
+      return Promise.resolve(existingApi);
+    }
+
+    if (captchaScriptPromise) {
+      return captchaScriptPromise;
+    }
+
+    captchaScriptPromise = new Promise(function (resolve, reject) {
+      var script = document.createElement('script');
+      script.async = true;
+      script.defer = true;
+      script.src =
+        captchaConfig.provider === 'turnstile'
+          ? 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
+          : 'https://js.hcaptcha.com/1/api.js?render=explicit';
+
+      script.onload = function () {
+        var api = getCaptchaApi();
+        if (api) {
+          resolve(api);
+          return;
+        }
+
+        reject(new Error('Captcha API unavailable after script load.'));
+      };
+
+      script.onerror = function () {
+        reject(new Error('Captcha script failed to load.'));
+      };
+
+      document.head.appendChild(script);
+    });
+
+    return captchaScriptPromise;
+  }
+
+  function ensureCaptchaTokenField(form) {
+    var tokenField = getFieldByName(form, 'captchaToken');
+    if (tokenField) {
+      return tokenField;
+    }
+
+    tokenField = document.createElement('input');
+    tokenField.type = 'hidden';
+    tokenField.name = 'captchaToken';
+    form.appendChild(tokenField);
+    return tokenField;
+  }
+
+  function resetCaptcha(form) {
+    if (!captchaConfig.enabled) {
+      return;
+    }
+
+    var api = getCaptchaApi();
+    var tokenField = getFieldByName(form, 'captchaToken');
+
+    if (tokenField) {
+      tokenField.value = '';
+    }
+
+    if (api && form && form._captchaWidgetId !== undefined && form._captchaWidgetId !== null) {
+      api.reset(form._captchaWidgetId);
+    }
+  }
+
+  function attachCaptcha(form) {
+    if (!captchaConfig.enabled) {
+      return;
+    }
+
+    var container = form.querySelector('.form-captcha');
+    var widgetTarget = container ? container.querySelector('.form-captcha-widget') : null;
+    var note = container ? container.querySelector('.form-captcha-note') : null;
+    var tokenField = ensureCaptchaTokenField(form);
+
+    if (!container || !widgetTarget || widgetTarget.dataset.rendered === 'true') {
+      return;
+    }
+
+    loadCaptchaScript()
+      .then(function (api) {
+        var widgetId = api.render(widgetTarget, {
+          sitekey: captchaConfig.siteKey,
+          theme: 'light',
+          callback: function (token) {
+            tokenField.value = token || '';
+            container.dataset.failed = 'false';
+          },
+          'expired-callback': function () {
+            tokenField.value = '';
+          },
+          'error-callback': function () {
+            tokenField.value = '';
+            container.dataset.failed = 'true';
+            if (note) {
+              note.textContent = "Le contrôle anti-spam doit être rechargé avant l'envoi.";
+            }
+          },
+        });
+
+        form._captchaWidgetId = widgetId;
+        widgetTarget.dataset.rendered = 'true';
+      })
+      .catch(function () {
+        container.dataset.failed = 'true';
+        if (note) {
+          note.textContent = "Le contrôle anti-spam n'a pas pu être chargé.";
+        }
+      });
+  }
+
+  function getCaptchaError(form, payload) {
+    if (!captchaConfig.enabled) {
+      return '';
+    }
+
+    var container = form.querySelector('.form-captcha');
+    if (!container) {
+      return captchaConfig.mode === 'required' ? "Le contrôle anti-spam est indisponible." : '';
+    }
+
+    if (container.dataset.failed === 'true') {
+      return "Le contrôle anti-spam n'a pas pu être chargé. Rechargez la page ou contactez-nous directement.";
+    }
+
+    if (captchaConfig.mode === 'required' && !payload.captchaToken) {
+      return 'Veuillez confirmer le contrôle anti-spam.';
+    }
+
+    return '';
+  }
+
   function splitDateTime(value) {
     if (!value || value.indexOf('T') === -1) {
       return { pickupDate: '', pickupTime: '' };
@@ -660,15 +830,19 @@
   }
 
   document.querySelectorAll('form[data-api-form]').forEach(function (form) {
+    attachCaptcha(form);
+
     form.addEventListener('submit', function (event) {
       event.preventDefault();
 
       var submitBtn = form.querySelector('.form-submit');
+      var captchaContainer = form.querySelector('.form-captcha');
       var messageEl = form.querySelector('.form-message');
       var originalText = submitBtn ? submitBtn.textContent : '';
       var payload = getFormPayload(form);
       var clientErrors = [];
       var firstField = null;
+      var captchaError = '';
 
       resetFormUi(messageEl);
       clearFormFieldStates(form);
@@ -679,6 +853,15 @@
         showFormMessage(messageEl, 'Veuillez corriger les champs signales.', 'error');
         if (firstField && typeof firstField.focus === 'function') {
           firstField.focus();
+        }
+        return;
+      }
+
+      captchaError = getCaptchaError(form, payload);
+      if (captchaError) {
+        showFormMessage(messageEl, captchaError, 'error');
+        if (captchaContainer && typeof captchaContainer.scrollIntoView === 'function') {
+          captchaContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
         return;
       }
@@ -711,6 +894,7 @@
               form.reset();
               resetFormUi(messageEl);
               clearFormFieldStates(form);
+              resetCaptcha(form);
               showFormMessage(messageEl, getSuccessMessage(form), 'success');
             });
         })
@@ -734,6 +918,8 @@
           }
         })
         .finally(function () {
+          resetCaptcha(form);
+
           if (submitBtn) {
             submitBtn.disabled = false;
             submitBtn.textContent = originalText;

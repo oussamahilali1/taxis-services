@@ -79,7 +79,7 @@ export async function createBooking(data, { captcha } = {}) {
     data: {
       ...enrichedBookingData,
       metadata: Object.keys(nextMetadata).length > 0 ? nextMetadata : undefined,
-      status: website || duplicateDetected ? BookingStatus.SPAM : BookingStatus.PENDING,
+      status: website ? BookingStatus.SPAM : duplicateDetected ? BookingStatus.IN_REVIEW : BookingStatus.PENDING,
     },
   });
 }

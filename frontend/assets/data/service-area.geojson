@@ -1,0 +1,39 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Zone de couverture locale",
+        "note": "Modifiez les coordonnees de ce polygone pour ajuster la zone desservie.",
+        "towns": [
+          "Anderlues",
+          "Chapelle-lez-Herlaimont",
+          "Courcelles",
+          "Fontaine-l'Eveque",
+          "Montigny-le-Tilleul"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [4.15, 50.482],
+            [4.208, 50.504],
+            [4.286, 50.507],
+            [4.356, 50.492],
+            [4.409, 50.455],
+            [4.423, 50.408],
+            [4.395, 50.359],
+            [4.337, 50.334],
+            [4.259, 50.327],
+            [4.191, 50.341],
+            [4.148, 50.387],
+            [4.138, 50.442],
+            [4.15, 50.482]
+          ]
+        ]
+      }
+    }
+  ]
+}
