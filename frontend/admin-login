@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=admin-login.html">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Redirecting...</title>
+  <script>window.location.replace("admin-login.html");</script>
+</head>
+<body>
+  <p>Redirecting to <a href="admin-login.html">admin-login.html</a>...</p>
+</body>
+</html>

@@ -621,6 +621,7 @@
       airportName: (data.get('airport_name') || data.get('airportName') || data.get('airport') || '').trim(),
       airportTerminal: (data.get('airport_terminal') || data.get('airportTerminal') || data.get('terminal') || '').trim(),
       airportDirection: (data.get('airport_direction') || data.get('airportDirection') || '').trim(),
+      captchaToken: (data.get('captchaToken') || data.get('captcha_token') || '').trim(),
       requestVariant: form.getAttribute('data-form-variant') || 'full',
     };
   }
@@ -640,6 +641,7 @@
       sourcePage: (data.get('source_page') || '').trim(),
       website: (data.get('website') || '').trim(),
       contactQuick: (data.get('contact_quick') || '').trim(),
+      captchaToken: (data.get('captchaToken') || data.get('captcha_token') || '').trim(),
     };
   }
 

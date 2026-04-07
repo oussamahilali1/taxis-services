@@ -1,11 +1,16 @@
 import { asyncHandler } from '../lib/async-handler.js';
+import { getClientIp } from '../lib/audit.js';
 import { validateBookingPayload, validateContactPayload } from '../lib/validation.js';
 import { createBooking } from '../services/booking.service.js';
+import { verifyPublicCaptcha } from '../services/captcha.service.js';
 import { createContact } from '../services/contact.service.js';
 
 export const submitBooking = asyncHandler(async (req, res) => {
+  const captcha = await verifyPublicCaptcha(req.body, {
+    remoteIp: getClientIp(req),
+  });
   const payload = validateBookingPayload(req.body);
-  const booking = await createBooking(payload);
+  const booking = await createBooking(payload, { captcha });
 
   res.status(201).json({
     success: true,
@@ -19,8 +24,11 @@ export const submitBooking = asyncHandler(async (req, res) => {
 });
 
 export const submitContact = asyncHandler(async (req, res) => {
+  const captcha = await verifyPublicCaptcha(req.body, {
+    remoteIp: getClientIp(req),
+  });
   const payload = validateContactPayload(req.body);
-  const contact = await createContact(payload);
+  const contact = await createContact(payload, { captcha });
 
   res.status(201).json({
     success: true,

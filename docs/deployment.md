@@ -6,7 +6,7 @@
 - Backend: Express API in `backend/`
 - Database: PostgreSQL managed by Neon or Supabase
 - ORM: Prisma
-- Admin auth: HTTP-only JWT cookie + CSRF header
+- Admin auth: server-side admin sessions stored in PostgreSQL + CSRF header
 
 ## Local setup
 
@@ -38,7 +38,8 @@
 - Create a PostgreSQL database on Neon or Supabase.
 - Set `DATABASE_URL` in the backend environment.
 - Run the committed migration with `npm run prisma:migrate:deploy`.
-- Seed the first admin with `npm run db:seed`.
+- Seed the first admin with `BOOTSTRAP_ADMIN_PASSWORD=... npm run db:seed`.
+- Rerunning `npm run db:seed` does not reset credentials unless `ALLOW_ADMIN_PASSWORD_RESET=true` is set explicitly.
 
 ## Auth and domains
 
@@ -49,7 +50,20 @@
   - `COOKIE_DOMAIN=.your-domain.com`
   - `COOKIE_SECURE=true`
   - `COOKIE_SAME_SITE=lax`
+- Recommended session settings:
+  - `ADMIN_SESSION_ABSOLUTE_TTL_MS=12h`
+  - `ADMIN_SESSION_IDLE_TTL_MS=2h`
+- The backend stores only an opaque session identifier in the cookie. Session state lives in PostgreSQL.
 - If you keep unrelated preview domains like `*.vercel.app` and `*.onrender.com`, cross-site admin cookies are less reliable. Use custom domains for production.
+
+## Abuse protection
+
+- Public form and admin login rate limits are stored in PostgreSQL, so they work across multiple backend instances.
+- Optional CAPTCHA support is available through:
+  - `PUBLIC_CAPTCHA_MODE=optional|required`
+  - `PUBLIC_CAPTCHA_PROVIDER=turnstile|hcaptcha`
+  - `PUBLIC_CAPTCHA_SECRET=...`
+- The frontend can submit a CAPTCHA token using a hidden field named `captchaToken` or `captcha_token`.
 
 ## Known content issue
 

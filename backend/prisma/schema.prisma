@@ -46,6 +46,7 @@ model Admin {
   lastLoginAt  DateTime?
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
+  sessions     AdminSession[]
 }
 
 model Booking {
@@ -84,4 +85,35 @@ model Contact {
   updatedAt  DateTime      @updatedAt
 
   @@index([status, createdAt])
+}
+
+model AdminSession {
+  id               String   @id @default(cuid())
+  adminId          String
+  sessionTokenHash String   @unique
+  csrfToken        String
+  ipAddress        String?
+  userAgent        String?
+  expiresAt        DateTime
+  idleExpiresAt    DateTime
+  lastActivityAt   DateTime @default(now())
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  admin            Admin    @relation(fields: [adminId], references: [id], onDelete: Cascade)
+
+  @@index([adminId, expiresAt])
+  @@index([idleExpiresAt])
+}
+
+model RateLimitBucket {
+  id             String   @id @default(cuid())
+  scope          String
+  identifierHash String
+  windowStart    DateTime
+  count          Int      @default(1)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@unique([scope, identifierHash, windowStart])
+  @@index([scope, windowStart])
 }

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "taxis-services-backend": "file:.."
+  }
+}

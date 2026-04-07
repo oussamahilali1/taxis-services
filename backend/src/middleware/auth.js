@@ -1,48 +1,42 @@
-import { prisma } from '../lib/prisma.js';
-import { HttpError } from '../lib/http-error.js';
 import { config } from '../lib/config.js';
-import { verifyAdminToken } from '../services/auth.service.js';
+import { HttpError } from '../lib/http-error.js';
+import {
+  clearAdminSessionCookie,
+  getAdminSessionByToken,
+  touchAdminSession,
+} from '../services/auth.service.js';
 
-function extractBearerToken(req) {
-  const authorization = req.headers.authorization || '';
-  if (!authorization.startsWith('Bearer ')) {
-    return undefined;
-  }
-
-  return authorization.slice('Bearer '.length).trim();
-}
-
-export async function requireAdminAuth(req, _res, next) {
+export async function requireAdminAuth(req, res, next) {
   try {
-    const token = req.cookies?.[config.auth.cookieName] || extractBearerToken(req);
+    const sessionToken = req.cookies?.[config.auth.cookieName];
 
-    if (!token) {
+    if (!sessionToken) {
       throw new HttpError(401, 'AUTH_REQUIRED', 'Authentication is required.');
     }
 
-    const payload = verifyAdminToken(token);
-    const admin = await prisma.admin.findUnique({
-      where: { id: payload.sub },
-      select: {
-        id: true,
-        email: true,
-        role: true,
-        createdAt: true,
-        updatedAt: true,
-        lastLoginAt: true,
-      },
-    });
-
-    if (!admin) {
-      throw new HttpError(401, 'INVALID_AUTH', 'This admin account no longer exists.');
+    let session = await getAdminSessionByToken(sessionToken);
+    if (!session) {
+      clearAdminSessionCookie(res);
+      throw new HttpError(401, 'INVALID_AUTH', 'Your session is invalid or has expired.');
     }
 
-    req.admin = admin;
-    req.adminToken = payload;
+    session = await touchAdminSession(session);
+    req.admin = session.admin;
+    req.adminSession = session;
     next();
   } catch (error) {
     next(error);
   }
+}
+
+export function requireAdminRole(...allowedRoles) {
+  return function enforceAdminRole(req, _res, next) {
+    if (!req.admin || !allowedRoles.includes(req.admin.role)) {
+      return next(new HttpError(403, 'FORBIDDEN', 'You are not allowed to perform this action.'));
+    }
+
+    return next();
+  };
 }
 
 export function requireCsrfToken(req, _res, next) {
@@ -50,10 +44,10 @@ export function requireCsrfToken(req, _res, next) {
     return next();
   }
 
-  const expectedToken = req.cookies?.[config.auth.csrfCookieName];
-  const providedToken = req.headers['x-csrf-token'];
+  const providedToken = String(req.headers[config.auth.csrfHeaderName] || '').trim();
+  const expectedToken = req.adminSession?.csrfToken;
 
-  if (!expectedToken || !providedToken || expectedToken !== providedToken) {
+  if (!expectedToken || !providedToken || providedToken !== expectedToken) {
     return next(new HttpError(403, 'INVALID_CSRF_TOKEN', 'A valid CSRF token is required.'));
   }
 

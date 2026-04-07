@@ -291,6 +291,7 @@ const staticPages = {
   },
   admin: {
     file: site.adminPath,
+    aliases: ['admin-login'],
     title: 'Accès privé | Taxis Services',
     description: 'Connexion administrateur sécurisée pour gérer les réservations et messages du site.',
     navKey: '',
@@ -298,6 +299,7 @@ const staticPages = {
   },
   adminDashboard: {
     file: site.adminDashboardPath,
+    aliases: ['admin-dashboard'],
     title: 'Tableau de bord | Taxis Services',
     description: 'Interface d’administration pour gérer les réservations et messages entrants.',
     navKey: '',
@@ -1854,6 +1856,22 @@ ${renderHead({
 </html>`;
 }
 
+function renderRedirectPage(targetPath) {
+  return `<!DOCTYPE html>
+<html lang="${site.lang}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=${escapeHtml(targetPath)}">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Redirecting...</title>
+  <script>window.location.replace(${JSON.stringify(targetPath)});</script>
+</head>
+<body>
+  <p>Redirecting to <a href="${escapeHtml(targetPath)}">${escapeHtml(targetPath)}</a>...</p>
+</body>
+</html>`;
+}
+
 function renderRobots() {
   return `User-agent: *
 Allow: /
@@ -1892,6 +1910,14 @@ async function main() {
     { file: staticPages.legal.file, content: renderLegalPage() },
     { file: staticPages.admin.file, content: renderAdminPage() },
     { file: staticPages.adminDashboard.file, content: renderAdminDashboardPage() },
+    ...(staticPages.admin.aliases || []).map((alias) => ({
+      file: alias,
+      content: renderRedirectPage(site.adminPath),
+    })),
+    ...(staticPages.adminDashboard.aliases || []).map((alias) => ({
+      file: alias,
+      content: renderRedirectPage(site.adminDashboardPath),
+    })),
     ...services.map((service) => ({ file: service.file, content: renderServiceDetailPage(service) })),
   ];
 

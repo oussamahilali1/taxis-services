@@ -1,6 +1,8 @@
 import { BookingStatus } from '@prisma/client';
+import { config } from '../lib/config.js';
 import { prisma } from '../lib/prisma.js';
 import { HttpError } from '../lib/http-error.js';
+import { compactObject } from '../lib/sanitize.js';
 import { applyBookingBusinessRules } from './booking-rules.service.js';
 
 function buildBookingWhere({ status, serviceType, search }) {
@@ -27,14 +29,57 @@ function buildBookingWhere({ status, serviceType, search }) {
   return where;
 }
 
-export async function createBooking(data) {
+async function hasRecentBookingDuplicate(data) {
+  const identifiers = [];
+
+  if (data.email) {
+    identifiers.push({ email: data.email });
+  }
+
+  if (data.phone) {
+    identifiers.push({ phone: data.phone });
+  }
+
+  if (identifiers.length === 0) {
+    return false;
+  }
+
+  const since = new Date(Date.now() - config.abuse.duplicateWindowMs);
+  const existingBooking = await prisma.booking.findFirst({
+    where: {
+      createdAt: {
+        gte: since,
+      },
+      serviceType: data.serviceType,
+      pickupLocation: data.pickupLocation,
+      OR: identifiers,
+    },
+    select: { id: true },
+  });
+
+  return Boolean(existingBooking);
+}
+
+export async function createBooking(data, { captcha } = {}) {
   const { website, ...bookingData } = data;
   const enrichedBookingData = applyBookingBusinessRules(bookingData);
+  const duplicateDetected = await hasRecentBookingDuplicate(enrichedBookingData);
+  const securitySignals = compactObject({
+    honeypotTriggered: website ? true : undefined,
+    duplicateDetected: duplicateDetected || undefined,
+    captchaVerified: captcha?.verified ? true : undefined,
+    captchaProvider: captcha?.verified ? captcha.provider : undefined,
+  });
+  const nextMetadata = compactObject({
+    ...(enrichedBookingData.metadata && typeof enrichedBookingData.metadata === 'object' ? enrichedBookingData.metadata : {}),
+    submissionSecurity: Object.keys(securitySignals).length > 0 ? securitySignals : undefined,
+  });
 
   return prisma.booking.create({
     data: {
       ...enrichedBookingData,
-      status: website ? BookingStatus.SPAM : BookingStatus.PENDING,
+      metadata: Object.keys(nextMetadata).length > 0 ? nextMetadata : undefined,
+      status: website || duplicateDetected ? BookingStatus.SPAM : BookingStatus.PENDING,
     },
   });
 }

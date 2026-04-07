@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=admin-dashboard.html">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Redirecting...</title>
+  <script>window.location.replace("admin-dashboard.html");</script>
+</head>
+<body>
+  <p>Redirecting to <a href="admin-dashboard.html">admin-dashboard.html</a>...</p>
+</body>
+</html>
