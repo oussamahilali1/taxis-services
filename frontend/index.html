@@ -1,976 +1,496 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Taxis Bruxelles - Service de Taxi Professionnel</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+<html lang="fr-BE">
 
-    <link rel="stylesheet" id="stylesheet" href="css/index.css" />
-    <!-- <link rel="stylesheet" id="stylesheet" href="css/lightMode.css" />  -->
-    <link rel="stylesheet" id="stylesheet" href="css/sharedCss.css" />
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3097/3097180.png" type="image/png" />
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Taxis Services | Chauffeur professionnel à Anderlues</title>
+  <meta name="description" content="Service de taxi à Anderlues pour navettes aéroport, transport business et trajets locaux. Ponctualité, professionnalisme et réservation simple.">
+  <meta name="keywords" content="taxi anderlues, navette aéroport charleroi, taxi business, transport pmr, taxi hainaut">
 
-  <body>
-    
-    <button class="open-nav" id="openNav">
-      <i class="fa-solid fa-bars"></i>
-    </button>
+  <link href="assets/img/favicon.svg" rel="icon">
+  <link href="assets/img/favicon.png" rel="apple-touch-icon">
 
-    <!-- Navigation -->
-    <nav id="navbar">
-      <a href="#" class="logo">
-        <img 
-          src="https://cdn-icons-png.flaticon.com/512/3097/3097180.png" 
-          alt="Taxi Logo" 
-          style="width: 40px; height: 40px;"
-        />
-        <span class="logo-text">Taxis<strong>Bruxelles</strong></span>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">TAXIS</h1><span>SERVICES</span>
       </a>
-      
-      <ul id="navMenu">
-        <li><a href="#services-section">Nos Services</a></li>
-        <li><a href="#why-us-section">Pourquoi Nous</a></li>
-        <li><a href="#fleet-section">Notre Flotte</a></li>
-        <li><a href="#tarifs-section">Tarifs</a></li>
-        <li><a href="#contact-section">Contact</a></li>
-        <li>
-          <a href="tel:+3223490909" class="btn1">
-            <i class="fa-solid fa-phone"></i> +32 2 349 09 09
-          </a>
-        </li>
 
-        <li class="close-nav-li">
-          <button class="close-nav" id="closeNav">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </li>
-      </ul>
-    </nav>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Accueil</a></li>
+          <li><a href="#about">À Propos</a></li>
+          <li><a href="service-details.html">Services</a></li>
+          <li><a href="navette.html">Notre Flotte</a></li>
+          <li><a href="#team">L'Équipe</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <header id="home">
-      <div class="header-text-container">
-        
-        <div class="hero-badge">
-          <div class="hero-badge-icon">
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <span>Service de confiance depuis 1995</span>
-        </div>
+      <a class="btn-getstarted" href="reservation.html">Réserver un trajet</a>
 
-        <h1 class="header-title">
-          Votre <span class="text-yellow">Taxi</span> à 
-          <span class="text-yellow">Bruxelles</span> en quelques 
-          <span class="text-yellow">clics</span>.
-        </h1>
+    </div>
+  </header>
 
-        <p class="header-p">
-          Service de taxi professionnel disponible 24h/24 et 7j/7. 
-          Réservez facilement et voyagez en toute sérénité partout en Belgique.
-        </p>
+  <main class="main">
 
-        <!-- Booking Form -->
-        <div class="booking-form">
-          <div class="booking-input-group">
-            <i class="fa-solid fa-location-dot"></i>
-            <input type="text" placeholder="Adresse de départ" id="departure" />
-          </div>
-          <div class="booking-input-group">
-            <i class="fa-solid fa-location-crosshairs"></i>
-            <input type="text" placeholder="Adresse de destination" id="destination" />
-          </div>
-          <div class="booking-input-group">
-            <i class="fa-solid fa-calendar"></i>
-            <input type="datetime-local" id="datetime" />
-          </div>
-          <button class="btn1 booking-btn" id="bookBtn">
-            <i class="fa-solid fa-taxi"></i> Réserver Maintenant
-          </button>
-        </div>
-
-        <div class="header-buttons-container">
-          <a href="tel:+3223490909" class="btn1 header-call-btn">
-            <i class="fa-solid fa-phone"></i> Appeler
-          </a>
-          <div class="header-stats">
-            <div class="stat">
-              <strong>15K+</strong>
-              <span>Clients</span>
-            </div>
-            <div class="stat">
-              <strong>50+</strong>
-              <span>Chauffeurs</span>
-            </div>
-            <div class="stat">
-              <strong>24/7</strong>
-              <span>Disponible</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="header-image-container">
-        <!-- Main Taxi Image -->
-        <div class="hero-image-wrapper">
-          <div class="hero-circle"></div>
-          <img
-            src="https://pngimg.com/d/taxi_PNG25.png"
-            alt="Taxi Bruxelles"
-            class="hero-taxi-img"
-          />
-
-          <!-- Price Card -->
-          <div class="floating-card price-card">
-            <div class="floating-card-icon">
-              <i class="fa-solid fa-plane-departure"></i>
-            </div>
-            <div class="floating-card-text">
-              <span>Aéroport</span>
-              <strong>€45 <small>fixe</small></strong>
-            </div>
-          </div>
-
-          <!-- Rating Card -->
-          <div class="floating-card rating-card">
-            <img
-              src="https://randomuser.me/api/portraits/men/32.jpg"
-              alt="Client satisfait"
-              class="rating-avatar"
-            />
-            <div class="floating-card-text">
-              <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="hero-content">
+              <div class="hero-tag" data-aos="fade-up" data-aos-delay="250">
+                <span class="tag-dot"></span>
+                <span class="tag-text">Service de transport professionnel</span>
               </div>
-              <span>4.9 (2,847 avis)</span>
-            </div>
-          </div>
-
-          <div class="floating-card online-card">
-            <div class="online-dot"></div>
-            <span>Disponible maintenant</span>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- ==================== SERVICES SECTION ==================== -->
-    <section class="services-section" id="services-section">
-      <div class="section-header">
-        <span class="section-badge">Nos Services</span>
-        <h2 class="section-title">
-          Services de <span class="text-yellow">Transport</span> Adaptés
-        </h2>
-        <p class="section-description">
-          Que ce soit pour un transfert aéroport, un trajet en ville ou un voyage longue distance,
-          nous avons la solution adaptée à vos besoins.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="service-card">
-          <div class="service-card-img">
-            <img 
-              src="https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=400&h=250&fit=crop" 
-              alt="Transfert Aéroport"
-            />
-          </div>
-          <div class="service-card-icon">
-            <i class="fa-solid fa-plane-departure"></i>
-          </div>
-          <h3>Transfert Aéroport</h3>
-          <p>Service ponctuel vers tous les aéroports. Prix fixes et suivi des vols.</p>
-          <ul class="service-features">
-            <li><i class="fa-solid fa-check"></i> Prix fixe garanti</li>
-            <li><i class="fa-solid fa-check"></i> Attente gratuite 45min</li>
-            <li><i class="fa-solid fa-check"></i> Suivi des vols</li>
-          </ul>
-          <button class="btn1">Réserver</button>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="service-card featured">
-          <div class="service-card-img">
-            <img 
-              src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400&h=250&fit=crop" 
-              alt="Business Transport"
-            />
-          </div>
-          <div class="service-card-icon">
-            <i class="fa-solid fa-briefcase"></i>
-          </div>
-          <h3>Business & Corporate</h3>
-          <p>Solutions professionnelles avec facturation mensuelle et véhicules premium.</p>
-          <ul class="service-features">
-            <li><i class="fa-solid fa-check"></i> Compte entreprise</li>
-            <li><i class="fa-solid fa-check"></i> Véhicules premium</li>
-            <li><i class="fa-solid fa-check"></i> Facturation flexible</li>
-          </ul>
-          <button class="btn1">Réserver</button>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="service-card">
-          <div class="service-card-img">
-            <img 
-              src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&h=250&fit=crop" 
-              alt="Longue Distance"
-            />
-          </div>
-          <div class="service-card-icon">
-            <i class="fa-solid fa-route"></i>
-          </div>
-          <h3>Longue Distance</h3>
-          <p>Voyages confortables vers toutes les destinations en Europe.</p>
-          <ul class="service-features">
-            <li><i class="fa-solid fa-check"></i> Toute l'Europe</li>
-            <li><i class="fa-solid fa-check"></i> Confort maximal</li>
-            <li><i class="fa-solid fa-check"></i> Tarifs compétitifs</li>
-          </ul>
-          <button class="btn1">Réserver</button>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="service-card">
-          <div class="service-card-img">
-            <img 
-              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=250&fit=crop" 
-              alt="Transport Médical"
-            />
-          </div>
-          <div class="service-card-icon">
-            <i class="fa-solid fa-hospital"></i>
-          </div>
-          <h3>Transport Médical</h3>
-          <p>Transport adapté pour rendez-vous médicaux et personnes à mobilité réduite.</p>
-          <ul class="service-features">
-            <li><i class="fa-solid fa-check"></i> Véhicules adaptés</li>
-            <li><i class="fa-solid fa-check"></i> Chauffeurs formés</li>
-            <li><i class="fa-solid fa-check"></i> Aide à la personne</li>
-          </ul>
-          <button class="btn1">Réserver</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== WHY US SECTION ==================== -->
-    <section class="why-us-section" id="why-us-section">
-      <div class="why-us-image">
-        <div class="why-us-img-wrapper">
-          <img
-            src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=500&h=600&fit=crop"
-            alt="Chauffeur professionnel"
-            class="why-us-main-img"
-          />
-          <div class="why-us-experience-card">
-            <h3>25+</h3>
-            <p>Années d'expérience</p>
-          </div>
-        </div>
-        
-        <div class="why-us-small-imgs">
-          <img
-            src="https://images.unsplash.com/photo-1590362891991-f776e747a588?w=200&h=150&fit=crop"
-            alt="Intérieur taxi"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1556122071-e404eaedb77f?w=200&h=150&fit=crop"
-            alt="Paiement carte"
-          />
-        </div>
-      </div>
-
-      <div class="why-us-text">
-        <span class="section-badge">Pourquoi Nous</span>
-        <h2 class="section-title">
-          Pourquoi choisir <span class="text-yellow">notre</span> service ?
-        </h2>
-        <p class="section-description">
-          Depuis plus de 25 ans, nous offrons un service fiable et professionnel 
-          à Bruxelles et dans toute la Belgique.
-        </p>
-
-        <div class="features-grid">
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fa-solid fa-clock"></i>
-            </div>
-            <div>
-              <h4>Disponible 24h/24</h4>
-              <p>Service continu, jour et nuit</p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <div>
-              <h4>Trajet sécurisé</h4>
-              <p>Chauffeurs certifiés et assurés</p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fa-solid fa-credit-card"></i>
-            </div>
-            <div>
-              <h4>Paiement flexible</h4>
-              <p>Cash, carte, virement</p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fa-solid fa-user-tie"></i>
-            </div>
-            <div>
-              <h4>Chauffeurs pros</h4>
-              <p>Expérimentés et courtois</p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fa-solid fa-car"></i>
-            </div>
-            <div>
-              <h4>Véhicules récents</h4>
-              <p>Flotte moderne et entretenue</p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fa-solid fa-euro-sign"></i>
-            </div>
-            <div>
-              <h4>Prix transparents</h4>
-              <p>Pas de surprises à l'arrivée</p>
-            </div>
-          </div>
-        </div>
-
-        <button class="btn1">En savoir plus</button>
-      </div>
-    </section>
-
-    <!-- ==================== FLEET SECTION ==================== -->
-    <section class="fleet-section" id="fleet-section">
-      <div class="section-header">
-        <span class="section-badge">Notre Flotte</span>
-        <h2 class="section-title">
-          Véhicules <span class="text-yellow">Modernes</span> & Confortables
-        </h2>
-      </div>
-
-      <div class="fleet-tabs">
-        <button class="fleet-tab active" data-category="all">Tous</button>
-        <button class="fleet-tab" data-category="berline">Berline</button>
-        <button class="fleet-tab" data-category="van">Van</button>
-        <button class="fleet-tab" data-category="luxe">Luxe</button>
-        <button class="fleet-tab" data-category="electrique">Électrique</button>
-      </div>
-
-      <div class="fleet-grid">
-        <!-- Vehicle 1  -->
-        <div class="fleet-card" data-category="berline">
-          <div class="fleet-card-img">
-            <img 
-              src="https://images.unsplash.com/photo-1550355291-bbee04a92027?w=400&h=250&fit=crop" 
-              alt="Mercedes Classe C"
-            />
-            <span class="fleet-badge">Standard</span>
-          </div>
-          <div class="fleet-card-content">
-            <h3>Mercedes Classe C</h3>
-            <div class="fleet-specs">
-              <span><i class="fa-solid fa-user"></i> 4</span>
-              <span><i class="fa-solid fa-suitcase"></i> 3</span>
-              <span><i class="fa-solid fa-wifi"></i> WiFi</span>
-              <span><i class="fa-solid fa-snowflake"></i> Clim</span>
-            </div>
-            <p>Berline confortable pour les trajets urbains et transferts aéroport.</p>
-            <div class="fleet-price">
-              <span>À partir de</span>
-              <strong>€2.40<small>/km</small></strong>
-            </div>
-            <button class="btn1">Réserver</button>
-          </div>
-        </div>
-
-        <!-- Vehicle 2  -->
-        <div class="fleet-card" data-category="van">
-          <div class="fleet-card-img">
-            <img 
-              src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=400&h=250&fit=crop" 
-              alt="Mercedes Vito"
-            />
-            <span class="fleet-badge">Van</span>
-          </div>
-          <div class="fleet-card-content">
-            <h3>Mercedes Vito</h3>
-            <div class="fleet-specs">
-              <span><i class="fa-solid fa-user"></i> 7</span>
-              <span><i class="fa-solid fa-suitcase"></i> 7</span>
-              <span><i class="fa-solid fa-wifi"></i> WiFi</span>
-              <span><i class="fa-solid fa-snowflake"></i> Clim</span>
-            </div>
-            <p>Parfait pour les groupes et familles avec beaucoup de bagages.</p>
-            <div class="fleet-price">
-              <span>À partir de</span>
-              <strong>€3.20<small>/km</small></strong>
-            </div>
-            <button class="btn1">Réserver</button>
-          </div>
-        </div>
-
-        <!-- Vehicle 3 -->
-        <div class="fleet-card" data-category="luxe">
-          <div class="fleet-card-img">
-            <img 
-              src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=400&h=250&fit=crop" 
-              alt="Mercedes Classe S"
-            />
-            <span class="fleet-badge">Premium</span>
-          </div>
-          <div class="fleet-card-content">
-            <h3>Mercedes Classe S</h3>
-            <div class="fleet-specs">
-              <span><i class="fa-solid fa-user"></i> 3</span>
-              <span><i class="fa-solid fa-suitcase"></i> 3</span>
-              <span><i class="fa-solid fa-champagne-glasses"></i> Bar</span>
-              <span><i class="fa-solid fa-tv"></i> Écran</span>
-            </div>
-            <p>Luxe et prestige pour vos déplacements VIP et événements.</p>
-            <div class="fleet-price">
-              <span>À partir de</span>
-              <strong>€5.00<small>/km</small></strong>
-            </div>
-            <button class="btn1">Réserver</button>
-          </div>
-        </div>
-
-        <!-- Vehicle 4  -->
-        <div class="fleet-card" data-category="electrique">
-          <div class="fleet-card-img">
-            <img 
-              src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=400&h=250&fit=crop" 
-              alt="Tesla Model 3"
-            />
-            <span class="fleet-badge">Eco</span>
-          </div>
-          <div class="fleet-card-content">
-            <h3>Tesla Model 3</h3>
-            <div class="fleet-specs">
-              <span><i class="fa-solid fa-user"></i> 4</span>
-              <span><i class="fa-solid fa-suitcase"></i> 3</span>
-              <span><i class="fa-solid fa-leaf"></i> 0 CO₂</span>
-              <span><i class="fa-solid fa-bolt"></i> Électrique</span>
-            </div>
-            <p>100% électrique. Voyagez écologique sans compromis sur le confort.</p>
-            <div class="fleet-price">
-              <span>À partir de</span>
-              <strong>€2.20<small>/km</small></strong>
-            </div>
-            <button class="btn1">Réserver</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== TARIFS SECTION ==================== -->
-    <section class="tarifs-section" id="tarifs-section">
-      <div class="section-header">
-        <span class="section-badge">Tarifs</span>
-        <h2 class="section-title">
-          Prix <span class="text-yellow">Transparents</span> & Fixes
-        </h2>
-        <p class="section-description">
-          Pas de surprise à l'arrivée. Tous nos prix sont clairs et communiqués à l'avance.
-        </p>
-      </div>
-
-      <div class="tarifs-grid">
-        <div class="tarif-card">
-          <div class="tarif-icon">
-            <i class="fa-solid fa-city"></i>
-          </div>
-          <h3>Centre Ville</h3>
-          <p>Trajets urbains</p>
-          <div class="tarif-price">
-            <span class="currency">€</span>
-            <span class="amount">2.40</span>
-            <span class="period">/km</span>
-          </div>
-          <ul class="tarif-features">
-            <li><i class="fa-solid fa-check"></i> Prise en charge: €2.40</li>
-            <li><i class="fa-solid fa-check"></i> Attente: €35/h</li>
-            <li><i class="fa-solid fa-check"></i> Supplément nuit: +€2</li>
-          </ul>
-          <button class="btn1 btn-outline">Réserver</button>
-        </div>
-
-        <!-- Tarif 2 - Featured -->
-        <div class="tarif-card featured">
-          <div class="tarif-popular">Populaire</div>
-          <div class="tarif-icon">
-            <i class="fa-solid fa-plane-departure"></i>
-          </div>
-          <h3>Aéroport Bruxelles</h3>
-          <p>Depuis le centre-ville</p>
-          <div class="tarif-price">
-            <span class="currency">€</span>
-            <span class="amount">45</span>
-            <span class="period">prix fixe</span>
-          </div>
-          <ul class="tarif-features">
-            <li><i class="fa-solid fa-check"></i> Attente gratuite 45min</li>
-            <li><i class="fa-solid fa-check"></i> Suivi du vol</li>
-            <li><i class="fa-solid fa-check"></i> Aide aux bagages</li>
-          </ul>
-          <button class="btn1">Réserver</button>
-        </div>
-
-        <div class="tarif-card">
-          <div class="tarif-icon">
-            <i class="fa-solid fa-train"></i>
-          </div>
-          <h3>Gare du Midi</h3>
-          <p>Eurostar / Thalys</p>
-          <div class="tarif-price">
-            <span class="currency">€</span>
-            <span class="amount">15</span>
-            <span class="period">prix fixe</span>
-          </div>
-          <ul class="tarif-features">
-            <li><i class="fa-solid fa-check"></i> Depuis le centre</li>
-            <li><i class="fa-solid fa-check"></i> Attente gratuite 15min</li>
-            <li><i class="fa-solid fa-check"></i> Aide aux bagages</li>
-          </ul>
-          <button class="btn1 btn-outline">Réserver</button>
-        </div>
-      </div>
-
-      <div class="destinations-section">
-        <h3>Destinations Populaires - Prix Fixes</h3>
-        <div class="destinations-grid">
-          <div class="destination-item">
-            <span><i class="fa-solid fa-location-dot"></i> Bruxelles → Anvers</span>
-            <strong>€85</strong>
-          </div>
-          <div class="destination-item">
-            <span><i class="fa-solid fa-location-dot"></i> Bruxelles → Gand</span>
-            <strong>€75</strong>
-          </div>
-          <div class="destination-item">
-            <span><i class="fa-solid fa-location-dot"></i> Bruxelles → Bruges</span>
-            <strong>€120</strong>
-          </div>
-          <div class="destination-item">
-            <span><i class="fa-solid fa-location-dot"></i> Bruxelles → Liège</span>
-            <strong>€130</strong>
-          </div>
-          <div class="destination-item">
-            <span><i class="fa-solid fa-location-dot"></i> Bruxelles → Charleroi</span>
-            <strong>€65</strong>
-          </div>
-          <div class="destination-item">
-            <span><i class="fa-solid fa-location-dot"></i> Bruxelles → Luxembourg</span>
-            <strong>€250</strong>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ==================== DRIVER SECTION ==================== -->
-    <section class="driver-section" id="driver-section">
-      <div class="driver-container">
-        <div class="driver-image-box">
-          <div class="driver-img-wrapper">
-            <img 
-              src="https://images.unsplash.com/photo-1600320254374-ce2d293c324e?w=600&h=800&fit=crop" 
-              alt="Chauffeur Taxi Professionnel" 
-              class="driver-main-img"
-            />
-          </div>
-          <div class="driver-stat-card card-1">
-            <i class="fa-solid fa-wallet"></i>
-            <div>
-              <strong>+3500€</strong>
-              <span>Revenu/mois</span>
-            </div>
-          </div>
-          <div class="driver-stat-card card-2">
-            <i class="fa-solid fa-clock"></i>
-            <div>
-              <strong>Liberté</strong>
-              <span>Horaires flexibles</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="driver-text-box">
-          <span class="section-badge">Carrière</span>
-          <h2 class="section-title">
-            Devenez <span class="text-yellow">Chauffeur</span> Partenaire
-          </h2>
-          <p class="section-description" style="text-align: left; margin: 0;">
-            Rejoignez la flotte la plus dynamique de Bruxelles. Profitez d'une liberté totale, de revenus attractifs et d'un flux constant de clients.
-          </p>
-
-          <div class="driver-benefits">
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fa-solid fa-money-bill-wave"></i>
-              </div>
-              <div class="benefit-info">
-                <h4>Revenus Attractifs</h4>
-                <p>Commissions réduites et bonus de performance hebdomadaires.</p>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fa-solid fa-calendar-check"></i>
-              </div>
-              <div class="benefit-info">
-                <h4>Gérez votre temps</h4>
-                <p>Conduisez quand vous voulez. Vous êtes votre propre patron.</p>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fa-solid fa-car-on"></i>
-              </div>
-              <div class="benefit-info">
-                <h4>Support 24/7</h4>
-                <p>Une équipe locale dédiée pour vous assister à tout moment.</p>
+              <h1 class="hero-headline" data-aos="fade-up" data-aos-delay="300">Votre chauffeur à Anderlues et ses environs</h1>
+              <p class="hero-text" data-aos="fade-up" data-aos-delay="350">Nous assurons tous vos déplacements avec ponctualité, confort et un service client irréprochable, 24h/24 et 7j/7 sur réservation.</p>
+              <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+                <a href="service-details.html" class="cta-button"><span>Explorer nos services</span><i class="bi bi-arrow-right"></i></a>
+                <a href="tel:+32486067927" class="cta-link"><i class="bi bi-telephone-fill"></i><span>Appel Direct</span></a>
               </div>
             </div>
           </div>
-
-          <div class="driver-actions">
-            <button class="btn1">Postuler Maintenant</button>
-            <a href="#" class="driver-link">Conditions d'inscription <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ==================== APP SECTION ==================== -->
-    <section class="app-section">
-      <div class="app-content">
-        <span class="section-badge">Application Mobile</span>
-        <h2 class="section-title">
-          Réservez en <span class="text-yellow">quelques secondes</span>
-        </h2>
-        <p class="section-description">
-          Téléchargez notre app pour réserver facilement, suivre votre chauffeur 
-          en temps réel et payer directement depuis votre téléphone.
-        </p>
-
-        <div class="app-features">
-          <div class="app-feature">
-            <i class="fa-solid fa-location-crosshairs"></i>
-            <span>Suivi GPS en direct</span>
-          </div>
-          <div class="app-feature">
-            <i class="fa-solid fa-credit-card"></i>
-            <span>Paiement sécurisé</span>
-          </div>
-          <div class="app-feature">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-            <span>Historique des trajets</span>
-          </div>
-          <div class="app-feature">
-            <i class="fa-solid fa-bell"></i>
-            <span>Notifications en direct</span>
-          </div>
-        </div>
-
-        <div class="store-buttons">
-          <a href="#" class="store-btn">
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" 
-              alt="Google Play"
-            />
-          </a>
-          <a href="#" class="store-btn">
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png" 
-              alt="App Store"
-            />
-          </a>
-        </div>
-      </div>
-
-      <div class="app-image">
-        <img
-          src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=350&h=700&fit=crop"
-          alt="Application Mobile Taxi"
-          class="app-mockup"
-        />
-      </div>
-    </section>
-
-    <!-- ==================== TESTIMONIALS SECTION ==================== -->
-    <section class="testimonials-section">
-      <div class="section-header">
-        <span class="section-badge">Avis Clients</span>
-        <h2 class="section-title">
-          Ce que disent nos <span class="text-yellow">clients</span>
-        </h2>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <p>"Service impeccable! Le chauffeur était ponctuel et très professionnel. Je recommande vivement."</p>
-          <div class="testimonial-author">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie Martin" />
-            <div>
-              <strong>Sophie Martin</strong>
-              <span>Bruxelles</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <p>"Transfert aéroport parfait. Le chauffeur suivait mon vol et m'attendait. Prix fixe, pas de mauvaise surprise!"</p>
-          <div class="testimonial-author">
-            <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Pierre Dubois" />
-            <div>
-              <strong>Pierre Dubois</strong>
-              <span>Anvers</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
-          </div>
-          <p>"Notre entreprise utilise leurs services depuis 3 ans. Facturation claire, chauffeurs toujours à l'heure."</p>
-          <div class="testimonial-author">
-            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Marie Lejeune" />
-            <div>
-              <strong>Marie Lejeune</strong>
-              <span>Directrice, BXL Corp</span>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="stats-grid">
+              <div class="stat-card stat-card-primary" data-aos="zoom-in" data-aos-delay="350">
+                <div class="stat-icon-wrap"><i class="bi bi-clock"></i></div>
+                <div class="stat-info"><span class="stat-value">1500+</span><span class="stat-title">Trajets réalisés</span></div>
+              </div>
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="stat-icon-wrap"><i class="bi bi-heart"></i></div>
+                <div class="stat-info"><span class="stat-value">98%</span><span class="stat-title">Clients satisfaits</span></div>
+              </div>
+              <div class="stat-card" data-aos="zoom-in" data-aos-delay="450">
+                <div class="stat-icon-wrap"><i class="bi bi-star"></i></div>
+                <div class="stat-info"><span class="stat-value">5+</span><span class="stat-title">Années d'expérience</span></div>
+              </div>
+              <div class="stat-card stat-card-accent" data-aos="zoom-in" data-aos-delay="500">
+                <div class="stat-icon-wrap"><i class="bi bi-people"></i></div>
+                <div class="stat-info"><span class="stat-value">10+</span><span class="stat-title">Chauffeurs qualifiés</span></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- /Hero Section -->
 
-    <!-- ==================== CONTACT SECTION ==================== -->
-    <section class="contact-section" id="contact-section">
-      <div class="section-header">
-        <span class="section-badge">Contact</span>
-        <h2 class="section-title">
-          Contactez-<span class="text-yellow">Nous</span>
-        </h2>
-      </div>
-
-      <div class="contact-content">
-        <div class="contact-info">
-          <h3>Besoin d'un taxi ?</h3>
-          <p>Disponible 24 heures sur 24, 7 jours sur 7</p>
-
-          <div class="contact-items">
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fa-solid fa-phone"></i>
-              </div>
-              <div>
-                <h4>Téléphone</h4>
-                <a href="tel:+3223490909">+32 2 349 09 09</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fa-solid fa-envelope"></i>
-              </div>
-              <div>
-                <h4>Email</h4>
-                <a href="mailto:info@taxisbruxelles.be">info@taxisbruxelles.be</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
-              <div>
-                <h4>Adresse</h4>
-                <p>Avenue Louise 123, 1050 Bruxelles</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fa-solid fa-clock"></i>
-              </div>
-              <div>
-                <h4>Disponibilité</h4>
-                <p>24h/24 - 7j/7</p>
-              </div>
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-5 align-items-center">
+          <div class="col-xl-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="about-images-wrapper">
+              <div class="image-main"><img src="assets/img/about/about-5.webp" alt="Business meeting" class="img-fluid"></div>
+              <div class="image-offset"><img src="assets/img/about/about-square-3.webp" alt="Detail shot" class="img-fluid"></div>
+              <div class="experience-badge"><span class="years purecounter" data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1">5</span><span class="text">Ans de<br>Service</span></div>
+              <div class="shape-pattern"></div>
             </div>
           </div>
-
-          <div class="social-links">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://wa.me/3223490909"><i class="fa-brands fa-whatsapp"></i></a>
+          <div class="col-xl-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="about-content">
+              <div class="section-subtitle">Qui Sommes-Nous</div>
+              <h2>Votre partenaire de confiance pour tous vos trajets</h2>
+              <p class="lead-text">Nous sommes une société de transport basée à Anderlues, dédiée à fournir un service de taxi fiable, ponctuel et confortable à nos clients.</p>
+              <p class="mb-4 description">Notre mission est de simplifier vos déplacements. Que ce soit pour un rendez-vous professionnel, un départ en vacances ou un simple trajet en ville, nous mettons tout en œuvre pour que votre expérience soit parfaite, de la réservation à l'arrivée.</p>
+              <div class="features-grid">
+                <div class="feature-card"><i class="bi bi-check-circle-fill"></i><span>Ponctualité</span></div>
+                <div class="feature-card"><i class="bi bi-check-circle-fill"></i><span>Sécurité</span></div>
+                <div class="feature-card"><i class="bi bi-check-circle-fill"></i><span>Chauffeurs professionnels</span></div>
+                <div class="feature-card"><i class="bi bi-check-circle-fill"></i><span>Disponibilité 24/7</span></div>
+              </div>
+              <div class="stats-row">
+                <div class="stat-box"><span class="number purecounter" data-purecounter-start="0" data-purecounter-end="1500" data-purecounter-duration="1">1500</span><span class="label">Trajets par an</span></div>
+                <div class="stat-box"><span class="number purecounter" data-purecounter-start="0" data-purecounter-end="300" data-purecounter-duration="1">300</span><span class="label">Clients fidèles</span></div>
+                <div class="stat-box"><span class="number purecounter" data-purecounter-start="0" data-purecounter-end="99" data-purecounter-duration="1">99%</span><span class="label">Taux de ponctualité</span></div>
+              </div>
+              <div class="action-buttons">
+                <a href="navette.html" class="btn btn-primary-custom">Voir notre flotte<i class="bi bi-arrow-right"></i></a>
+                <div class="contact-info">
+                  <div class="icon-box"><i class="bi bi-telephone-fill"></i></div>
+                  <div class="text"><span>Appelez-nous</span><a href="tel:+32486067927">+32 486 06 79 27</a></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </section><!-- /About Section -->
 
-        <form class="contact-form" id="contactForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Nom complet</label>
-              <input type="text" placeholder="Votre nom" required />
+    <!-- Services Section -->
+    <section id="services" class="services section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Nos Services</h2>
+        <p>Une gamme complète de solutions de transport pour répondre à tous vos besoins de mobilité.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card">
+              <div class="icon-wrapper"><i class="bi bi-geo-alt"></i></div>
+              <h3>Transport Local</h3>
+              <p>Pour vos courses, rendez-vous ou sorties en ville dans la région d'Anderlues et alentours.</p>
+              <a href="reservation.html" class="service-link"><span>Demander une course</span><i class="bi bi-arrow-right"></i></a>
             </div>
-            <div class="form-group">
-              <label>Téléphone</label>
-              <input type="tel" placeholder="+32 XXX XX XX XX" required />
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
+              <div class="icon-wrapper"><i class="bi bi-airplane"></i></div>
+              <h3>Navettes Aéroports</h3>
+              <p>Transferts vers et depuis les aéroports de Charleroi, Zaventem, Liège et autres.</p>
+              <a href="reservation.html" class="service-link"><span>Réserver une navette</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="votre@email.com" required />
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card featured">
+              <div class="featured-badge"><i class="bi bi-star-fill"></i><span>Populaire</span></div>
+              <div class="icon-wrapper"><i class="bi bi-briefcase"></i></div>
+              <h3>Transport d'Affaires</h3>
+              <p>Service discret et ponctuel pour vos déplacements professionnels et rendez-vous importants.</p>
+              <a href="reservation.html" class="service-link"><span>Planifier un trajet</span><i class="bi bi-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="form-group">
-            <label>Sujet</label>
-            <select required>
-              <option value="">Sélectionnez un sujet</option>
-              <option>Réservation</option>
-              <option>Demande de devis</option>
-              <option>Réclamation</option>
-              <option>Partenariat entreprise</option>
-              <option>Autre</option>
-            </select>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card">
+              <div class="icon-wrapper"><i class="bi bi-train-front"></i></div>
+              <h3>Transferts Gares</h3>
+              <p>Nous vous déposons ou récupérons dans toutes les gares de Belgique (Midi, Central, etc.).</p>
+              <a href="reservation.html" class="service-link"><span>Demander un transfert</span><i class="bi bi-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea rows="5" placeholder="Votre message..." required></textarea>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
+              <div class="icon-wrapper"><i class="bi bi-bandaid"></i></div>
+              <h3>Transport PMR</h3>
+              <p>Solutions adaptées pour les personnes à mobilité réduite, avec assistance si nécessaire.</p>
+              <a href="reservation.html" class="service-link"><span>En savoir plus</span><i class="bi bi-arrow-right"></i></a>
+            </div>
           </div>
-          <button type="submit" class="btn1">
-            <i class="fa-solid fa-paper-plane"></i> Envoyer
-          </button>
-        </form>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card">
+              <div class="icon-wrapper"><i class="bi bi-box-seam"></i></div>
+              <h3>Livraison de Colis</h3>
+              <p>Service de coursier rapide pour vos documents et petits colis urgents dans toute la Belgique.</p>
+              <a href="reservation.html" class="service-link"><span>Demander une livraison</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Services Section -->
+
+    <!-- Notre Flotte Section -->
+    <section id="portfolio" class="portfolio section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Notre Flotte</h2>
+        <p>Découvrez notre gamme de véhicules adaptés à chaque besoin, du confort d'une berline à l'espace d'un van.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="isotope-layout" data-default-filter="*" data-layout="fitRows" data-sort="original-order">
+          <div class="filters-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <ul class="portfolio-filters isotope-filters">
+              <li data-filter="*" class="filter-active">Tous les véhicules</li>
+              <li data-filter=".filter-berline">Berlines</li>
+              <li data-filter=".filter-van">Vans</li>
+              <li data-filter=".filter-premium">Premium</li>
+            </ul>
+          </div>
+          <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-berline">
+              <div class="project-card">
+                <div class="image-wrapper"><img src="assets/img/portfolio/portfolio-2.webp" alt="Project showcase" class="img-fluid" loading="lazy">
+                  <div class="hover-overlay"><div class="overlay-actions"><a href="assets/img/portfolio/portfolio-2.webp" class="glightbox action-btn" data-gallery="portfolio"><i class="bi bi-eye"></i></a></div></div><span class="category-badge">Berline Standard</span>
+                </div>
+                <div class="project-info"><h3>Confort et Fiabilité</h3><p>Idéale pour les trajets quotidiens et les transferts jusqu'à 4 personnes.</p></div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-van">
+              <div class="project-card featured">
+                <div class="image-wrapper"><img src="assets/img/portfolio/portfolio-4.webp" alt="Project showcase" class="img-fluid" loading="lazy">
+                  <div class="hover-overlay"><div class="overlay-actions"><a href="assets/img/portfolio/portfolio-4.webp" class="glightbox action-btn" data-gallery="portfolio"><i class="bi bi-eye"></i></a></div></div><span class="category-badge">Van Spacieux</span><span class="featured-badge"><i class="bi bi-star-fill"></i> Pour Groupes</span>
+                </div>
+                <div class="project-info"><h3>Espace et Polyvalence</h3><p>Parfait pour les familles, les groupes ou les passagers avec beaucoup de bagages.</p></div>
+              </div>
+            </div>
+             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-premium">
+              <div class="project-card">
+                <div class="image-wrapper"><img src="assets/img/portfolio/portfolio-6.webp" alt="Project showcase" class="img-fluid" loading="lazy">
+                  <div class="hover-overlay"><div class="overlay-actions"><a href="assets/img/portfolio/portfolio-6.webp" class="glightbox action-btn" data-gallery="portfolio"><i class="bi bi-eye"></i></a></div></div><span class="category-badge">Berline Premium</span>
+                </div>
+                <div class="project-info"><h3>Luxe et Prestation</h3><p>Pour vos trajets business ou événements spéciaux, voyagez avec élégance.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cta-section" data-aos="zoom-in" data-aos-delay="300">
+          <div class="cta-content">
+            <span class="cta-label"><i class="bi bi-car-front-fill"></i> Un trajet en vue ?</span>
+            <h3>Réservez le véhicule adapté à votre besoin.</h3>
+            <p>Contactez-nous pour discuter de votre trajet et nous vous proposerons la solution la plus adaptée à vos attentes et à votre budget.</p>
+            <div class="cta-buttons">
+              <a href="reservation.html" class="btn-cta-primary">Faire une demande de prix <i class="bi bi-arrow-right"></i></a>
+              <a href="service-details.html" class="btn-cta-secondary"><i class="bi bi-grid-fill"></i> Voir nos services</a>
+            </div>
+          </div>
+          <div class="cta-decoration"><div class="floating-shape shape-1"></div><div class="floating-shape shape-2"></div><div class="floating-shape shape-3"></div></div>
+        </div>
       </div>
     </section>
+    <!-- /Notre Flotte Section -->
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer>
-      <div class="footer-content">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/3097/3097180.png" 
-              alt="Logo"
-              style="width: 35px; height: 35px;"
-            />
-            <span>Taxis<strong>Bruxelles</strong></span>
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Pourquoi nous choisir ?</h2>
+        <p>Nos engagements sont la garantie d'un service de qualité supérieure pour chacun de vos déplacements.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-5">
+          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
+            <div class="sidebar-content">
+              <div class="badge-wrapper"><span class="section-badge"><i class="bi bi-stars"></i> Notre différence</span></div>
+              <h2>L'excellence dans chaque trajet</h2>
+              <p class="description">Nous ne nous contentons pas de vous transporter d'un point A à un point B. Nous nous engageons à faire de votre trajet une expérience agréable, sûre et sans stress.</p>
+              <div class="action-buttons"><a href="reservation.html" class="btn-main">Réserver maintenant</a><a href="#testimonials" class="btn-outline">Voir les avis clients</a></div>
+            </div>
           </div>
-          <p>Votre partenaire de confiance pour tous vos déplacements depuis 1995.</p>
-          <div class="footer-social">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://wa.me/3223490909"><i class="fa-brands fa-whatsapp"></i></a>
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+            <div class="features-grid">
+              <div class="feature-box highlight" data-aos="fade-up" data-aos-delay="250">
+                <div class="feature-ribbon">Notre Priorité</div>
+                <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+                <div class="feature-content"><h4>Sécurité avant tout</h4><p>Nos véhicules sont entretenus et nos chauffeurs formés pour une conduite sûre en toutes circonstances.</p></div>
+              </div>
+              <div class="feature-box" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon"><i class="bi bi-clock-history"></i></div>
+                <div class="feature-content"><h4>Ponctualité irréprochable</h4><p>Nous savons que votre temps est précieux. Nous planifions chaque course pour être à l'heure, à chaque fois.</p></div>
+              </div>
+              <div class="feature-box" data-aos="fade-up" data-aos-delay="350">
+                <div class="feature-icon"><i class="bi bi-gem"></i></div>
+                <div class="feature-content"><h4>Confort et Propreté</h4><p>Voyagez dans des véhicules impeccables, climatisés et confortables pour un trajet des plus agréables.</p></div>
+              </div>
+            </div>
+            <div class="process-timeline" data-aos="fade-up" data-aos-delay="400">
+              <h5 class="timeline-title"><i class="bi bi-diagram-3-fill"></i> Notre Processus de Réservation</h5>
+              <div class="timeline-steps">
+                <div class="timeline-step"><div class="step-marker">1</div><div class="step-info"><strong>Demande</strong><span>Contactez-nous</span></div></div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step"><div class="step-marker">2</div><div class="step-info"><strong>Devis</strong><span>Recevez notre offre</span></div></div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step"><div class="step-marker">3</div><div class="step-info"><strong>Confirmation</strong><span>Validez le trajet</span></div></div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step"><div class="step-marker">4</div><div class="step-info"><strong>Trajet</strong><span>Profitez du voyage</span></div></div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="footer-links">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="#services-section">Transfert Aéroport</a></li>
-            <li><a href="#services-section">Business & Corporate</a></li>
-            <li><a href="#services-section">Longue Distance</a></li>
-            <li><a href="#services-section">Transport Médical</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-links">
-          <h4>Informations</h4>
-          <ul>
-            <li><a href="#why-us-section">À propos de nous</a></li>
-            <li><a href="#tarifs-section">Nos tarifs</a></li>
-            <li><a href="#">Conditions générales</a></li>
-            <li><a href="#">Politique de confidentialité</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-contact">
-          <h4>Réservation Rapide</h4>
-          <p>Appelez-nous 24h/24 ou réservez en ligne</p>
-          <a href="tel:+3223490909" class="btn1 footer-call-btn">
-            <i class="fa-solid fa-phone"></i> +32 2 349 09 09
-          </a>
         </div>
       </div>
+    </section>
+    <!-- /Why Us Section -->
 
-      <div class="footer-bottom">
-        <p>© 2024 Taxis Bruxelles - Tous droits réservés</p>
-        <div class="footer-bottom-links">
-          <a href="#">Mentions légales</a>
-          <a href="#">Confidentialité</a>
-          <a href="#">Cookies</a>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Avis de nos clients</h2>
+        <p>Leur satisfaction est notre meilleure carte de visite. Découvrez ce qu'ils pensent de nos services.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right" data-aos-delay="150">
+            <div class="testimonials-sidebar">
+              <div class="avatar-stack"><img src="assets/img/person/person-m-3.webp" alt="Happy Client" class="avatar" loading="lazy"><img src="assets/img/person/person-f-7.jpeg" alt="Happy Client" class="avatar" loading="lazy"><img src="assets/img/person/person-m-9.webp" alt="Happy Client" class="avatar" loading="lazy"><span class="avatar-count">+300</span></div>
+              <div class="sidebar-content"><span class="satisfied-badge"><i class="bi bi-heart-fill"></i> Clients Fidèles</span><h3>Ils nous font confiance pour leurs déplacements</h3><p>La qualité de notre service nous a permis de construire une relation de confiance durable avec de nombreux passagers.</p></div>
+            </div>
+          </div>
+          <div class="col-lg-8" data-aos="fade-left" data-aos-delay="200">
+            <div class="testimonials-carousel swiper">
+              <script type="application/json" class="swiper-config">{"loop": true, "speed": 700, "autoplay": {"delay": 5000}, "slidesPerView": 1, "spaceBetween": 24, "pagination": {"el": ".swiper-pagination", "type": "bullets", "clickable": true}, "breakpoints": {"768": {"slidesPerView": 2}}}</script>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="testimonial-card">
+                    <div class="card-top"><div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><span class="quote-mark"><i class="bi bi-quote"></i></span></div>
+                    <p class="testimonial-text">Service parfait pour mon transfert à l'aéroport de Charleroi. Chauffeur à l'heure, très aimable et conduite sûre. Je recommande vivement !</p>
+                    <div class="author-info"><img src="assets/img/person/person-f-2.webp" alt="Client" class="author-img" loading="lazy"><div class="author-details"><h5>Sophie Dubois</h5><span>Passagère Business</span></div></div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="testimonial-card">
+                    <div class="card-top"><div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><span class="quote-mark"><i class="bi bi-quote"></i></span></div>
+                    <p class="testimonial-text">J'utilise Taxis Services chaque semaine pour mes rendez-vous. C'est un service fiable sur lequel je peux compter les yeux fermés.</p>
+                    <div class="author-info"><img src="assets/img/person/person-m-5.webp" alt="Client" class="author-img" loading="lazy"><div class="author-details"><h5>Marc L.</h5><span>Client régulier</span></div></div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="testimonial-card">
+                    <div class="card-top"><div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><span class="quote-mark"><i class="bi bi-quote"></i></span></div>
+                    <p class="testimonial-text">Un grand merci au chauffeur pour sa patience et son aide lors du transport de ma mère. Un service humain et de grande qualité.</p>
+                    <div class="author-info"><img src="assets/img/person/person-f-9.webp" alt="Client" class="author-img" loading="lazy"><div class="author-details"><h5>Elena Martin</h5><span>Famille d'un passager PMR</span></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
+    </section><!-- /Testimonials Section -->
 
-    <!-- ==================== FLOATING BUTTONS ==================== -->
-    <a href="https://wa.me/3223490909" class="float-btn whatsapp-btn" target="_blank" title="WhatsApp">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <!-- Team Section -->
+    <section id="team" class="team section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Notre Équipe</h2>
+        <p>Des chauffeurs professionnels, courtois et expérimentés, dévoués à votre confort et votre sécurité.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-5">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-card">
+              <div class="member-img"><img src="assets/img/person/person-m-1.jpeg" class="img-fluid" alt="Team Member"></div>
+              <div class="member-info"><span class="member-badge">Fondateur</span><h4>Khalid Hilali</h4><p>Gérant & Chauffeur Principal</p></div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-card">
+              <div class="member-img"><img src="assets/img/person/person-m-1.jpeg" class="img-fluid" alt="Team Member"></div>
+              <div class="member-info"><span class="member-badge">Réservations</span><h4>Oussama Hilali</h4><p>Responsable Clientèle</p></div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-card featured">
+              <div class="member-img"><img src="assets/img/person/person-m-1.jpeg" class="img-fluid" alt="Team Member"></div>
+              <div class="member-info"><span class="member-badge">Chauffeur</span><h4>David Chen</h4><p>Spécialiste Longues Distances</p></div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-card">
+              <div class="member-img"><img src="assets/img/person/person-f-7.jpeg" class="img-fluid" alt="Team Member"></div>
+              <div class="member-info"><span class="member-badge">Developer</span><h4>Younsse Amazzal</h4><p>creates, maintains, and improves software applications</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Team Section -->
 
-    <a href="tel:+3223490909" class="float-btn call-float-btn" title="Appeler">
-      <i class="fa-solid fa-phone"></i>
-    </a>
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact & Réservation</h2>
+        <p>Prêt à réserver votre prochain trajet ? Contactez-nous via le formulaire ou par téléphone pour une réponse immédiate.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-5 align-items-stretch">
+          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
+            <div class="info-panel">
+              <div class="panel-header"><span class="section-badge"><i class="bi bi-chat-dots-fill"></i>Contact Direct</span><h3>Une question ou une urgence ?</h3><p>Pour un besoin immédiat ou une information rapide, n'hésitez pas à nous appeler directement.</p></div>
+              <div class="contact-methods">
+                <div class="method-item">
+                  <div class="method-icon"><i class="bi bi-envelope-paper-fill"></i></div>
+                  <div class="method-details"><span class="method-label">Email</span><a href="mailto:info@taxis-services.be">info@taxis-services.be</a></div>
+                </div>
+                <div class="method-item">
+                  <div class="method-icon"><i class="bi bi-headset"></i></div>
+                  <div class="method-details"><span class="method-label">Téléphone</span><a href="tel:+32486067927">+32 486 06 79 27</a></div>
+                </div>
+                <div class="method-item">
+                  <div class="method-icon"><i class="bi bi-pin-map-fill"></i></div>
+                  <div class="method-details"><span class="method-label">Notre base</span><span>Anderlues, 6150, Belgique</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
+            <div class="form-card">
+              <div class="form-card-header">
+                <div class="header-icon"><i class="bi bi-send-fill"></i></div>
+                <div class="header-text"><h4>Envoyez-nous votre demande</h4><p>Remplissez le formulaire et nous vous recontacterons au plus vite pour confirmer.</p></div>
+              </div>
+              <form action="forms/contact.php" method="post" class="php-email-form">
+                <div class="row g-4">
+                  <div class="col-md-6"><div class="input-group-custom"><label>Votre nom</label><div class="input-wrapper"><i class="bi bi-person"></i><input type="text" name="name" placeholder="Ex: Jean Dupont" required=""></div></div></div>
+                  <div class="col-md-6"><div class="input-group-custom"><label>Votre téléphone</label><div class="input-wrapper"><i class="bi bi-telephone"></i><input type="email" name="phone" placeholder="+32 4..." required=""></div></div></div>
+                  <div class="col-12"><div class="input-group-custom"><label>Objet de la demande</label><div class="input-wrapper"><i class="bi bi-chat-square-text"></i><input type="text" name="subject" placeholder="Ex: Réservation aéroport Charleroi" required=""></div></div></div>
+                  <div class="col-12"><div class="input-group-custom"><label>Détails de votre trajet</label><div class="input-wrapper textarea-wrapper"><i class="bi bi-pencil-square"></i><textarea name="message" rows="5" placeholder="Merci de préciser : adresse de départ et d'arrivée, date, heure, nombre de passagers, bagages..." required=""></textarea></div></div></div>
+                </div>
+                <div class="form-actions">
+                  <div class="loading">Chargement</div><div class="error-message"></div><div class="sent-message">Votre demande a été envoyée. Nous vous répondrons rapidement. Merci !</div>
+                  <button type="submit" class="btn-submit"><span>Envoyer ma demande</span><i class="bi bi-arrow-right-circle-fill"></i></button>
+                  <div class="secure-note"><i class="bi bi-lock-fill"></i><span>Vos données sont protégées.</span></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Contact Section -->
 
-    <button class="float-btn scroll-top-btn" id="scrollTopBtn" title="Haut de page">
-      <i class="fa-solid fa-arrow-up"></i>
-    </button>
+  </main>
 
-    <div id="notification" class="notification"></div>
+  <footer id="footer" class="footer light-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-3 col-md-6 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center mb-4"><span class="sitename">Taxis Services</span></a>
+          <p>Votre partenaire de confiance pour des déplacements sereins et professionnels à Anderlues et dans toute la Belgique.</p>
+          <div class="social-links d-flex mt-4"><a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a></div>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-links"><h4>Navigation</h4><ul><li><a href="#hero">Accueil</a></li><li><a href="#about">À Propos</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li></ul></div>
+        <div class="col-lg-2 col-md-6 footer-links"><h4>Nos Services</h4><ul><li><a href="#services">Transport Local</a></li><li><a href="#services">Navettes Aéroports</a></li><li><a href="#services">Transport d'Affaires</a></li><li><a href="#services">Transport PMR</a></li></ul></div>
+        <div class="col-lg-2 col-md-6 footer-links"><h4>Informations</h4><ul><li><a href="terms.html">Mentions Légales</a></li><li><a href="terms.html">Politique de confidentialité</a></li><li><a href="privacy.html">Conditions de service</a></li></ul></div>
+        <div class="col-lg-3 col-md-6"><div class="footer-newsletter"><h4>Restez informé</h4><p>Inscrivez-vous pour recevoir nos promotions et nouveautés occasionnelles.</p><form action="" method="post" class="php-email-form"><div class="position-relative"><input type="email" name="email" placeholder="Votre Email" required=""><button type="submit" class="btn-subscribe"><i class="bi bi-arrow-right"></i></button></div><div class="loading">Chargement</div><div class="error-message"></div><div class="sent-message">Votre inscription a été prise en compte. Merci !</div></form></div></div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div class="row gy-3">
+        <div class="col-md-6 order-2 order-md-1">
+          <div class="copyright"><p>© <span>Copyright</span> <strong class="sitename" >
+            <a href="admin-login.html"> 
+              Taxis Services
+            </a>
+          </strong>. Tous droits réservés.</p></div>
+          <div class="credits">Designed by <a href="https://www.linkedin.com/in/younsse-amazzal-bba2443b6/">Younsse Amazzal</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-<script type="module" src="js/main.js"></script> 
- </body>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>

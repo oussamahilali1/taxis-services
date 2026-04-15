@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Connexion Administrateur - Taxis Services</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <link href="assets/img/favicon.svg" rel="icon">
+  <link href="assets/img/favicon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">TAXIS</h1><span>SERVICES</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Retour au site<i class="bi bi-box-arrow-up-right ms-2"></i></a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#contact">Support</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house"></i> Accueil</a></li>
+            <li class="breadcrumb-item active current">Espace Administrateur</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>Espace Administrateur</h1>
+        <p>Veuillez vous connecter pour accéder au panneau de gestion des réservations et du site.</p>
+      </div>
+    </div>
+    <!-- End Page Title -->
+
+    <!-- Admin Login Section -->
+    <section id="admin-login-page" class="contact section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5 align-items-stretch justify-content-center">
+
+          <!-- Colonne d'information à gauche -->
+          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
+            <div class="info-panel">
+              <div class="panel-header">
+                <span class="section-badge"><i class="bi bi-shield-lock-fill"></i> Accès Sécurisé</span>
+                <h3>Zone Réservée</h3>
+                <p>Cette page est destinée uniquement au personnel autorisé. Toutes les tentatives de connexion sont enregistrées.</p>
+              </div>
+
+              <ul class="list-unstyled mt-4" style="line-height: 2;">
+                <li class="d-flex align-items-start mb-3">
+                  <i class="bi bi-hdd-network-fill me-3 fs-4 text-danger"></i>
+                  <div><strong>Enregistrement d'IP :</strong> Votre adresse IP est enregistrée à des fins de sécurité.</div>
+                </li>
+                <li class="d-flex align-items-start mb-3">
+                  <i class="bi bi-eye-slash-fill me-3 fs-4 text-danger"></i>
+                  <div><strong>Confidentialité :</strong> Ne partagez jamais vos identifiants de connexion.</div>
+                </li>
+                 <li class="d-flex align-items-start">
+                  <i class="bi bi-question-circle-fill me-3 fs-4 text-danger"></i>
+                  <div><strong>Problème de connexion ?</strong> Contactez le support technique.</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-5" data-aos="fade-left" data-aos-delay="300">
+            <div class="form-card">
+              <div class="form-card-header">
+                <div class="header-icon"><i class="bi bi-box-arrow-in-right"></i></div>
+                <div class="header-text">
+                  <h4>Connexion</h4>
+                  <p>Entrez vos identifiants.</p>
+                </div>
+              </div>
+
+
+              <form action="forms/admin-login.php" method="post" class="php-email-form">
+                
+                <div class="row g-4">
+                  <div class="col-12">
+                    <div class="input-group-custom">
+                      <label>Nom d'utilisateur ou Email*</label>
+                      <div class="input-wrapper">
+                        <i class="bi bi-person-fill"></i>
+                        <input type="text" name="username" class="form-control" placeholder="Votre identifiant" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="input-group-custom">
+                      <label>Mot de passe*</label>
+                      <div class="input-wrapper">
+                        <i class="bi bi-lock-fill"></i>
+                        <input type="password" name="password" class="form-control" placeholder="Votre mot de passe" required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <div class="loading">Chargement...</div>
+                  <div class="error-message">Identifiants incorrects. Veuillez réessayer.</div>
+                  <div class="sent-message" hidden>Connexion réussie. Redirection...</div>
+                  <button type="submit" class="btn-submit">
+                    <span>Se Connecter</span>
+                    <i class="bi bi-arrow-right-circle-fill"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- /Admin Login Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container footer-bottom">
+      <div class="row gy-3">
+        <div class="col-md-12 text-center">
+          <div class="copyright"><p>© <span>Copyright</span> <strong class="sitename">Taxis Services</strong>. Tous droits réservés.</p></div>
+          <div class="credits">Designed by <a href="https://www.linkedin.com/in/younsse-amazzal-bba2443b6/">Younsse Amazzal</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
